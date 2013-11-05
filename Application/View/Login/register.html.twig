@@ -1,0 +1,14 @@
+<h1>Register</h1>
+
+{% if loginfalse == true %}
+    <p>Bad authentication</p>
+{% endif %}
+
+<form method="post" action="">
+	<label>Username: </label><input type="text" name="username" /> <br />
+	<label>Password: </label><input type="password" name="password" /> <br />
+	<label>Confirm: </label><input type="password" name="password2" /> <br />
+	<label>Email: </label><input type="text" name="email" /> <br /><br />	
+	
+	<input type="submit" name="submit" value="Register" />
+</form>
