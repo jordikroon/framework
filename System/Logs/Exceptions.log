@@ -395,3 +395,145 @@ Stack trace:
 #2 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
 #3 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
 #4 {main} [] []
+[2013-11-05 20:38:19] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:38:19] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:38:57] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:39:27] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:39:33] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:39:36] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:39:41] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:39:46] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:39:55] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:40:00] PDOException.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Database/Database.php:21
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Database/Database.php(21): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Model.php(16): System\Framework\Database\Database->__construct()
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/Application/Model/Auth.php(15): System\Framework\Model->getDatabase()
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/Application/Controller/Auth/LoginController.php(19): Application\Model\Auth->__construct()
+#4 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php(70): Application\Controller\Auth\LoginController->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#6 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#7 {main} [] []
+[2013-11-05 20:41:04] InvalidArgumentException.CRITICAL: Exception thrown: exception 'InvalidArgumentException' with message 'fail to load language file '/Applications/XAMPP/xamppfiles/htdocs/framework/System/lang/en.php'' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Form/FormValidator.php:61
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/Application/Controller/Auth/RegisterController.php(23): System\Framework\Form\FormValidator->__construct(Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php(70): Application\Controller\Auth\RegisterController->index()
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#4 {main} [] []
+[2013-11-05 20:42:00] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:42:45] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:42:57] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:42:58] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:43:04] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:43:07] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:44:40] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:45:56] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:45:58] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:46:05] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:46:09] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:46:50] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php:73
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-05 20:47:55] PDOException.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Database/Database.php:21
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Database/Database.php(21): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Model.php(16): System\Framework\Database\Database->__construct()
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/Application/Model/Auth.php(15): System\Framework\Model->getDatabase()
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/Application/Controller/Auth/LoginController.php(19): Application\Model\Auth->__construct()
+#4 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php(70): Application\Controller\Auth\LoginController->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#6 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#7 {main} [] []
+[2013-11-05 20:55:51] PDOException.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Database/Database.php:21
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Database/Database.php(21): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Model.php(16): System\Framework\Database\Database->__construct()
+#2 /Applications/XAMPP/xamppfiles/htdocs/framework/Application/Model/Auth.php(15): System\Framework\Model->getDatabase()
+#3 /Applications/XAMPP/xamppfiles/htdocs/framework/Application/Controller/Auth/LoginController.php(19): Application\Model\Auth->__construct()
+#4 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/MainController.php(70): Application\Controller\Auth\LoginController->index()
+#5 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
+#6 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
+#7 {main} [] []

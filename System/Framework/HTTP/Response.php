@@ -50,7 +50,7 @@ class Response {
 
 	public function getUri() {
 		if (isset($_GET['r'])) {
-			$uri = $_GET['r'];
+			$uri = '/' . $_GET['r'];
 		} else {
 			$uri = '/';
 		}
