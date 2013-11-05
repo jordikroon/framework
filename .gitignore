@@ -1,5 +1,3 @@
 /Application/Cache/*
 .project
 .settings/
-/System/Logs/*
-/Application/Logs/*
