@@ -13,6 +13,7 @@ Third party libaries:
  - Twig template parser
  - Mono Log
  - FluentPDO
+ - Valitron
  
 
 Questions:
