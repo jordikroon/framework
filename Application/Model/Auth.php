@@ -19,7 +19,7 @@ Class Auth extends Model {
 		if (is_object($user)) {
 			
 			$sth = $this -> database -> prepare('SELECT id FROM scms_users WHERE username = ? AND password = ?');
-			$sth -> execute(array($user -> getUsername(), $user -> $user -> hashPassword($this -> getPassword())));
+			$sth -> execute(array($user -> getUsername(), $user -> hashPassword($user -> getPassword())));
 
 			if ($sth -> rowCount() == 1) {
 				$result = $sth -> fetch(\PDO::FETCH_ASSOC);

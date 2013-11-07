@@ -537,3 +537,87 @@ Stack trace:
 #5 /Applications/XAMPP/xamppfiles/htdocs/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute()
 #6 /Applications/XAMPP/xamppfiles/htdocs/framework/web/index.php(31): System\Framework\Application->runApp()
 #7 {main} [] []
+[2013-11-06 13:40:32] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-06 13:40:54] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 09:39:52] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 09:39:55] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 09:40:02] InvalidArgumentException.CRITICAL: Exception thrown: exception 'InvalidArgumentException' with message 'fail to load language file 'D:\localroot\framework\System/lang/en.php'' in D:\localroot\framework\System\Framework\Form\FormValidator.php:61
+Stack trace:
+#0 D:\localroot\framework\Application\Controller\Auth\RegisterController.php(24): System\Framework\Form\FormValidator->__construct(Array)
+#1 D:\localroot\framework\System\Framework\MainController.php(70): Application\Controller\Auth\RegisterController->index()
+#2 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#3 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#4 {main} [] []
+[2013-11-07 09:43:05] InvalidArgumentException.CRITICAL: Exception thrown: exception 'InvalidArgumentException' with message 'Rule 'equal' has not been registered with System\Framework\Form\FormValidator::addRule().' in D:\localroot\framework\System\Framework\Form\FormValidator.php:535
+Stack trace:
+#0 D:\localroot\framework\Application\Controller\Auth\RegisterController.php(27): System\Framework\Form\FormValidator->rule('equal', 'password', Array)
+#1 D:\localroot\framework\System\Framework\MainController.php(70): Application\Controller\Auth\RegisterController->index()
+#2 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#3 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#4 {main} [] []
+[2013-11-07 11:53:16] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 13:43:58] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 13:45:16] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 13:46:20] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 13:48:39] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 16:04:51] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 16:18:38] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 16:18:43] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 16:18:45] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-07 16:18:51] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []

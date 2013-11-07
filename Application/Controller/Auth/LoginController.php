@@ -19,6 +19,8 @@ Class LoginController extends MainController {
 		$auth = new Auth;
 		$session = new Session;
 
+		$response = new Response();
+		
 		if (!$auth -> isAuthenticated()) {
 
 			$form = new FormHandler;
@@ -31,6 +33,7 @@ Class LoginController extends MainController {
 
 				if ($auth -> check($user)) {
 					$session -> create('key', $auth -> getKey());
+					$response -> redirect('contact_page');
 				} else {
 					$render['loginfalse'] = true;
 				}
@@ -38,7 +41,6 @@ Class LoginController extends MainController {
 		} else {
 			$session -> get('key'); //todo... db check:)
 
-			$response = new Response();
 			$response -> redirect('contact_page');
 		}
 		

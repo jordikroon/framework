@@ -134,7 +134,6 @@ class User extends Model {
 
 			$sth = $this -> database -> prepare('SELECT id FROM scms_users ' . $where);
 			
-			print_r($array);
 			if ($sth -> execute(array_values($array))) {
 				if($sth->rowCount() >= 1) {
 					return true;

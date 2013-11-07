@@ -1,7 +1,13 @@
 <h1>Register</h1>
 
-{% if loginfalse == true %}
-    <p>Bad authentication</p>
+{% if error|length > 0 %}
+	<p>Errors:</p>
+	{% for message in error %}
+		{% for display in message %}
+	        <li>{{ display }}</li>
+	    {% endfor %}
+	{% endfor %}
+	<br />
 {% endif %}
 
 <form method="post" action="">

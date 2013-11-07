@@ -48,11 +48,25 @@ class Response {
 		exit();
 	}
 
+	public function url($routeName) {
+
+		$route = new Route;
+		$routeInfo = $route -> getByName($routeName);
+
+		if (!$routeInfo) {
+			throw new \Exception(sprintf('Route %s not found!', $routeName));
+		} else {
+			return $this -> getBasePath() . $routeInfo[1];
+		}
+
+	
+	}
+	
 	public function getUri() {
 		if (isset($_GET['r'])) {
-			$uri = '/' . $_GET['r'];
+			$uri = $_GET['r'];
 		} else {
-			$uri = '/';
+			$uri = '';
 		}
 
 		return $uri;
