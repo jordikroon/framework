@@ -1,6 +1,6 @@
 <?php
 	$routes = array(
-		array('contact_page', 
+		array('home', 
 					'home','Home_Home:index'),
 					
 		array('login', 

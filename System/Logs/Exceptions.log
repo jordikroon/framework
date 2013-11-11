@@ -677,3 +677,100 @@ Stack trace:
 #0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
 #1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
 #2 {main} [] []
+[2013-11-11 12:18:41] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'Unknown tag name "extends" in "Home/index.html.twig" at line 1' in D:\localroot\framework\Vendor\Twig\Parser.php:186
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\Parser.php(99): Twig_Parser->subparse(NULL, false)
+#1 D:\localroot\framework\Vendor\Twig\Environment.php(479): Twig_Parser->parse(Object(Twig_TokenStream))
+#2 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->parse(Object(Twig_TokenStream))
+#3 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('{% extends 'Cor...', 'Home/index.html...')
+#4 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#5 D:\localroot\framework\Application\Controller\Home\HomeController.php(11): Twig_Environment->render('Home/index.html...', Array)
+#6 D:\localroot\framework\System\Framework\MainController.php(70): Application\Controller\Home\HomeController->index()
+#7 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#8 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#9 {main} [] []
+[2013-11-11 12:19:28] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'Unknown tag name "extends" in "Home/index.html.twig" at line 1' in D:\localroot\framework\Vendor\Twig\Parser.php:186
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\Parser.php(99): Twig_Parser->subparse(NULL, false)
+#1 D:\localroot\framework\Vendor\Twig\Environment.php(479): Twig_Parser->parse(Object(Twig_TokenStream))
+#2 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->parse(Object(Twig_TokenStream))
+#3 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('{% extends 'Cor...', 'Home/index.html...')
+#4 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#5 D:\localroot\framework\Application\Controller\Home\HomeController.php(11): Twig_Environment->render('Home/index.html...', Array)
+#6 D:\localroot\framework\System\Framework\MainController.php(70): Application\Controller\Home\HomeController->index()
+#7 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#8 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#9 {main} [] []
+[2013-11-11 12:19:47] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'Unknown tag name "extends" in "Home/index.html.twig" at line 1' in D:\localroot\framework\Vendor\Twig\Parser.php:186
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\Parser.php(99): Twig_Parser->subparse(NULL, false)
+#1 D:\localroot\framework\Vendor\Twig\Environment.php(479): Twig_Parser->parse(Object(Twig_TokenStream))
+#2 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->parse(Object(Twig_TokenStream))
+#3 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('{% extends 'Cor...', 'Home/index.html...')
+#4 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#5 D:\localroot\framework\Application\Controller\Home\HomeController.php(11): Twig_Environment->render('Home/index.html...', Array)
+#6 D:\localroot\framework\System\Framework\MainController.php(70): Application\Controller\Home\HomeController->index()
+#7 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#8 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#9 {main} [] []
+[2013-11-11 12:59:08] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'Unclosed "(" in "Core/default.html.twig" at line 23' in D:\localroot\framework\Vendor\Twig\Lexer.php:267
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\Lexer.php(219): Twig_Lexer->lexExpression()
+#1 D:\localroot\framework\Vendor\Twig\Lexer.php(118): Twig_Lexer->lexVar()
+#2 D:\localroot\framework\Vendor\Twig\Environment.php(443): Twig_Lexer->tokenize('<!DOCTYPE html ...', 'Core/default.ht...')
+#3 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->tokenize('<!DOCTYPE html ...', 'Core/default.ht...')
+#4 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('<!DOCTYPE html ...', 'Core/default.ht...')
+#5 D:\localroot\framework\Application\Cache\twig\1b\50\8d0f3b5d84240fecca6c64564cd6.php(10): Twig_Environment->loadTemplate('Core/default.ht...')
+#6 D:\localroot\framework\Vendor\Twig\Environment.php(334): __TwigTemplate_1b508d0f3b5d84240fecca6c64564cd6->__construct(Object(Twig_Environment))
+#7 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#8 D:\localroot\framework\Application\Controller\Home\HomeController.php(11): Twig_Environment->render('Home/index.html...', Array)
+#9 D:\localroot\framework\System\Framework\MainController.php(70): Application\Controller\Home\HomeController->index()
+#10 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#11 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#12 {main} [] []
+[2013-11-11 12:59:16] Twig_Error_Runtime.CRITICAL: Exception thrown: exception 'Exception' with message 'Route home not found!' in D:\localroot\framework\System\Framework\HTTP\Response.php:57
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Template\Extension\CoreExtension.php(21): System\Framework\HTTP\Response->url('home')
+#1 [internal function]: System\Framework\Template\Extension\CoreExtension->System\Framework\Template\Extension\{closure}('home')
+#2 D:\localroot\framework\Application\Cache\twig\15\2b\88eafbd883225dffe80c031aa922.php(48): call_user_func_array(Object(Closure), Array)
+#3 D:\localroot\framework\Vendor\Twig\Template.php(264): __TwigTemplate_152b88eafbd883225dffe80c031aa922->doDisplay(Array, Array)
+#4 D:\localroot\framework\Vendor\Twig\Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#5 D:\localroot\framework\Application\Cache\twig\1b\50\8d0f3b5d84240fecca6c64564cd6.php(24): Twig_Template->display(Array, Array)
+#6 D:\localroot\framework\Vendor\Twig\Template.php(264): __TwigTemplate_1b508d0f3b5d84240fecca6c64564cd6->doDisplay(Array, Array)
+#7 D:\localroot\framework\Vendor\Twig\Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#8 D:\localroot\framework\Vendor\Twig\Template.php(249): Twig_Template->display(Array)
+#9 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Template->render(Array)
+#10 D:\localroot\framework\Application\Controller\Home\HomeController.php(11): Twig_Environment->render('Home/index.html...', Array)
+#11 D:\localroot\framework\System\Framework\MainController.php(70): Application\Controller\Home\HomeController->index()
+#12 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#13 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#14 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("Route home not found!") in "Home/index.html.twig".' in D:\localroot\framework\Vendor\Twig\Template.php:279
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#1 D:\localroot\framework\Application\Cache\twig\1b\50\8d0f3b5d84240fecca6c64564cd6.php(24): Twig_Template->display(Array, Array)
+#2 D:\localroot\framework\Vendor\Twig\Template.php(264): __TwigTemplate_1b508d0f3b5d84240fecca6c64564cd6->doDisplay(Array, Array)
+#3 D:\localroot\framework\Vendor\Twig\Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#4 D:\localroot\framework\Vendor\Twig\Template.php(249): Twig_Template->display(Array)
+#5 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Template->render(Array)
+#6 D:\localroot\framework\Application\Controller\Home\HomeController.php(11): Twig_Environment->render('Home/index.html...', Array)
+#7 D:\localroot\framework\System\Framework\MainController.php(70): Application\Controller\Home\HomeController->index()
+#8 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#9 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#10 {main} [] []
+[2013-11-11 12:59:49] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-11 12:59:58] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-11 13:00:01] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:73
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(27): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(31): System\Framework\Application->runApp()
+#2 {main} [] []

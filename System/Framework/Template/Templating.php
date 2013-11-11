@@ -34,10 +34,14 @@ class Templating {
 			$loader = new \Twig_Loader_Filesystem($this -> viewDir);
 			
 			if(empty($this -> cacheDir)) {
-				return new \Twig_Environment($loader);					
+				$twig = new \Twig_Environment($loader);					
 			} else {
-				return new \Twig_Environment($loader, array('cache' => $this -> cacheDir, 'auto_reload' => true));					
+				$twig = new \Twig_Environment($loader, array('cache' => $this -> cacheDir, 'auto_reload' => true));					
 			}
+			
+			$twig -> addExtension(new Extension\CoreExtension());
+			
+			return $twig;
 		}
 	}
 }

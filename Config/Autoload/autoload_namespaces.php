@@ -25,4 +25,5 @@
 		'System\\Framework\\HTTP\\Response',
 		'System\\Framework\\Exception\\ExceptionHandler',
 		'System\\Framework\\Template\\Templating',
+		'System\\Framework\\Template\\Extension\\CoreExtension',
 	);

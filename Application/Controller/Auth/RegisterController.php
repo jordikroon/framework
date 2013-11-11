@@ -51,7 +51,7 @@ class RegisterController extends MainController {
 
 				$response = new Response();
 
-				return $this -> twig -> render('Login/register-complete.html.twig', array('url' => $response -> url('contact_page'), 'name' => $fields['username']));
+				return $this -> twig -> render('Login/register-complete.html.twig', array('url' => $response -> url('home'), 'name' => $fields['username']));
 			}
 		}
 

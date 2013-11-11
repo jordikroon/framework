@@ -10,4 +10,4 @@ $config['database']['database'] = 'scms';
 $config['security']['salt'] = 'RF7ufd76#$67Rei6BI6GUu7Re%$%#J';
 $config['security']['pepper'] = 'vjFU^f#fyuj%$%#r$$8Nt$326tif';
 
-$config['BasePath'] = 'http://localhost/framework/web/index.php/?r=';
+$config['BasePath'] = 'http://localhost/framework/web/?r=';

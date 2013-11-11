@@ -33,7 +33,7 @@ Class LoginController extends MainController {
 
 				if ($auth -> check($user)) {
 					$session -> create('key', $auth -> getKey());
-					$response -> redirect('contact_page');
+					$response -> redirect('home');
 				} else {
 					$render['loginfalse'] = true;
 				}
@@ -41,7 +41,7 @@ Class LoginController extends MainController {
 		} else {
 			$session -> get('key'); //todo... db check:)
 
-			$response -> redirect('contact_page');
+			$response -> redirect('home');
 		}
 		
 		return $this -> twig -> render('Login/login.html.twig', $render);
