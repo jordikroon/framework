@@ -20,11 +20,7 @@ class Maincontroller extends Application {
 	protected $twig;
 
 	public function __construct() {
-		$response = new Response;
-		$route = $this -> getRouteMatches($response->getUri());
-		
 		$this -> loadTemplates();
-
 	}
 
 	/** Load template parser 'twig' 

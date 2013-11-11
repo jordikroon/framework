@@ -5,10 +5,12 @@
 		'Application\\Controller\\Home\\HomeController',
 		'Application\\Controller\\Auth\\LoginController',
 		'Application\\Controller\\Auth\\RegisterController',
-				
+		'Application\\Controller\\Menu\\MenuController',
+			
 		#model namespaces
 		'Application\\Model\\User',
 		'Application\\Model\\Auth',
+		'Application\\Model\\Menu',
 		
 		#system namespaces
 		'System\\Framework\\Application',

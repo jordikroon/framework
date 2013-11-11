@@ -24,13 +24,19 @@ Class Route {
 	public function handle($name, $route, $data) {
 
 		$this -> route = $route;
+		$this -> data = $this -> parseRouteData($data);
+		$this -> name = $name;
+	}
+	
+	public function parseRouteData($data) {
 		$group = explode('_', $data);
 		$method = explode(':', $group[1]);
-
-		$this -> data = array($group[0], $method[0], $method[1]);
-		$this -> name = $name;
 		
-		
+		if(empty($group[0]) || empty($method[0]) || empty($method[1])) {
+			throw new \InvalidArgumentException('Invalid route data string: ' . $data);
+		} else {
+			return array($group[0], $method[0], $method[1]);
+		}
 	}
 
 	/** Returns route information

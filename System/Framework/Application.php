@@ -17,11 +17,12 @@ class Application {
 	
 	/** core of the application
 	 * 
-	 * @return string $maincontroller->execute output of pages
+	 * @return string $execute output of pages
 	 */
 	public function runApp() {
 		
 		try {
+			
 			$maincontroller = new MainController;
 			
 			return $maincontroller->execute();

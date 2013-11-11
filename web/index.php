@@ -3,11 +3,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
 require_once '../autoload.php';
 require_once '../config/autoload/autoload_namespaces.php';
 require_once '../config/autoload/autoload_vendor.php';
 
+/***************************************************************************\
+ *                                INIT APPLICATION                         *
+\***************************************************************************/
 
 if (isset($namespaces) && is_array($namespaces)) {
 	foreach ($namespaces AS $namespaces) {
@@ -19,7 +21,7 @@ if (isset($namespaces) && is_array($namespaces)) {
 if (isset($vendors) && is_array($vendors)) {
 	foreach ($vendors AS $vendor) {
 		$classLoader = new ClassLoader($vendor);
-		$classLoader->setIncludePath('Vendor');
+		$classLoader -> setIncludePath('Vendor');
 		$classLoader -> register();
 	}
 }

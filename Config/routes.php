@@ -1,7 +1,7 @@
 <?php
 	$routes = array(
 		array('home', 
-					'home','Home_Home:index'),
+					'','Home_Home:index'), // empty = /
 					
 		array('login', 
 					'auth/login','Auth_Login:index'),
