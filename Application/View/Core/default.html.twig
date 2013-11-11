@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="description" content="fdjf" />
+<meta name="keywords" content="gdfh" />
+<title>{% block title %}Homepage{% endblock %}</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" media="screen" href="templates/main/css/style.css" />
+
+	
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="index.php">Jordi Kroon</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="index.php">Homepage</a></li>
+				<li><a href="index.php?page=facebook">Facebook</a></li>
+
+				<li><a href="index.php?page=google">Google+</a></li>
+				<li><a href="index.php?page=linkedin">Linked-in</a></li>
+			</ul>
+			<br class="clearfix">
+		</div>
+	</div>
+	<div id="page">
+		<div id="content">
+			<div id="post">
+				{% block content %}{% endblock %}
+			</div>
+			
+		</div>
+		<div id="sidebar">
+			<h3>Twitter </h3>
+			<div class="date-list">
+				<ul class="list date-list">
+				
+					<li class="last"></li>
+				</ul>
+			</div>
+
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+<div id="footer">
+	Copyright (c) 2012 <strong>jordikroon.nl</strong> alle rechten voorbehouden.
+</div>
+</body>
+</html>
