@@ -11,6 +11,7 @@
 		'Application\\Model\\User',
 		'Application\\Model\\Auth',
 		'Application\\Model\\Menu',
+		'Application\\Model\\MenuItem',
 		
 		#system namespaces
 		'System\\Framework\\Application',
