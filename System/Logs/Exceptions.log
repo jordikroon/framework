@@ -1898,3 +1898,13 @@ Stack trace:
 #0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
 #1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
 #2 {main} [] []
+[2013-11-15 12:09:24] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:69
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-15 12:09:24] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:69
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []

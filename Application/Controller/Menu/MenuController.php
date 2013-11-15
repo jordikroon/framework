@@ -8,7 +8,6 @@
 namespace Application\Controller\Menu;
 
 use System\Framework\MainController;
-
 use Application\Model\Menu;
 
 class MenuController extends MainController {
