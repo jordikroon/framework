@@ -34,8 +34,21 @@ Class Menu extends Model {
 			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
 		}
 	}
-	
+
 	public function addItem($menuitem) {
-		var_dump($menuitem);
+		if (is_object($menuitem) && $menuitem instanceof MenuItem) {
+			
+			$sth = $this -> database -> prepare('INSERT INTO scms_menu (mname, lname, link, parent) VALUES (?, ?, ?, ?)');
+			if ($sth -> execute(array($this -> getMenu(), $menuitem -> getName(), $menuitem -> getLink(), $menuitem -> getParent()))) {
+
+				return true;
+			} else {
+				throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			}
+			 
+		} else {
+			throw new \InvalidArgumentException('Parameter should be an instance of Menuitem!');
+		}
 	}
+
 }

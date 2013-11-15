@@ -1,11 +1,15 @@
 <?php
 
+/**
+ * @author Jordi Kroon
+ * @version 1.0
+ * @todo Parse url (@ = route, http(s) = external, other = internal)
+ */
 namespace Application\Controller\Menu;
 
 use System\Framework\MainController;
 
 use Application\Model\Menu;
-use Application\Model\MenuItem;
 
 class MenuController extends MainController {
 
@@ -14,19 +18,7 @@ class MenuController extends MainController {
 		$menu = new Menu;
 		$menu -> setMenu('head');
 		
-		
-		$menuItem = new MenuItem;
-		
-		$menuItem -> setName('testName');
-		$menuItem -> setLink('link');
-		$menuItem -> setParent(0);
-		
-		$menu -> addItem($menuItem);
-		
-		
-		print_r($menu -> getItems());
-		
-		return $this -> twig -> render('Menu/menu.html.twig');
+		return $this -> twig -> render('Menu/menu.html.twig', array('menu' => $menu -> getItems()));
 	}
 	
 }
