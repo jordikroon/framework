@@ -7,7 +7,6 @@
  * @package Framework
  */
 
-
 namespace System\Framework\Storage;
 
 class Session {

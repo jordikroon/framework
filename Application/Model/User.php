@@ -17,6 +17,8 @@ class User extends Model {
 
 	private $object;
 
+	private $role = 0;
+	
 	public function __construct() {
 		$this -> database = $this -> getDatabase();
 	}
@@ -53,9 +55,17 @@ class User extends Model {
 		return $this -> email;
 	}
 
+	public function setRole($role) {
+		$this -> role = $role;
+	}
+
+	public function getRole() {
+		return $this -> role;
+	}
+	
 	public function create() {
-		$sth = $this -> database -> prepare('INSERT INTO scms_users (username, password, email) VALUES (?, ?, ?)');
-		if ($sth -> execute(array($this -> getUsername(), $this -> hashPassword($this -> getPassword()), $this -> getEmail()))) {
+		$sth = $this -> database -> prepare('INSERT INTO scms_users (username, password, email, role) VALUES (?, ?, ?, ?)');
+		if ($sth -> execute(array($this -> getUsername(), $this -> hashPassword($this -> getPassword()), $this -> getEmail(), $this -> getRole()))) {
 
 			return true;
 		} else {
@@ -64,14 +74,14 @@ class User extends Model {
 	}
 
 	public function update() {
-		$sth = $this -> database -> prepare('UPDATE scms_users SET id=?, username=?, password=?, email=? WHERE id=?');
+		$sth = $this -> database -> prepare('UPDATE scms_users SET id=?, username=?, password=?, email=?, role=? WHERE id=?');
 
 		if ($this -> getPassword() != $this -> object -> getPassword()) {
 			$password = $this -> object -> getPassword();
 		} else {
 			$password = $this -> hashPassword($this -> getPassword());
 		}
-		if ($sth -> execute(array($this -> getId(), $this -> getUsername(), $password, $this -> getEmail(), $this -> object -> getId()))) {
+		if ($sth -> execute(array($this -> getId(), $this -> getUsername(), $password, $this -> getEmail(), $this -> getRole(), $this -> object -> getId()))) {
 
 			$this -> object = $this;
 			// update with new information
@@ -95,7 +105,7 @@ class User extends Model {
 	}
 
 	public function read($id) {
-		$sth = $this -> database -> prepare('SELECT id, username, password, email FROM scms_users WHERE id = ?');
+		$sth = $this -> database -> prepare('SELECT id, username, password, email, role FROM scms_users WHERE id = ?');
 		if ($sth -> execute(array($id))) {
 
 			$fetch = $sth -> fetch();
@@ -111,7 +121,6 @@ class User extends Model {
 		} else {
 			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
 		}
-
 	}
 
 	public function exists($array) {
@@ -148,6 +157,18 @@ class User extends Model {
 
 	}
 
+	public function getUsers() {
+		$sth = $this -> database -> prepare('SELECT id, username, password, email, role FROM scms_users');
+		if ($sth -> execute()) {
+
+			$fetch = $sth -> fetchAll(\PDO::FETCH_ASSOC);
+
+			return $fetch;
+		} else {
+			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+		}
+	}	
+	
 	public function hashPassword($password) {
 		$config = new Config;
 

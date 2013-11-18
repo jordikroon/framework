@@ -1,0 +1,10 @@
+{% extends "Admin/Core/core.html.twig" %}
+
+{% block content %}
+	{% include 'Admin/Core/topmenu.html.twig' %}
+	{% include 'Admin/Core/leftmenu.html.twig' %}
+		
+		{% block page %}{% endblock%}
+		
+	{% include 'Admin/Core/footer.html.twig' %}
+{% endblock %}

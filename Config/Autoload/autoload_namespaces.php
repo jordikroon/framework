@@ -6,7 +6,9 @@
 		'Application\\Controller\\Auth\\LoginController',
 		'Application\\Controller\\Auth\\RegisterController',
 		'Application\\Controller\\Menu\\MenuController',
-			
+		'Application\\Controller\\Admin\\DashboardController',
+		'Application\\Controller\\Admin\\UserController',
+					
 		#model namespaces
 		'Application\\Model\\User',
 		'Application\\Model\\Auth',

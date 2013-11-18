@@ -3,8 +3,11 @@
 /**
  * @author Jordi Kroon
  * @version 1.0
+ * @copyright (c) Copyright 2013
+ * @package CMS
  * @todo Parse url (@ = route, http(s) = external, other = internal)
  */
+
 namespace Application\Controller\Menu;
 
 use System\Framework\MainController;

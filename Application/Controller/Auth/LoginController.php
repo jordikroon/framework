@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @author Jordi Kroon
+ * @version 1.0
+ * @copyright (c) Copyright 2013
+ * @package CMS
+ */
+ 
 namespace Application\Controller\Auth;
 
 use System\Framework\MainController;
@@ -44,7 +51,7 @@ Class LoginController extends MainController {
 			$response -> redirect('home');
 		}
 		
-		return $this -> twig -> render('Login/login.html.twig', $render);
+		return $this -> twig -> render('Admin/login.html.twig', $render);
 	}
 	
 	public function logOut() {

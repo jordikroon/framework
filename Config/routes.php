@@ -11,4 +11,10 @@
 									
 		array('register', 
 					'auth/register','Auth_Register:index'),
+					
+		array('admin', 
+					'admin/dashboard','Admin_Dashboard:index'),
+					
+		array('admin-users', 
+					'admin/users','Admin_User:index'),
 	);
