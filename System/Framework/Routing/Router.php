@@ -12,7 +12,7 @@ namespace System\Framework\Routing;
 Class Router {
 
 	private $routes = array();
-
+	
 	/** adds a route
 	 * 
 	 * @param object $route route object
@@ -29,11 +29,19 @@ Class Router {
 	 */	
 	public function getRoute($request) {
 		foreach ($this->routes as $route) {
-			if ($route -> match($request)) {
+			if ($data = $route -> match($request)) {
+				
+				if(isset($data['string'])) {
+					$route -> setParam($data['string']);
+				} else if(isset($data['id'])) {
+					$route -> setParam($data['id']);
+				}
+				
 				return $route;
 			}
 
 		}
 	}
+
 
 }

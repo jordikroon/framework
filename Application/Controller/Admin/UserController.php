@@ -32,7 +32,8 @@ class UserController extends MainController {
 		$form = new FormHandler;
 
 		$error = array();
-
+		$confirmation = array();
+		
 		if ($form -> isMethod('post')) {
 
 			$fields = $form -> getFields(array('user', 'pass', 'email', 'role'));
@@ -62,14 +63,20 @@ class UserController extends MainController {
 				$user -> setRole($fields['role']);
 
 				$user -> create();
-
-				echo 'toegevoegd';
-				//	return $this -> twig -> render('Login/register-complete.html.twig', array('url' => $response -> url('home'), 'name' => $fields['username']));
+				
+				$confirmation['message'] = 'User has been created!';
 			}
 		}
 
-		print_r($error);
-		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers()));
+		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
 	}
 
+	public function delete($id) {
+		$user = new User;
+		$user -> read($id);
+		$user -> delete();
+		
+		return $this -> index();
+	
+	}
 }

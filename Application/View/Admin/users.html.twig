@@ -1,5 +1,7 @@
 {% extends "Admin/Core/coreback.html.twig" %}
 
+{% block title %}Add user{% endblock %}
+
 {% block page %}
 
 <h2><a href="#">Users</a> &raquo; <a href="#" class="active">Manage users</a></h2>
@@ -9,17 +11,18 @@
 	<h3>Manage users:</h3>
 	<table cellpadding="0" cellspacing="0">
 
-		
-	{% for user in users %}
-			<tr class="{{ cycle(['even','odd'],loop.index) }}">
-				<td>{{ user.username }}</td>
-				<td class="action">
-					<a href="#" class="view">View</a>
-					<a href="#" class="edit">Edit</a>
-					<a href="#" class="delete">Delete</a>
-				</td>
-			</tr> 
-	{% endfor %}
+		<div id="dialog" title="Delete user?" style="display: none;">
+			<p>
+				<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Are you sure you want to delete this user?
+			</p>
+		</div>
+
+		{% for user in users %}
+		<tr class="{{ cycle(['even','odd'],loop.index) }}">
+			<td>{{ user.username }}</td>
+			<td class="action"><a href="#" class="view">View</a><a href="?r=admin/users/delete/{{ user.id }}" class="edit">Edit</a><a href="?r=admin/users/delete/{{ user.id }}" class="delete">Delete</a></td>
+		</tr>
+		{% endfor %}
 	</table>
 
 	<h3>Add user:</h3>
@@ -27,6 +30,24 @@
 	<fieldset>
 
 		<form action="" method='post' class="jNice">
+			{% if field_errors|length %}
+			<div class="alert-box2 error">
+				<span>User could not been created:</span>
+				<br />
+				<br />
+				{% for error in field_errors %}
+					{% for message in error %}
+						{{ message }}	<br />
+					{% endfor %}
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			{% if confirmation|length %}
+			<div class="alert-box2 success">
+				<span>{{ confirmation.message }}</span>
+			</div>
+			{% endif %}
 
 			<p>
 				<label>Username:</label>
@@ -48,9 +69,33 @@
 
 				</select>
 			</p>
-			<input type="submit" value="Add homepage" />
+			<input type="submit" value="Add user" />
 		</form>
 	</fieldset>
 
 </div>
+
+<script>
+	$('.delete').click(function() {
+
+		var a = this;
+
+		$('#dialog').dialog({
+			resizable : false,
+			draggable: false,
+			width : 250,	
+			modal : true,
+			buttons : {
+				"Delete user" : function() {
+					window.location = a.href; 
+				},
+				Cancel : function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+		return false;
+	});
+
+</script>
 {% endblock %}

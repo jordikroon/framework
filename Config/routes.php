@@ -17,4 +17,7 @@
 					
 		array('admin-users', 
 					'admin/users','Admin_User:index'),
+					
+		array('admin-users-delete', 
+					'admin/users/delete/<:id>','Admin_User:delete'),
 	);

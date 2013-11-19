@@ -19,6 +19,8 @@ class Maincontroller extends Application {
 	protected $database;
 	protected $twig;
 
+	private $param;
+	
 	public function __construct() {
 		$this -> loadTemplates();
 	}
@@ -43,8 +45,10 @@ class Maincontroller extends Application {
 
 		$router = $this -> getRouter();
 		$route = $router -> getRoute($request);
-
+		
 		if ($route) {
+			$this -> param = $route -> getParam();
+			
 			return $route -> getData();
 		}
 
@@ -59,11 +63,20 @@ class Maincontroller extends Application {
 		$route = $this -> getRouteMatches($response->getUri());
 
 		if ($route) {
-
+			
+			
 			$controllerClass = '\\Application\\Controller\\' . $route[0] . '\\' . $route[1] . 'Controller';
 
 			$controller = new $controllerClass;
-			$this -> response = $controller -> $route[2]();
+			
+			$reflection = new \ReflectionMethod($controller,$route[2]);
+			
+			if(count($reflection->getParameters()) == 1) {
+				$this -> response = $controller -> $route[2]($this -> param);
+			} else {
+				$this -> response = $controller -> $route[2]();
+			}
+			
 
 		} else {
 			throw new \ErrorException('Page not found');

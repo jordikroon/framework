@@ -15,6 +15,7 @@ Class Route {
 	private $controller;
 	private $data;
 	private $name;
+	private $param;
 	
 	/** initializes object and parses the data
 	 * 
@@ -68,7 +69,7 @@ Class Route {
 		$route = preg_replace('/\<\#(.*?)\>/', '(?P<\1>[A-Za-z0-9\-\_]+)', $route); // <#string>
 
 		if (preg_match($route, $query, $matches)) {
-			return $route;
+			return $matches;
 		}
 	}
 
@@ -80,5 +81,14 @@ Class Route {
 				return $route;
 			}
 		}
+	}
+	
+	
+	public function setParam($param) {
+		$this -> param = $param;
+	}
+	
+	public function getParam() {
+		return $this -> param;
 	}
 }
