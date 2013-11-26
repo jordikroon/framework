@@ -20,4 +20,7 @@
 					
 		array('admin-users-delete', 
 					'admin/users/delete/<:id>','Admin_User:delete'),
+
+		array('admin-users-edit', 
+					'admin/users/edit/<:id>','Admin_User:edit'),
 	);

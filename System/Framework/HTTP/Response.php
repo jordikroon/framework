@@ -61,11 +61,10 @@ class Response {
 		$routeInfo = $route -> getByName($routeName);
 
 		if (!$routeInfo) {
-			throw new \Exception(sprintf('Route %s not found!', $routeName));
+			throw new \Exception(sprintf('Route %s not found!', $routeInfo[1]));
 		} else {
-			return $this -> getBasePath() . $routeInfo[1];
+			return $this -> getBasePath() . str_replace(array('<:id>', '<#string>'), array('', ''), $routeInfo[1]);
 		}
-
 	
 	}
 	

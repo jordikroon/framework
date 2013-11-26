@@ -20,15 +20,16 @@
 		{% for user in users %}
 		<tr class="{{ cycle(['even','odd'],loop.index) }}">
 			<td>{{ user.username }}</td>
-			<td class="action"><a href="#" class="view">View</a><a href="?r=admin/users/delete/{{ user.id }}" class="edit">Edit</a><a href="?r=admin/users/delete/{{ user.id }}" class="delete">Delete</a></td>
+			<td class="action"><a href="{{ url('admin-users-edit') }}{{ user.id }}" class="edit">Edit</a><a href="{{ url('admin-users-delete') }}{{ user.id }}" class="delete">Delete</a></td>
 		</tr>
 		{% endfor %}
 	</table>
 
-	<h3>Add user:</h3>
+	<h3>{{ edituser|default('Add') }} user:</h3>
 
 	<fieldset>
-
+		
+		{% if edituser and updateuser.id%}
 		<form action="" method='post' class="jNice">
 			{% if field_errors|length %}
 			<div class="alert-box2 error">
@@ -51,26 +52,31 @@
 
 			<p>
 				<label>Username:</label>
-				<input name="user" type="text" class="text-long" />
+				<input name="user" type="text" value="{{  updateuser.user|default(formValue('user')) }}" class="text-long" />
 			</p>
 			<p>
 				<label>Password:</label>
-				<input name="pass" type="password" class="text-long" />
+				<input name="pass" type="password" value="" class="text-long" />
 			</p>
 			<p>
 				<label>Email:</label>
-				<input name="email" type="text" class="text-long" />
+				<input name="email" type="text" value="{{ updateuser.email|default(formValue('email')) }}" class="text-long" />
 			</p>
 			<p>
 				<label>Role:</label>
 				<select name="role">
-					<option value="0">User</option>
-					<option value="1">Administrator</option>
+					<option value="0" {{ formSelectValue('role', 0) }}>User</option>
+					<option value="1" {{ formSelectValue('role', 1) }}>Administrator</option>
 
 				</select>
 			</p>
-			<input type="submit" value="Add user" />
+			<input type="submit" value="{{ edituser|default('Add') }} user" />
 		</form>
+		{% else %}
+		<div class="alert-box2 error">
+			<span>User does not exist!</span>
+		</div>
+		{% endif %}
 	</fieldset>
 
 </div>

@@ -3298,3 +3298,131 @@ Stack trace:
 #0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
 #1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
 #2 {main} [] []
+[2013-11-20 13:44:31] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-20 14:06:06] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-20 14:07:52] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-20 14:07:52] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-23 17:27:23] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-23 17:27:23] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-23 17:27:27] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-23 17:27:27] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-23 17:28:59] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'The function "formValue" does not exist in "Admin/users.html.twig" at line 54' in D:\localroot\framework\Vendor\Twig\ExpressionParser.php:555
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(334): Twig_ExpressionParser->getFunctionNodeClass('formValue', 54)
+#1 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(147): Twig_ExpressionParser->getFunctionNode('formValue', 54)
+#2 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(84): Twig_ExpressionParser->parsePrimaryExpression()
+#3 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(41): Twig_ExpressionParser->getPrimary()
+#4 D:\localroot\framework\Vendor\Twig\Parser.php(145): Twig_ExpressionParser->parseExpression()
+#5 D:\localroot\framework\Vendor\Twig\TokenParser\Block.php(47): Twig_Parser->subparse(Array, true)
+#6 D:\localroot\framework\Vendor\Twig\Parser.php(191): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#7 D:\localroot\framework\Vendor\Twig\Parser.php(99): Twig_Parser->subparse(NULL, false)
+#8 D:\localroot\framework\Vendor\Twig\Environment.php(479): Twig_Parser->parse(Object(Twig_TokenStream))
+#9 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->parse(Object(Twig_TokenStream))
+#10 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('{% extends "Adm...', 'Admin/users.htm...')
+#11 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Admin/users.htm...')
+#12 D:\localroot\framework\Application\Controller\Admin\UserController.php(90): Twig_Environment->render('Admin/users.htm...', Array)
+#13 D:\localroot\framework\System\Framework\MainController.php(75): Application\Controller\Admin\UserController->edit('6')
+#14 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#15 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#16 {main} [] []
+[2013-11-23 18:59:36] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-23 18:59:36] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-23 18:59:40] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-23 18:59:40] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-23 18:59:45] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-26 09:27:41] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'Unexpected character "$" in "Admin/users.html.twig" at line 79' in D:\localroot\framework\Vendor\Twig\Lexer.php:287
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\Lexer.php(219): Twig_Lexer->lexExpression()
+#1 D:\localroot\framework\Vendor\Twig\Lexer.php(118): Twig_Lexer->lexVar()
+#2 D:\localroot\framework\Vendor\Twig\Environment.php(443): Twig_Lexer->tokenize('{% extends "Adm...', 'Admin/users.htm...')
+#3 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->tokenize('{% extends "Adm...', 'Admin/users.htm...')
+#4 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('{% extends "Adm...', 'Admin/users.htm...')
+#5 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Admin/users.htm...')
+#6 D:\localroot\framework\Application\Controller\Admin\UserController.php(71): Twig_Environment->render('Admin/users.htm...', Array)
+#7 D:\localroot\framework\System\Framework\MainController.php(77): Application\Controller\Admin\UserController->index()
+#8 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#9 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#10 {main} [] []
+[2013-11-26 09:41:01] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-26 09:41:01] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-26 09:41:36] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'The function "base_path" does not exist in "Admin/Core/core.html.twig" at line 10' in D:\localroot\framework\Vendor\Twig\ExpressionParser.php:555
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(334): Twig_ExpressionParser->getFunctionNodeClass('base_path', 10)
+#1 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(147): Twig_ExpressionParser->getFunctionNode('base_path', 10)
+#2 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(84): Twig_ExpressionParser->parsePrimaryExpression()
+#3 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(41): Twig_ExpressionParser->getPrimary()
+#4 D:\localroot\framework\Vendor\Twig\Parser.php(145): Twig_ExpressionParser->parseExpression()
+#5 D:\localroot\framework\Vendor\Twig\Parser.php(99): Twig_Parser->subparse(NULL, false)
+#6 D:\localroot\framework\Vendor\Twig\Environment.php(479): Twig_Parser->parse(Object(Twig_TokenStream))
+#7 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->parse(Object(Twig_TokenStream))
+#8 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('<!DOCTYPE html ...', 'Admin/Core/core...')
+#9 D:\localroot\framework\Application\Cache\twig\82\87\ab611970a7a8d230f0f97f08a8de.php(10): Twig_Environment->loadTemplate('Admin/Core/core...')
+#10 D:\localroot\framework\Vendor\Twig\Environment.php(334): __TwigTemplate_8287ab611970a7a8d230f0f97f08a8de->__construct(Object(Twig_Environment))
+#11 D:\localroot\framework\Application\Cache\twig\43\4b\307457414bfb438a49a6a9911898.php(10): Twig_Environment->loadTemplate('Admin/Core/core...')
+#12 D:\localroot\framework\Vendor\Twig\Environment.php(334): __TwigTemplate_434b307457414bfb438a49a6a9911898->__construct(Object(Twig_Environment))
+#13 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Admin/users.htm...')
+#14 D:\localroot\framework\Application\Controller\Admin\UserController.php(137): Twig_Environment->render('Admin/users.htm...', Array)
+#15 D:\localroot\framework\System\Framework\MainController.php(75): Application\Controller\Admin\UserController->edit('14')
+#16 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#17 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#18 {main} [] []

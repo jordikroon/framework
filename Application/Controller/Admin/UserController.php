@@ -71,12 +71,71 @@ class UserController extends MainController {
 		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
 	}
 
-	public function delete($id) {
+	public function update() {
+
+		$user = new User;
+		$form = new FormHandler;
+
+		$error = array();
+		$confirmation = array();
+		
+		if ($form -> isMethod('post')) {
+
+			$fields = $form -> getFields(array('user', 'pass', 'email', 'role'));
+
+			$validator = new FormValidator($fields);
+
+			$validator -> rule('required', array('user', 'pass', 'email'));
+			$validator -> rule('email', 'email');
+			$validator -> rule('in', 'role', array(0, 1));
+
+			if ($user -> exists(array('username' => $fields['user']))) {
+				$error['user'][] = 'Username in use!';
+			}
+
+			if ($user -> exists(array('email' => $fields['email']))) {
+				$error['email'][] = 'Email in use!';
+			}
+
+			if (!$validator -> validate()) {
+				$error = array_merge($error, $validator -> errors());
+			}
+
+			if (empty($error)) {
+				$user -> setUsername($fields['user']);
+				$user -> setPassword($fields['pass']);
+				$user -> setEmail($fields['email']);
+				$user -> setRole($fields['role']);
+
+				$user -> create();
+				
+				$confirmation['message'] = 'User has been created!';
+			}
+		}
+
+		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
+	}
+	
+	public function edit($id) {
 		$user = new User;
 		$user -> read($id);
-		$user -> delete();
+		$user -> update();
 		
-		return $this -> index();
+		//return $this -> index();
+	
+		return $this -> twig -> render(
+									'Admin/users.html.twig', array(
+										'users' => $user -> getUsers(), 
+										'field_errors' => array(), 
+										'confirmation' => array(), 
+										'edituser' => 'Edit', 
+										'updateuser' => array(
+											'id' => $user -> getId(),
+											'user' => $user -> getUsername(),
+											'email' => $user -> getEmail(),
+										)
+									));
+	
 	
 	}
 }

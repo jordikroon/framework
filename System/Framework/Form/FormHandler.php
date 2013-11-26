@@ -21,6 +21,14 @@ class FormHandler {
 		}
 	}
 	
+	/** 
+	 * manually set post variable
+	 */
+	public function setValue($name, $value) {
+		$_POST[$name] = $value;
+		
+	}
+	
 	public function getFields($array) {
 		
 		if(!is_array($array)) {
