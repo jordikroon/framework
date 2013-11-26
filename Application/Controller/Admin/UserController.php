@@ -33,7 +33,7 @@ class UserController extends MainController {
 
 		$error = array();
 		$confirmation = array();
-		
+
 		if ($form -> isMethod('post')) {
 
 			$fields = $form -> getFields(array('user', 'pass', 'email', 'role'));
@@ -63,7 +63,7 @@ class UserController extends MainController {
 				$user -> setRole($fields['role']);
 
 				$user -> create();
-				
+
 				$confirmation['message'] = 'User has been created!';
 			}
 		}
@@ -71,71 +71,72 @@ class UserController extends MainController {
 		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
 	}
 
-	public function update() {
-
+	public function edit($id) {
 		$user = new User;
 		$form = new FormHandler;
 
 		$error = array();
 		$confirmation = array();
 		
+		$user -> read($id);
+
 		if ($form -> isMethod('post')) {
 
 			$fields = $form -> getFields(array('user', 'pass', 'email', 'role'));
 
 			$validator = new FormValidator($fields);
 
-			$validator -> rule('required', array('user', 'pass', 'email'));
+			$required = array();
+
+			if ($user -> getUsername() != $fields['user']) {
+				$required[] = 'user';
+
+				if ($user -> exists(array('username' => $fields['user']))) {
+					$error['user'][] = 'Username in use!';
+				}
+			}
+
+			if ($fields['pass'] != '') {
+				$required[] = 'pass';
+			}
+
+			if ($user -> getEmail() != $fields['email']) {
+				$required[] = 'email';
+				if ($user -> exists(array('email' => $fields['email']))) {
+					$error['email'][] = 'Email in use!';
+				}
+			}
+
+			$validator -> rule('required', $required);
 			$validator -> rule('email', 'email');
 			$validator -> rule('in', 'role', array(0, 1));
-
-			if ($user -> exists(array('username' => $fields['user']))) {
-				$error['user'][] = 'Username in use!';
-			}
-
-			if ($user -> exists(array('email' => $fields['email']))) {
-				$error['email'][] = 'Email in use!';
-			}
 
 			if (!$validator -> validate()) {
 				$error = array_merge($error, $validator -> errors());
 			}
 
 			if (empty($error)) {
+
 				$user -> setUsername($fields['user']);
-				$user -> setPassword($fields['pass']);
+
+				if ($fields['pass'] != '') {
+					$user -> setPassword($fields['pass']);
+				} else {
+					$user -> setPassword($user -> getPassword());
+				}
+
 				$user -> setEmail($fields['email']);
 				$user -> setRole($fields['role']);
 
-				$user -> create();
-				
-				$confirmation['message'] = 'User has been created!';
+				$user -> update();
+
+				$confirmation['message'] = 'User has been edited!';
 			}
 		}
-
-		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
-	}
-	
-	public function edit($id) {
-		$user = new User;
-		$user -> read($id);
-		$user -> update();
-		
 		//return $this -> index();
-	
-		return $this -> twig -> render(
-									'Admin/users.html.twig', array(
-										'users' => $user -> getUsers(), 
-										'field_errors' => array(), 
-										'confirmation' => array(), 
-										'edituser' => 'Edit', 
-										'updateuser' => array(
-											'id' => $user -> getId(),
-											'user' => $user -> getUsername(),
-											'email' => $user -> getEmail(),
-										)
-									));
-	
-	
+
+		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation, 'edituser' => 'Edit', 'updateuser' => array('id' => $user -> getId(), 'user' => $user -> getUsername(), 'email' => $user -> getEmail(), )));
+
 	}
+
 }

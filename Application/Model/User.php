@@ -15,9 +15,9 @@ class User extends Model {
 
 	private $email;
 
-	private $object;
-
 	private $role = 0;
+	
+	private $backid;
 	
 	public function __construct() {
 		$this -> database = $this -> getDatabase();
@@ -75,16 +75,16 @@ class User extends Model {
 
 	public function update() {
 		$sth = $this -> database -> prepare('UPDATE scms_users SET id=?, username=?, password=?, email=?, role=? WHERE id=?');
-
-		if ($this -> getPassword() != $this -> object -> getPassword()) {
-			$password = $this -> object -> getPassword();
-		} else {
+				
 			$password = $this -> hashPassword($this -> getPassword());
-		}
-		if ($sth -> execute(array($this -> getId(), $this -> getUsername(), $password, $this -> getEmail(), $this -> getRole(), $this -> object -> getId()))) {
-
-			$this -> object = $this;
-			// update with new information
+			$prepare = array($this -> getId(), $this -> getUsername(), $password, $this -> getEmail(), $this -> getRole(), $this -> backid);
+			
+			if($this -> getPassword() == '') {
+				$sth = $this -> database -> prepare('UPDATE scms_users SET id=?, username=?, email=?, role=? WHERE id=?');
+				$prepare = array($this -> getId(), $this -> getUsername(), $this -> getEmail(), $this -> getRole(), $this -> backid);
+			}
+			
+		if ($sth -> execute($prepare)) {
 			return true;
 		} else {
 			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
@@ -94,9 +94,7 @@ class User extends Model {
 	public function delete() {
 		$sth = $this -> database -> prepare('DELETE FROM scms_users WHERE id = ?');
 
-		if ($sth -> execute(array($this -> object -> getId()))) {
-
-			$this -> object = $this;
+		if ($sth -> execute(array($this -> backid))) {
 
 			return true;
 		} else {
@@ -112,11 +110,9 @@ class User extends Model {
 
 			$this -> setId($fetch['id']);
 			$this -> setUsername($fetch['username']);
-			$this -> setPassword($fetch['password']);
 			$this -> setEmail($fetch['email']);
 
-			$this -> object = $this;
-
+			$this -> backid = $fetch['id'];
 			return $this;
 		} else {
 			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());

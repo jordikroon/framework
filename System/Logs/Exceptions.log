@@ -3426,3 +3426,103 @@ Stack trace:
 #16 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
 #17 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
 #18 {main} [] []
+[2013-11-26 10:20:49] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-26 10:20:49] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-26 10:23:08] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-26 10:26:31] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'Unexpected "}" in "Admin/users.html.twig" at line 32' in D:\localroot\framework\Vendor\Twig\Lexer.php:262
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\Lexer.php(208): Twig_Lexer->lexExpression()
+#1 D:\localroot\framework\Vendor\Twig\Lexer.php(114): Twig_Lexer->lexBlock()
+#2 D:\localroot\framework\Vendor\Twig\Environment.php(443): Twig_Lexer->tokenize('{% extends "Adm...', 'Admin/users.htm...')
+#3 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->tokenize('{% extends "Adm...', 'Admin/users.htm...')
+#4 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('{% extends "Adm...', 'Admin/users.htm...')
+#5 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Admin/users.htm...')
+#6 D:\localroot\framework\Application\Controller\Admin\UserController.php(72): Twig_Environment->render('Admin/users.htm...', Array)
+#7 D:\localroot\framework\System\Framework\MainController.php(77): Application\Controller\Admin\UserController->index()
+#8 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#9 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#10 {main} [] []
+[2013-11-26 10:26:38] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'Unexpected token "operator" of value "!=" in "Admin/users.html.twig" at line 32' in D:\localroot\framework\Vendor\Twig\ExpressionParser.php:170
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(84): Twig_ExpressionParser->parsePrimaryExpression()
+#1 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(41): Twig_ExpressionParser->getPrimary()
+#2 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(50): Twig_ExpressionParser->parseExpression(61)
+#3 D:\localroot\framework\Vendor\Twig\TokenParser\If.php(38): Twig_ExpressionParser->parseExpression()
+#4 D:\localroot\framework\Vendor\Twig\Parser.php(191): Twig_TokenParser_If->parse(Object(Twig_Token))
+#5 D:\localroot\framework\Vendor\Twig\TokenParser\Block.php(47): Twig_Parser->subparse(Array, true)
+#6 D:\localroot\framework\Vendor\Twig\Parser.php(191): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#7 D:\localroot\framework\Vendor\Twig\Parser.php(99): Twig_Parser->subparse(NULL, false)
+#8 D:\localroot\framework\Vendor\Twig\Environment.php(479): Twig_Parser->parse(Object(Twig_TokenStream))
+#9 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->parse(Object(Twig_TokenStream))
+#10 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('{% extends "Adm...', 'Admin/users.htm...')
+#11 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Admin/users.htm...')
+#12 D:\localroot\framework\Application\Controller\Admin\UserController.php(72): Twig_Environment->render('Admin/users.htm...', Array)
+#13 D:\localroot\framework\System\Framework\MainController.php(77): Application\Controller\Admin\UserController->index()
+#14 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#15 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#16 {main} [] []
+[2013-11-26 10:26:45] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'Unexpected token "operator" of value "!=" in "Admin/users.html.twig" at line 32' in D:\localroot\framework\Vendor\Twig\ExpressionParser.php:170
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(84): Twig_ExpressionParser->parsePrimaryExpression()
+#1 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(41): Twig_ExpressionParser->getPrimary()
+#2 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(50): Twig_ExpressionParser->parseExpression(61)
+#3 D:\localroot\framework\Vendor\Twig\TokenParser\If.php(38): Twig_ExpressionParser->parseExpression()
+#4 D:\localroot\framework\Vendor\Twig\Parser.php(191): Twig_TokenParser_If->parse(Object(Twig_Token))
+#5 D:\localroot\framework\Vendor\Twig\TokenParser\Block.php(47): Twig_Parser->subparse(Array, true)
+#6 D:\localroot\framework\Vendor\Twig\Parser.php(191): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#7 D:\localroot\framework\Vendor\Twig\Parser.php(99): Twig_Parser->subparse(NULL, false)
+#8 D:\localroot\framework\Vendor\Twig\Environment.php(479): Twig_Parser->parse(Object(Twig_TokenStream))
+#9 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->parse(Object(Twig_TokenStream))
+#10 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('{% extends "Adm...', 'Admin/users.htm...')
+#11 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Admin/users.htm...')
+#12 D:\localroot\framework\Application\Controller\Admin\UserController.php(72): Twig_Environment->render('Admin/users.htm...', Array)
+#13 D:\localroot\framework\System\Framework\MainController.php(77): Application\Controller\Admin\UserController->index()
+#14 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#15 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#16 {main} [] []
+[2013-11-26 10:26:47] Twig_Error_Syntax.CRITICAL: Exception thrown: exception 'Twig_Error_Syntax' with message 'Unexpected token "operator" of value "==" in "Admin/users.html.twig" at line 32' in D:\localroot\framework\Vendor\Twig\ExpressionParser.php:170
+Stack trace:
+#0 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(84): Twig_ExpressionParser->parsePrimaryExpression()
+#1 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(41): Twig_ExpressionParser->getPrimary()
+#2 D:\localroot\framework\Vendor\Twig\ExpressionParser.php(50): Twig_ExpressionParser->parseExpression(61)
+#3 D:\localroot\framework\Vendor\Twig\TokenParser\If.php(38): Twig_ExpressionParser->parseExpression()
+#4 D:\localroot\framework\Vendor\Twig\Parser.php(191): Twig_TokenParser_If->parse(Object(Twig_Token))
+#5 D:\localroot\framework\Vendor\Twig\TokenParser\Block.php(47): Twig_Parser->subparse(Array, true)
+#6 D:\localroot\framework\Vendor\Twig\Parser.php(191): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#7 D:\localroot\framework\Vendor\Twig\Parser.php(99): Twig_Parser->subparse(NULL, false)
+#8 D:\localroot\framework\Vendor\Twig\Environment.php(479): Twig_Parser->parse(Object(Twig_TokenStream))
+#9 D:\localroot\framework\Vendor\Twig\Environment.php(529): Twig_Environment->parse(Object(Twig_TokenStream))
+#10 D:\localroot\framework\Vendor\Twig\Environment.php(323): Twig_Environment->compileSource('{% extends "Adm...', 'Admin/users.htm...')
+#11 D:\localroot\framework\Vendor\Twig\Environment.php(288): Twig_Environment->loadTemplate('Admin/users.htm...')
+#12 D:\localroot\framework\Application\Controller\Admin\UserController.php(72): Twig_Environment->render('Admin/users.htm...', Array)
+#13 D:\localroot\framework\System\Framework\MainController.php(77): Application\Controller\Admin\UserController->index()
+#14 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#15 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#16 {main} [] []
+[2013-11-26 10:28:58] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-26 10:29:07] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2013-11-26 10:29:08] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:82
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []

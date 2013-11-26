@@ -29,7 +29,11 @@
 
 	<fieldset>
 		
-		{% if edituser and updateuser.id%}
+			{% if updateuser.id  == '' and edituser %}
+			<div class="alert-box2 error">
+				<span>User does not exist!</span>
+			</div>
+			{% else %}
 		<form action="" method='post' class="jNice">
 			{% if field_errors|length %}
 			<div class="alert-box2 error">
@@ -72,11 +76,9 @@
 			</p>
 			<input type="submit" value="{{ edituser|default('Add') }} user" />
 		</form>
-		{% else %}
-		<div class="alert-box2 error">
-			<span>User does not exist!</span>
-		</div>
+	
 		{% endif %}
+	
 	</fieldset>
 
 </div>
