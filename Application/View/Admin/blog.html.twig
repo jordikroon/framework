@@ -1,35 +1,35 @@
 {% extends "Admin/Core/coreback.html.twig" %}
 
-{% block title %}{{ edituser|default('Add') }} user{% endblock %}
+{% block title %}{{ editblog|default('Add') }} blog{% endblock %}
 
 {% block page %}
 
-<h2><a href="#">Users</a> &raquo; <a href="#" class="active">Manage users</a></h2>
+<h2><a href="#">Blog</a> &raquo; <a href="#" class="active">Manage blog</a></h2>
 
 <div id="main">
 
-	<h3>Manage users:</h3>
+	<h3>Manage blog:</h3>
 	<table cellpadding="0" cellspacing="0">
 
 		<div id="dialog" title="Delete user?" style="display: none;">
 			<p>
-				<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Are you sure you want to delete this user?
+				<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Are you sure you want to delete this blog item?
 			</p>
 		</div>
 
 		{% for user in users %}
 		<tr class="{{ cycle(['even','odd'],loop.index) }}">
-			<td>{{ user.fullname }}</td>
-			<td class="action"><a href="{{ url('admin-users-edit') }}{{ user.id }}" class="edit">Edit</a><a href="{{ url('admin-users-delete') }}{{ user.id }}" class="delete">Delete</a></td>
+			<td>{{ user.username }}</td>
+			<td class="action"><a href="{{ url('admin-blog-edit') }}{{ user.id }}" class="edit">Edit</a><a href="{{ url('admin-blog-delete') }}{{ user.id }}" class="delete">Delete</a></td>
 		</tr>
 		{% endfor %}
 	</table>
 
-	<h3>{{ edituser|default('Add') }} user:</h3>
+	<h3>{{ editblog|default('Add') }} item:</h3>
 
 	<fieldset>
 		
-			{% if updateuser.id  == '' and edituser %}
+			{% if updateuser.id  == '' and editblog %}
 			<div class="alert-box2 error">
 				<span>User does not exist!</span>
 			</div>
@@ -55,30 +55,26 @@
 			{% endif %}
 
 			<p>
-				<label>Username:</label>
+				<label>Title:</label>
 				<input name="user" type="text" value="{{  updateuser.user|default(formValue('user')) }}" class="text-long" />
 			</p>
 			<p>
-				<label>Password:</label>
-				<input name="pass" type="password" value="" class="text-long" />
+				<label>Author:</label>
+				<input name="user" type="text" value="{{  updateuser.user|default(formValue('user')) }}" class="text-long" />
 			</p>
 			<p>
-				<label>Email:</label>
-				<input name="email" type="text" value="{{ updateuser.email|default(formValue('email')) }}" class="text-long" />
+				<label>Blog content:</label>
+				 <textarea class='newsarea' name='text'></textarea>
 			</p>
 			<p>
-				<label>Full name:</label>
-				<input name="fname" type="text" value="{{  updateuser.user|default(formValue('fname')) }}" class="text-long" />
-			</p>
-			<p>
-				<label>Role:</label>
-				<select name="role">
-					<option value="0" {{ formSelectValue('role', 0) }}>User</option>
-					<option value="1" {{ formSelectValue('role', 1) }}>Administrator</option>
+				<label>Publish:</label>
+				<select name="publish">
+					<option value="0" {{ formSelectValue('role', 0) }}>Yes</option>
+					<option value="1" {{ formSelectValue('role', 1) }}>No</option>
 
 				</select>
 			</p>
-			<input type="submit" value="{{ edituser|default('Add') }} user" />
+			<input type="submit" value="{{ editblog|default('Add') }} item" />
 		</form>
 	
 		{% endif %}

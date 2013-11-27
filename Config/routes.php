@@ -23,4 +23,13 @@
 
 		array('admin-users-edit', 
 					'admin/users/edit/<:id>','Admin_User:edit'),
+					
+		array('admin-blog', 
+					'admin/blog','Admin_Blog:index'),
+				
+		array('admin-blog-delete', 
+					'admin/users/delete/<:id>','Admin_Blog:delete'),
+
+		array('admin-blog-edit', 
+					'admin/blog/edit/<:id>','Admin_Blog:edit'),
 	);

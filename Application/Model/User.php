@@ -11,6 +11,8 @@ class User extends Model {
 
 	private $username;
 
+	private $fullname;
+	
 	private $password;
 
 	private $email;
@@ -39,6 +41,14 @@ class User extends Model {
 		return $this -> username;
 	}
 
+	public function setFullname($fullname) {
+		$this -> fullname = $fullname;
+	}
+
+	public function getFullname() {
+		return $this -> fullname;
+	}
+	
 	public function setPassword($password) {
 		$this -> password = $password;
 	}
@@ -64,8 +74,8 @@ class User extends Model {
 	}
 	
 	public function create() {
-		$sth = $this -> database -> prepare('INSERT INTO scms_users (username, password, email, role) VALUES (?, ?, ?, ?)');
-		if ($sth -> execute(array($this -> getUsername(), $this -> hashPassword($this -> getPassword()), $this -> getEmail(), $this -> getRole()))) {
+		$sth = $this -> database -> prepare('INSERT INTO scms_users (username, password, email, role, fullname) VALUES (?, ?, ?, ?, ?)');
+		if ($sth -> execute(array($this -> getUsername(), $this -> hashPassword($this -> getPassword()), $this -> getEmail(), $this -> getRole(), $this -> getFullname()))) {
 
 			return true;
 		} else {
@@ -74,14 +84,14 @@ class User extends Model {
 	}
 
 	public function update() {
-		$sth = $this -> database -> prepare('UPDATE scms_users SET id=?, username=?, password=?, email=?, role=? WHERE id=?');
+		$sth = $this -> database -> prepare('UPDATE scms_users SET id=?, username=?, password=?, email=?, role=?, fullname=? WHERE id=?');
 				
 			$password = $this -> hashPassword($this -> getPassword());
-			$prepare = array($this -> getId(), $this -> getUsername(), $password, $this -> getEmail(), $this -> getRole(), $this -> backid);
+			$prepare = array($this -> getId(), $this -> getUsername(), $password, $this -> getEmail(), $this -> getRole(), $this -> getFullname(), $this -> backid);
 			
 			if($this -> getPassword() == '') {
-				$sth = $this -> database -> prepare('UPDATE scms_users SET id=?, username=?, email=?, role=? WHERE id=?');
-				$prepare = array($this -> getId(), $this -> getUsername(), $this -> getEmail(), $this -> getRole(), $this -> backid);
+				$sth = $this -> database -> prepare('UPDATE scms_users SET id=?, username=?, email=?, role=?, fullname=? WHERE id=?');
+				$prepare = array($this -> getId(), $this -> getUsername(), $this -> getEmail(), $this -> getRole(), $this -> getFullname(), $this -> backid);
 			}
 			
 		if ($sth -> execute($prepare)) {
@@ -103,7 +113,7 @@ class User extends Model {
 	}
 
 	public function read($id) {
-		$sth = $this -> database -> prepare('SELECT id, username, password, email, role FROM scms_users WHERE id = ?');
+		$sth = $this -> database -> prepare('SELECT id, username, password, email, role, fullname FROM scms_users WHERE id = ?');
 		if ($sth -> execute(array($id))) {
 
 			$fetch = $sth -> fetch();
@@ -111,7 +121,8 @@ class User extends Model {
 			$this -> setId($fetch['id']);
 			$this -> setUsername($fetch['username']);
 			$this -> setEmail($fetch['email']);
-
+			$this -> setFullname($fetch['fullname']);
+			
 			$this -> backid = $fetch['id'];
 			return $this;
 		} else {
@@ -154,7 +165,7 @@ class User extends Model {
 	}
 
 	public function getUsers() {
-		$sth = $this -> database -> prepare('SELECT id, username, password, email, role FROM scms_users');
+		$sth = $this -> database -> prepare('SELECT id, username, password, email, role, fullname FROM scms_users');
 		if ($sth -> execute()) {
 
 			$fetch = $sth -> fetchAll(\PDO::FETCH_ASSOC);

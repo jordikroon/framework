@@ -16,7 +16,7 @@ use Application\Model\User;
 use System\Framework\Form\FormHandler;
 use System\Framework\Form\FormValidator;
 
-class UserController extends MainController {
+class BlogController extends MainController {
 
 	public function index() {
 
@@ -32,7 +32,7 @@ class UserController extends MainController {
 
 			$validator = new FormValidator($fields);
 
-			$validator -> rule('required', array('user', 'pass', 'email', 'fullname'));
+			$validator -> rule('required', array('user', 'pass', 'email'));
 			$validator -> rule('email', 'email');
 			$validator -> rule('in', 'role', array(0, 1));
 
@@ -53,15 +53,14 @@ class UserController extends MainController {
 				$user -> setPassword($fields['pass']);
 				$user -> setEmail($fields['email']);
 				$user -> setRole($fields['role']);
-				$user -> setFullname($fields['fname']);
-				
+
 				$user -> create();
 
 				$confirmation['message'] = 'User has been created!';
 			}
 		}
 
-		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
+		return $this -> twig -> render('Admin/blog.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
 	}
 
 	public function edit($id) {
@@ -80,8 +79,7 @@ class UserController extends MainController {
 			$validator = new FormValidator($fields);
 
 			$required = array();
-			$required[] = 'fullname';
-			
+
 			if ($user -> getUsername() != $fields['user']) {
 				$required[] = 'user';
 
@@ -118,18 +116,18 @@ class UserController extends MainController {
 				} else {
 					$user -> setPassword($user -> getPassword());
 				}
-				$user -> setFullname($fields['fname']);
+
 				$user -> setEmail($fields['email']);
 				$user -> setRole($fields['role']);
 
 				$user -> update();
 
-				$confirmation['message'] = 'User has been edited!';
+				$confirmation['message'] = 'Blog item has been edited!';
 			}
 		}
 		//return $this -> index();
 
-		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation, 'edituser' => 'Edit', 'updateuser' => array('id' => $user -> getId(), 'user' => $user -> getUsername(), 'email' => $user -> getEmail(), )));
+		return $this -> twig -> render('Admin/blog.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation, 'editblog' => 'Edit', 'updateuser' => array('id' => $user -> getId(), 'user' => $user -> getUsername(), 'email' => $user -> getEmail(), )));
 
 	}
 

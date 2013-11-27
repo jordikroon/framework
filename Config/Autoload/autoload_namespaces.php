@@ -8,12 +8,14 @@
 		'Application\\Controller\\Menu\\MenuController',
 		'Application\\Controller\\Admin\\DashboardController',
 		'Application\\Controller\\Admin\\UserController',
-					
+		'Application\\Controller\\Admin\\BlogController',
+				
 		#model namespaces
 		'Application\\Model\\User',
 		'Application\\Model\\Auth',
 		'Application\\Model\\Menu',
 		'Application\\Model\\MenuItem',
+		'Application\\Model\\Blog',
 		
 		#system namespaces
 		'System\\Framework\\Application',
