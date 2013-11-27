@@ -53,7 +53,7 @@ class UserController extends MainController {
 				$user -> setPassword($fields['pass']);
 				$user -> setEmail($fields['email']);
 				$user -> setRole($fields['role']);
-				$user -> setFullname($fields['fname']);
+				$user -> setFullname($fields['fullname']);
 				
 				$user -> create();
 
@@ -75,7 +75,7 @@ class UserController extends MainController {
 
 		if ($form -> isMethod('post')) {
 
-			$fields = $form -> getFields(array('user', 'pass', 'email', 'role'));
+			$fields = $form -> getFields(array('user', 'pass', 'email', 'role', 'fullname'));
 
 			$validator = new FormValidator($fields);
 
@@ -118,7 +118,7 @@ class UserController extends MainController {
 				} else {
 					$user -> setPassword($user -> getPassword());
 				}
-				$user -> setFullname($fields['fname']);
+				$user -> setFullname($fields['fullname']);
 				$user -> setEmail($fields['email']);
 				$user -> setRole($fields['role']);
 
@@ -129,7 +129,7 @@ class UserController extends MainController {
 		}
 		//return $this -> index();
 
-		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation, 'edituser' => 'Edit', 'updateuser' => array('id' => $user -> getId(), 'user' => $user -> getUsername(), 'email' => $user -> getEmail(), )));
+		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation, 'edituser' => 'Edit', 'updateuser' => array('id' => $user -> getId(), 'user' => $user -> getUsername(), 'fullname' => $user -> getFullname(), 'email' => $user -> getEmail(), )));
 
 	}
 
