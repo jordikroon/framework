@@ -14,8 +14,38 @@ use System\Framework\MainController;
 Class HomeController extends MainController {
 
 	public function index() {
+		
+$bb = new \UBBParser();
 
-		return $this -> twig -> render('Home/index.html.twig', array('name' => 'Jordi'));
+$content =  $bb->parse(<<<'EOT'
+
+[quote=test]test[/quote]
+
+[code]
+<?php
+echo 'test';
+?>
+[/code]
+
+Zonder code tag:
+
+<?php
+echo 'hai';
+?>
+
+Originele probleem:
+
+[code]
+<?php
+echo 'iets met code tag en open tag zonder sluit tag';
+[/code]
+
+
+Test.
+EOT
+,2);
+		
+		return $this -> twig -> render('Home/index.html.twig', array('content' => $content));
 	}
 
 }

@@ -4,23 +4,23 @@
 
 {% block page %}
 
-<h2><a href="#">Blog</a> &raquo; <a href="#" class="active">Manage blog</a></h2>
+<h2><a href="#">Blog</a> &raquo; <a href="{{ url('admin-blog') }}" class="active">Manage blog</a></h2>
 
 <div id="main">
 
 	<h3>Manage blog:</h3>
 	<table cellpadding="0" cellspacing="0">
 
-		<div id="dialog" title="Delete user?" style="display: none;">
+		<div id="dialog" title="Delete blog item?" style="display: none;">
 			<p>
 				<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Are you sure you want to delete this blog item?
 			</p>
 		</div>
 
-		{% for user in users %}
+		{% for blog in blogitems %}
 		<tr class="{{ cycle(['even','odd'],loop.index) }}">
-			<td>{{ user.username }}</td>
-			<td class="action"><a href="{{ url('admin-blog-edit') }}{{ user.id }}" class="edit">Edit</a><a href="{{ url('admin-blog-delete') }}{{ user.id }}" class="delete">Delete</a></td>
+			<td>{{ blog.title }}</td>
+			<td class="action"><a href="{{ url('admin-blog-edit') }}{{ blog.id }}" class="edit">Edit</a><a href="{{ url('admin-blog-delete') }}{{ blog.id }}" class="delete">Delete</a></td>
 		</tr>
 		{% endfor %}
 	</table>
@@ -29,15 +29,15 @@
 
 	<fieldset>
 		
-			{% if updateuser.id  == '' and editblog %}
+			{% if updateblog.id  == '' and editblog %}
 			<div class="alert-box2 error">
-				<span>User does not exist!</span>
+				<span>Blogitem does not exist!</span>
 			</div>
 			{% else %}
 		<form action="" method='post' class="jNice">
 			{% if field_errors|length %}
 			<div class="alert-box2 error">
-				<span>User could not been created:</span>
+				<span>Item could not been created:</span>
 				<br />
 				<br />
 				{% for error in field_errors %}
@@ -56,22 +56,25 @@
 
 			<p>
 				<label>Title:</label>
-				<input name="user" type="text" value="{{  updateuser.user|default(formValue('user')) }}" class="text-long" />
+				<input name="title" type="text" value="{{  updateblog.title|default(formValue('title')) }}" class="text-long" />
 			</p>
 			<p>
 				<label>Author:</label>
-				<input name="user" type="text" value="{{  updateuser.user|default(formValue('user')) }}" class="text-long" />
+				<select name="author">
+					{% for author in authors %}
+					<option value="{{ author.id }}" {{ formSelectValue('author', author.id ) }}>{{ author.fullname }}</option>
+					{% endfor %}
+				</select>
 			</p>
 			<p>
 				<label>Blog content:</label>
-				 <textarea class='newsarea' name='text'></textarea>
+				 <textarea class='content' name='content'>{{  updateblog.content|default(formValue('content')) }}</textarea>
 			</p>
 			<p>
 				<label>Publish:</label>
-				<select name="publish">
-					<option value="0" {{ formSelectValue('role', 0) }}>Yes</option>
-					<option value="1" {{ formSelectValue('role', 1) }}>No</option>
-
+				<select name="published">
+					<option value="1" {{ formSelectValue('published', 1) }}>Yes</option>
+					<option value="0" {{ formSelectValue('published', 0) }}>No</option>
 				</select>
 			</p>
 			<input type="submit" value="{{ editblog|default('Add') }} item" />

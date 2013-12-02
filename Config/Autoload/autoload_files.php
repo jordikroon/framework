@@ -5,6 +5,7 @@ $files = array(
 	'/Vendor/Mailer/swift_required.php',
 	'/Vendor/php-form-builder-class/class.form.php',
 	'/Vendor/Twig/Autoloader.php',
+	'/Vendor/UBBParser/bb_parser.php',
 	
 );
 

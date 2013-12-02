@@ -3,6 +3,7 @@
 	$namespaces = array(
 		#controller namespaces
 		'Application\\Controller\\Home\\HomeController',
+		'Application\\Controller\\Blog\\BlogController',
 		'Application\\Controller\\Auth\\LoginController',
 		'Application\\Controller\\Auth\\RegisterController',
 		'Application\\Controller\\Menu\\MenuController',

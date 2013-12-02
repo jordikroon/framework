@@ -28,7 +28,7 @@ class UserController extends MainController {
 
 		if ($form -> isMethod('post')) {
 
-			$fields = $form -> getFields(array('user', 'pass', 'email', 'role'));
+			$fields = $form -> getFields(array('user', 'pass', 'email', 'role', 'fullname'));
 
 			$validator = new FormValidator($fields);
 
@@ -56,7 +56,8 @@ class UserController extends MainController {
 				$user -> setFullname($fields['fullname']);
 				
 				$user -> create();
-
+				
+				$form -> unsetAll();
 				$confirmation['message'] = 'User has been created!';
 			}
 		}
@@ -132,5 +133,17 @@ class UserController extends MainController {
 		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation, 'edituser' => 'Edit', 'updateuser' => array('id' => $user -> getId(), 'user' => $user -> getUsername(), 'fullname' => $user -> getFullname(), 'email' => $user -> getEmail(), )));
 
 	}
-
+	
+	public function delete($id) {
+		
+		$user = new User;
+		
+		$user -> read($id);
+		$user -> delete();
+		
+		$confirmation = array();
+		$confirmation['message'] = 'User has been deleted!';
+		
+		return $this -> twig -> render('Admin/users.html.twig', array('users' => $user -> getUsers(), 'field_errors' => array(), 'confirmation' => $confirmation));
+	}
 }

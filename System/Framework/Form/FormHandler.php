@@ -26,7 +26,16 @@ class FormHandler {
 	 */
 	public function setValue($name, $value) {
 		$_POST[$name] = $value;
-		
+	}
+	
+	public function unsetValue($name) {
+		unset($_POST[$name]);
+	}
+	
+	public function unsetAll() {
+		foreach($_POST as $key => $value) {
+			unset($_POST[$key]);
+		}
 	}
 	
 	public function getFields($array) {

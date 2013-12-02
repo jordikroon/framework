@@ -10,12 +10,15 @@
 namespace Application\Controller\Blog;
 
 use System\Framework\MainController;
+use Application\Model\Blog;
 
 class BlogController extends MainController {
 
 	public function index() {
 		
-		return $this -> twig -> render('Menu/menu.html.twig', array('menu' => $menu -> getItems()));
+		$blog = new Blog;
+		
+		return $this -> twig -> render('Blog/blog.html.twig', array('blogitems' => $blog -> getItems()));
 	}
 	
 }

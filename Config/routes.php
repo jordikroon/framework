@@ -12,6 +12,9 @@
 		array('register', 
 					'auth/register','Auth_Register:index'),
 					
+		array('blog', 
+					'blog','Blog_Blog:index'),
+					
 		array('admin', 
 					'admin/dashboard','Admin_Dashboard:index'),
 					
@@ -28,8 +31,9 @@
 					'admin/blog','Admin_Blog:index'),
 				
 		array('admin-blog-delete', 
-					'admin/users/delete/<:id>','Admin_Blog:delete'),
+					'admin/blog/delete/<:id>','Admin_Blog:delete'),
 
 		array('admin-blog-edit', 
 					'admin/blog/edit/<:id>','Admin_Blog:edit'),
+					
 	);

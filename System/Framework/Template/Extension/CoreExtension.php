@@ -11,7 +11,11 @@ class CoreExtension extends \Twig_Extension {
     public function getFilters()
     {
         return array(
-            
+             new \Twig_SimpleFilter('ubb', function($content) {
+			 	$UBBParser = new \UBBParser;
+				
+				return $UBBParser -> parse($content);
+			 }, array('is_safe' => array('html'))),
         );
     }
 

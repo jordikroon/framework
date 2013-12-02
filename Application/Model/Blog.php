@@ -68,7 +68,7 @@ class Blog extends Model {
 	}
 	
 	public function create() {
-		$sth = $this -> database -> prepare('INSERT INTO scms_blog (title, content, published, author_id) VALUES (?, ?, ?, ?)');
+		$sth = $this -> database -> prepare('INSERT INTO scms_blog (title, content, published, author_id, date_added) VALUES (?, ?, ?, ?, NOW())');
 		if ($sth -> execute(array($this -> getTitle(), $this -> getContent(), $this -> getPublished(), $this -> getAuthor()))) {
 			return true;
 		} else {
@@ -79,7 +79,7 @@ class Blog extends Model {
 	public function update() {
 		$sth = $this -> database -> prepare('UPDATE scms_blog SET id=?, title=?, content=?, published=?, author_id=? WHERE id=?');
 				
-		$prepare = array($this -> getTitle(), $this -> getContent(), $this -> getPublished(), $this -> getAuthor(), $this -> backid);
+		$prepare = array($this -> getId(), $this -> getTitle(), $this -> getContent(), $this -> getPublished(), $this -> getAuthor(), $this -> backid);
 			
 		if ($sth -> execute($prepare)) {
 			return true;
@@ -100,7 +100,7 @@ class Blog extends Model {
 	}
 
 	public function read($id) {
-		$sth = $this -> database -> prepare('SELECT id, title, content, published, author_id FROM scms_blog id = ?');
+		$sth = $this -> database -> prepare('SELECT id, title, content, published, author_id FROM scms_blog WHERE id = ?');
 		if ($sth -> execute(array($id))) {
 
 			$fetch = $sth -> fetch();
@@ -119,7 +119,7 @@ class Blog extends Model {
 	}
 
 	public function getItems() {
-		$sth = $this -> database -> prepare('SELECT id, title, content, published, author_id');
+		$sth = $this -> database -> prepare('SELECT id, title, content, published, author_id FROM scms_blog');
 		if ($sth -> execute()) {
 
 			$fetch = $sth -> fetchAll(\PDO::FETCH_ASSOC);

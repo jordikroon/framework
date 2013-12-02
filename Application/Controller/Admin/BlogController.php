@@ -13,6 +13,7 @@ use System\Framework\MainController;
 
 use Application\Model\Auth;
 use Application\Model\User;
+use Application\Model\Blog;
 use System\Framework\Form\FormHandler;
 use System\Framework\Form\FormValidator;
 
@@ -21,6 +22,7 @@ class BlogController extends MainController {
 	public function index() {
 
 		$user = new User;
+		$blog = new Blog;
 		$form = new FormHandler;
 
 		$error = array();
@@ -28,20 +30,15 @@ class BlogController extends MainController {
 
 		if ($form -> isMethod('post')) {
 
-			$fields = $form -> getFields(array('user', 'pass', 'email', 'role'));
+			$fields = $form -> getFields(array('title', 'author', 'content', 'published'));
 
 			$validator = new FormValidator($fields);
 
-			$validator -> rule('required', array('user', 'pass', 'email'));
-			$validator -> rule('email', 'email');
-			$validator -> rule('in', 'role', array(0, 1));
+			$validator -> rule('required', array('title', 'author', 'content'));
+			$validator -> rule('in', 'published', array(0, 1));
 
-			if ($user -> exists(array('username' => $fields['user']))) {
-				$error['user'][] = 'Username in use!';
-			}
-
-			if ($user -> exists(array('email' => $fields['email']))) {
-				$error['email'][] = 'Email in use!';
+			if (!$user -> exists(array('id' => $fields['author']))) {
+				$error['user'][] = 'Author not found!';
 			}
 
 			if (!$validator -> validate()) {
@@ -49,85 +46,79 @@ class BlogController extends MainController {
 			}
 
 			if (empty($error)) {
-				$user -> setUsername($fields['user']);
-				$user -> setPassword($fields['pass']);
-				$user -> setEmail($fields['email']);
-				$user -> setRole($fields['role']);
 
-				$user -> create();
+				$blog -> setAuthor($fields['author']);
+				$blog -> setTitle($fields['title']);
+				$blog -> setContent($fields['content']);
+				$blog -> setPublished($fields['published']);
 
-				$confirmation['message'] = 'User has been created!';
+				$blog -> create();
+
+				$confirmation['message'] = 'Item has been created!';
+
+				$form -> unsetAll();
 			}
 		}
 
-		return $this -> twig -> render('Admin/blog.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
+		return $this -> twig -> render('Admin/blog.html.twig', array('blogitems' => $blog -> getItems(), 'authors' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
 	}
 
 	public function edit($id) {
+
+		$blog = new Blog;
 		$user = new User;
 		$form = new FormHandler;
 
 		$error = array();
 		$confirmation = array();
-		
-		$user -> read($id);
+
+		$blog -> read($id);
 
 		if ($form -> isMethod('post')) {
 
-			$fields = $form -> getFields(array('user', 'pass', 'email', 'role'));
+			$fields = $form -> getFields(array('title', 'author', 'content', 'published'));
 
 			$validator = new FormValidator($fields);
 
-			$required = array();
+			$validator -> rule('required', array('title', 'author', 'content'));
+			$validator -> rule('in', 'published', array(0, 1));
 
-			if ($user -> getUsername() != $fields['user']) {
-				$required[] = 'user';
-
-				if ($user -> exists(array('username' => $fields['user']))) {
-					$error['user'][] = 'Username in use!';
-				}
+			if (!$user -> exists(array('id' => $fields['author']))) {
+				$error['user'][] = 'Author not found!';
 			}
-
-			if ($fields['pass'] != '') {
-				$required[] = 'pass';
-			}
-
-			if ($user -> getEmail() != $fields['email']) {
-				$required[] = 'email';
-				if ($user -> exists(array('email' => $fields['email']))) {
-					$error['email'][] = 'Email in use!';
-				}
-			}
-
-			$validator -> rule('required', $required);
-			$validator -> rule('email', 'email');
-			$validator -> rule('in', 'role', array(0, 1));
 
 			if (!$validator -> validate()) {
 				$error = array_merge($error, $validator -> errors());
 			}
-
 			if (empty($error)) {
 
-				$user -> setUsername($fields['user']);
+				$blog -> setAuthor($fields['author']);
+				$blog -> setTitle($fields['title']);
+				$blog -> setContent($fields['content']);
+				$blog -> setPublished($fields['published']);
 
-				if ($fields['pass'] != '') {
-					$user -> setPassword($fields['pass']);
-				} else {
-					$user -> setPassword($user -> getPassword());
-				}
-
-				$user -> setEmail($fields['email']);
-				$user -> setRole($fields['role']);
-
-				$user -> update();
+				$blog -> update();
 
 				$confirmation['message'] = 'Blog item has been edited!';
 			}
 		}
 		//return $this -> index();
 
-		return $this -> twig -> render('Admin/blog.html.twig', array('users' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation, 'editblog' => 'Edit', 'updateuser' => array('id' => $user -> getId(), 'user' => $user -> getUsername(), 'email' => $user -> getEmail(), )));
+		return $this -> twig -> render('Admin/blog.html.twig', array('blogitems' => $blog -> getItems(), 'authors' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation, 'editblog' => 'Edit', 'updateblog' => array('id' => $blog -> getId(), 'author' => $blog -> getAuthor(), 'title' => $blog -> getTitle(), 'content' => $blog -> getContent(), 'published' => $blog -> getPublished(), )));
+
+	}
+
+	public function delete($id) {
+
+		$blog = new Blog;
+		$user = new User;
+		$blog -> read($id);
+		$blog -> delete();
+
+		$confirmation = array();
+		$confirmation['message'] = 'Item has been deleted!';
+
+		return $this -> twig -> render('Admin/blog.html.twig', array('blogitems' => $blog -> getItems(), 'authors' => $user -> getUsers(), 'field_errors' => array(), 'confirmation' => $confirmation));
 
 	}
 

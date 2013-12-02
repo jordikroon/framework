@@ -1,0 +1,15 @@
+{% extends 'Core/default.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+	{% for item in blogitems %}
+		
+		
+        <h1>{{ item.title }}</h1>
+        
+        <p>{{ item.content|ubb }}</p>
+        
+        <hr />
+    {% endfor %}
+{% endblock %}
