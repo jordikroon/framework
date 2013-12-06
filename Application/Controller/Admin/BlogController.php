@@ -102,7 +102,6 @@ class BlogController extends MainController {
 				$confirmation['message'] = 'Blog item has been edited!';
 			}
 		}
-		//return $this -> index();
 
 		return $this -> twig -> render('Admin/blog.html.twig', array('blogitems' => $blog -> getItems(), 'authors' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation, 'editblog' => 'Edit', 'updateblog' => array('id' => $blog -> getId(), 'author' => $blog -> getAuthor(), 'title' => $blog -> getTitle(), 'content' => $blog -> getContent(), 'published' => $blog -> getPublished(), )));
 
