@@ -21,12 +21,11 @@ class BlogController extends MainController {
 		return $this -> twig -> render('Blog/blog.html.twig', array('blogitems' => $blog -> getItems()));
 	}
 	
-	public function item($id, $string) {
+	public function item($id) {
 		
 		$blog = new Blog;
 		$blog -> read($id);
 		
-
 		$blogItem = array();
 		$blogItem['id'] = $blog -> getId();
 		$blogItem['author'] = $blog -> getAuthor(); 
@@ -34,6 +33,7 @@ class BlogController extends MainController {
 		$blogItem['content'] = $blog -> getContent();
 		$blogItem['date_added'] = $blog -> getDateAdded();
 	
+		
 		return $this -> twig -> render('Blog/blogitem.html.twig', array('item' => $blogItem));
 	}
 	
