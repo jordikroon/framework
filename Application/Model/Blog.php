@@ -2,8 +2,7 @@
 
 /**
  * @author Jordi Kroon
- * @version 1.0
- * @todo testen of dit werkt:)
+ * @version 1.1
  */
 namespace Application\Model;
 

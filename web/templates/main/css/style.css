@@ -316,6 +316,7 @@ ul h4 {
 	font-size:9pt;
 	width:200px;
 	float:left;
+	
 }
 .commentUserInfo img {
 	border:1px solid #6B2E42;
@@ -331,14 +332,9 @@ ul h4 {
 	margin-left:200px;
 	padding-left:20px;
 	min-height:150px;
+	line-height:110%;
 }
-.commentdate {
-	font-style:italic;
-	color:gray;
-	display:inline-block;
-	padding-bottom:5px;
-	
-}
+
 .blogitemdatum {
 	float:left;
 }

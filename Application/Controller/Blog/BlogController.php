@@ -11,6 +11,7 @@ namespace Application\Controller\Blog;
 
 use System\Framework\MainController;
 use Application\Model\Blog;
+use Application\Model\BlogReply;
 
 class BlogController extends MainController {
 
@@ -33,8 +34,10 @@ class BlogController extends MainController {
 		$blogItem['content'] = $blog -> getContent();
 		$blogItem['date_added'] = $blog -> getDateAdded();
 	
+		$reply = new BlogReply;
+		$reply -> setBlogItem((int) $id);
 		
-		return $this -> twig -> render('Blog/blogitem.html.twig', array('item' => $blogItem));
+		return $this -> twig -> render('Blog/blogitem.html.twig', array('item' => $blogItem, 'replies' => $reply -> getReplies()));
 	}
 	
 }

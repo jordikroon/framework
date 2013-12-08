@@ -17,6 +17,7 @@
 		'Application\\Model\\Menu',
 		'Application\\Model\\MenuItem',
 		'Application\\Model\\Blog',
+		'Application\\Model\\BlogReply',
 		
 		#system namespaces
 		'System\\Framework\\Application',
