@@ -8,7 +8,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" type="text/css" media="screen" href="templates/main/css/style.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{ base_path() }}templates/main/css/style.css" />
 
 	
 </head>
@@ -24,12 +24,15 @@
 		</div>
 	</div>
 	<div id="page">
-		<div id="content">
-			<div id="post">
-				{% block content %}{% endblock %}
-			</div>
+	
+		{% block blogcontent %}
+		<div class="content">
+			<div class="post">
 			
+				{% block content %}{% endblock %}
+			</div>	
 		</div>
+		{% endblock %}
 		<div id="sidebar">
 			<h3>Twitter </h3>
 			<div class="date-list">

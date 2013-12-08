@@ -87,7 +87,7 @@ ul h4 {
 	margin-bottom: 0.35em;
 }
 
-#content {
+.content {
 	background: #FFFFFF;
 	width: 595px;
 	color: #6E6E6E;
@@ -96,7 +96,7 @@ ul h4 {
 	border-bottom: solid 2px #BBC1BF;
 }
 
-#content h2, #content h3, #content h4 {
+.content h2, .content h3, .content h4 {
 	color: #171717;
 }
 
@@ -251,3 +251,95 @@ ul h4 {
 	margin: 35px auto 0 auto;
 	position: relative;
 }
+
+
+
+/* START BLOG CSS */
+.blogheader {
+	font-size:8pt;
+	margin-bottom:50px;
+	border-bottom:1px solid lightgray;
+	line-height:100%
+}
+.blogheader h1 {
+	color:black;
+	font-size:26pt;
+	float:left;
+	padding-top:5px;
+}
+.blogheader h1  a{
+	text-decoration:none;
+}
+.blogheader h1  a:hover{
+	text-decoration:underline;
+}
+.blogheader p {
+	margin-left:100px;
+	display:block;
+	font-style:italic;
+}
+.blogitem {
+	margin-bottom:80px;
+}
+
+.blogitem h5 {
+	color:white;
+	background-color:#6B2E42;
+	padding:5px 10px;
+	font-size:14pt;
+	font-weight:normal;
+	margin-bottom:20px;
+}
+.blogitem h5 a {
+	color:white;
+	text-decoration:none;
+}
+.blogiteminfo {
+	color:gray;
+	text-align:right;
+	font-size:9pt;
+	border-top:1px solid lightgray;
+}
+
+.commentitem :nth-child(1){
+	border-top:0px;
+}
+.commentitem {
+	border-top:1px solid #C39FAB;
+	padding-top:30px;
+}
+.commentfooter {
+	clear:both;
+	margin-bottom:30px;
+}
+.commentUserInfo {
+	font-size:9pt;
+	width:200px;
+	float:left;
+}
+.commentUserInfo img {
+	border:1px solid #6B2E42;
+	background-color:whitesmoke;
+	width:64px;
+	height:64px;
+	display:block;
+	background-image:url('/framework/web/templates/main/images/bloguser.png'); /* LET OP: MAAK NOG RELATIVE URL!!! */
+	
+}
+.commentTxt {
+	border-left:1px solid lightgray;
+	margin-left:200px;
+	padding-left:20px;
+	min-height:150px;
+}
+.commentdate {
+	font-style:italic;
+	color:gray;
+	display:inline-block;
+	padding-bottom:5px;
+	
+}
+.blogitemdatum {
+	float:left;
+}
+/* EIND BLOG CC */

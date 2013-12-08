@@ -31,11 +31,13 @@ Class Router {
 		foreach ($this->routes as $route) {
 			if ($data = $route -> match($request)) {
 				
-				if(isset($data['string'])) {
-					$route -> setParam($data['string']);
-				} else if(isset($data['id'])) {
-					$route -> setParam($data['id']);
-				}
+				foreach($data as $key => $param)
+				{
+				    if(is_string($key))
+				    {
+				        $route -> addParam($data[$key]);
+				    } 
+				}	
 				
 				return $route;
 			}

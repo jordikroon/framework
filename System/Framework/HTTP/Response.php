@@ -55,15 +55,27 @@ class Response {
 		exit();
 	}
 
-	public function url($routeName) {
+	public function url() {
 
+		$params = func_get_args();
+	
 		$route = new Route;
-		$routeInfo = $route -> getByName($routeName);
+		$routeInfo = $route -> getByName($params[0]);
 
+		unset($params[0]);
 		if (!$routeInfo) {
 			throw new \Exception(sprintf('Route %s not found!', $routeInfo[1]));
 		} else {
-			return $this -> getBasePath() . str_replace(array('<:id>', '<#string>'), array('', ''), $routeInfo[1]);
+			
+			$url = $routeInfo[1];
+			foreach($params AS $param) {
+				
+				$url = preg_replace('/<[:|#](.+?)>/', $param, $url, 1);
+						
+			}
+		
+
+			return $this -> getBasePath() . $url;
 		}
 	
 	}

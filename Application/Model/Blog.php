@@ -23,6 +23,8 @@ class Blog extends Model {
 	
 	private $backid;
 	
+	private $dateAdded;
+	
 	public function __construct() {
 		$this -> database = $this -> getDatabase();
 	}
@@ -66,6 +68,14 @@ class Blog extends Model {
 	public function getPublished() {
 		return $this -> publish;
 	}
+
+	private function setDateAdded($added) {
+		$this -> dateAdded = $added;
+	}
+		
+	public function getDateAdded() {
+		return $this -> dateAdded;
+	}
 	
 	public function create() {
 		$sth = $this -> database -> prepare('INSERT INTO scms_blog (title, content, published, author_id, date_added) VALUES (?, ?, ?, ?, NOW())');
@@ -100,7 +110,7 @@ class Blog extends Model {
 	}
 
 	public function read($id) {
-		$sth = $this -> database -> prepare('SELECT id, title, content, published, author_id FROM scms_blog WHERE id = ?');
+		$sth = $this -> database -> prepare('SELECT id, title, content, published, author_id, date_added FROM scms_blog WHERE id = ?');
 		if ($sth -> execute(array($id))) {
 
 			$fetch = $sth -> fetch();
@@ -110,6 +120,7 @@ class Blog extends Model {
 			$this -> setTitle($fetch['title']);
 			$this -> setContent($fetch['content']);
 			$this -> setPublished($fetch['published']);
+			$this -> setDateAdded($fetch['date_added']);
 			
 			$this -> backid = $fetch['id'];
 			return $this;

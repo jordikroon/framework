@@ -1,0 +1,81 @@
+{% extends 'Core/default.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+	<div class="blogheader">
+		<h1><a href="{{ url('blog') }}">Blog</a></h1>
+		<p>Lees het verdomde laatste nieuws over Jordi Kroon.<br />
+		Uitvinder en ontwikkelaar van het JK-framework dat standaard zit bij iedere webhost.</p>
+	</div>
+		
+		<div class="blogitem">
+			<h5><a href="{{ url('blog-item', item.id, item.title|replace({ ' ': '-' })|lower) }}">{{ item.title }}</a></h5>
+        
+			<p>{{ item.content|ubb }}</p>
+					
+			<div class="blogiteminfo">
+				<div class="blogitemdatum">{{ item.date_added }}</div>
+				0 reacties | <a href="{{ url('blog-item', item.id, item.title|replace({ ' ': '-' })|lower) }}">#{{ item.id }}</a>
+			</div>
+        
+		</div>
+		
+		<div class="comments">
+		
+		
+			<div class="commentitem">
+			
+				
+				<div class="commentUserInfo">
+					<img src="" />Peter van Dam<br />
+					666 posts<br />
+					Lid sinds: 25 februari 2013
+					
+				</div>
+				
+				<div class="commentTxt">
+					
+					<div class="commentdate">
+						12 minuten geleden schreef Peter:
+					</div>
+					<p>dit is toch godverdomme niet normaal. Normaals krijg je godverdomme sterretjes als je vloekt maar deze *****zooi doet dat niet!!!</p>
+					<p>dit is toch godverdomme niet normaal. Normaals krijg je godverdomme sterretjes als je vloekt maar deze *****zooi doet dat niet!!!</p>
+					<p>dit is toch godverdomme niet normaal. Normaals krijg je godverdomme sterretjes als je vloekt maar deze *****zooi doet dat niet!!!</p>
+					
+				</div>
+				
+				
+			
+			</div>
+			
+			<div class="commentitem">
+			
+				
+				<div class="commentUserInfo">
+					<img src="" />Jordi Kroon<br />
+					666 posts<br />
+					Lid sinds: 25 februari 2013
+					
+				</div>
+				
+				<div class="commentTxt">
+					
+					<div class="commentdate">
+						5 minuten geleden schreef Peter:
+					</div>
+					<p>Alweer aan het stalken, zucht...</p>
+					
+				</div>
+				
+				
+			
+			</div>
+		
+		
+		<div class="commentfooter"></div>
+		</div>
+
+        
+{% endblock %}

@@ -20,7 +20,7 @@
 		{% for user in users %}
 		<tr class="{{ cycle(['even','odd'],loop.index) }}">
 			<td>{{ user.fullname }}</td>
-			<td class="action"><a href="{{ url('admin-users-edit') }}{{ user.id }}" class="edit">Edit</a><a href="{{ url('admin-users-delete') }}{{ user.id }}" class="delete">Delete</a></td>
+			<td class="action"><a href="{{ url('admin-users-edit', user.id) }}" class="edit">Edit</a><a href="{{ url('admin-users-delete', user.id) }}" class="delete">Delete</a></td>
 		</tr>
 		{% endfor %}
 	</table>

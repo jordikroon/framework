@@ -23,11 +23,11 @@ class CoreExtension extends \Twig_Extension {
     {
     	
         return array(
-            new \Twig_SimpleFunction('url', function($routeName) {
+            new \Twig_SimpleFunction('url', function() {
 				$response = new Response;
 				
-				$routeName = str_replace(array('<:id>'), '', $routeName);
-            	return $response -> url($routeName);
+				return call_user_func_array(array($response, 'url'), func_get_args() );
+			
             }),
             new \Twig_SimpleFunction('base_path', function() {
 				$response = new Response;

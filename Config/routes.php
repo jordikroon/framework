@@ -14,7 +14,10 @@
 					
 		array('blog', 
 					'blog','Blog_Blog:index'),
-					
+
+		array('blog-item', 
+					'blog/item/<:id>/<#title>','Blog_Blog:item'),
+									
 		array('admin', 
 					'admin/dashboard','Admin_Dashboard:index'),
 					

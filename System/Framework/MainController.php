@@ -19,7 +19,7 @@ class Maincontroller extends Application {
 	protected $database;
 	protected $twig;
 
-	private $param;
+	private $params;
 	
 	public function __construct() {
 		$this -> loadTemplates();
@@ -47,7 +47,8 @@ class Maincontroller extends Application {
 		$route = $router -> getRoute($request);
 		
 		if ($route) {
-			$this -> param = $route -> getParam();
+			
+			$this -> params = $route -> getParams();
 			
 			return $route -> getData();
 		}
@@ -64,18 +65,13 @@ class Maincontroller extends Application {
 
 		if ($route) {
 			
-			
 			$controllerClass = '\\Application\\Controller\\' . $route[0] . '\\' . $route[1] . 'Controller';
 
 			$controller = new $controllerClass;
-			
 			$reflection = new \ReflectionMethod($controller,$route[2]);
 			
-			if(count($reflection->getParameters()) == 1) {
-				$this -> response = $controller -> $route[2]($this -> param);
-			} else {
-				$this -> response = $controller -> $route[2]();
-			}
+			$array = array_slice($this -> params, 0, count($reflection->getParameters()));
+			$this -> response = call_user_func_array(array($controller, $route[2]), $array );
 			
 
 		} else {

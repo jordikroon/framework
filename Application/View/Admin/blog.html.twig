@@ -20,7 +20,7 @@
 		{% for blog in blogitems %}
 		<tr class="{{ cycle(['even','odd'],loop.index) }}">
 			<td>{{ blog.title }}</td>
-			<td class="action"><a href="{{ url('admin-blog-edit') }}{{ blog.id }}" class="edit">Edit</a><a href="{{ url('admin-blog-delete') }}{{ blog.id }}" class="delete">Delete</a></td>
+			<td class="action"><a href="{{ url('admin-blog-edit', blog.id) }}" class="edit">Edit</a><a href="{{ url('admin-blog-delete', blog.id) }}" class="delete">Delete</a></td>
 		</tr>
 		{% endfor %}
 	</table>

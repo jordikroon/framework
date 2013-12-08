@@ -15,7 +15,7 @@ Class Route {
 	private $controller;
 	private $data;
 	private $name;
-	private $param;
+	private $param = array();
 	
 	/** initializes object and parses the data
 	 * 
@@ -67,8 +67,9 @@ Class Route {
 		$route = '#^' . $this -> route . '$#';
 		$route = preg_replace('/\<\:(.*?)\>/', '(?P<\1>[0-9]+)', $route); // <:id>
 		$route = preg_replace('/\<\#(.*?)\>/', '(?P<\1>[A-Za-z0-9\-\_]+)', $route); // <#string>
-
+		
 		if (preg_match($route, $query, $matches)) {
+			
 			return $matches;
 		}
 	}
@@ -84,11 +85,11 @@ Class Route {
 	}
 	
 	
-	public function setParam($param) {
-		$this -> param = $param;
+	public function addParam($param) {
+		$this -> param[] = $param;
 	}
 	
-	public function getParam() {
+	public function getParams() {
 		return $this -> param;
 	}
 }
