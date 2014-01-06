@@ -24,9 +24,7 @@ class CoreExtension extends \Twig_Extension {
     	
         return array(
             new \Twig_SimpleFunction('url', function() {
-				$response = new Response;
-				
-				return call_user_func_array(array($response, 'url'), func_get_args() );
+				return call_user_func_array(array(new Response, 'url'), func_get_args() );
 			
             }),
             new \Twig_SimpleFunction('base_path', function() {

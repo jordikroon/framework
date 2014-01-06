@@ -4,7 +4,7 @@
 					'','Home_Home:index'), // empty = /
 					
 		array('login', 
-					'auth/login','Auth_Login:index'),
+					'auth/login/<#type>','Auth_Login:index'),
 
 		array('logout', 
 					'auth/logout','Auth_Login:logOut'),	
@@ -17,7 +17,16 @@
 
 		array('blog-item', 
 					'blog/item/<:id>/<#title>','Blog_Blog:item'),
-									
+					
+		array('blog-item-add', 
+					'blog/item/<:id>/<#title>/add','Blog_Blog:additem'),	
+						
+		array('blog-item-edit', 
+					'blog/item/<:id>/<#title>/edit','Blog_Blog:edititem'),
+					
+		array('blog-item-remove', 
+					'blog/item/<:id>/<#title>/remove','Blog_Blog:removeitem'),	
+								
 		array('admin', 
 					'admin/dashboard','Admin_Dashboard:index'),
 					

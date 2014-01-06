@@ -1,6 +1,10 @@
 <?php
 
 	$namespaces = array(
+	
+		#system extends 
+		'Application\\System\\Controller\\SecurityController',
+		
 		#controller namespaces
 		'Application\\Controller\\Home\\HomeController',
 		'Application\\Controller\\Blog\\BlogController',
@@ -35,4 +39,6 @@
 		'System\\Framework\\Exception\\ExceptionHandler',
 		'System\\Framework\\Template\\Templating',
 		'System\\Framework\\Template\\Extension\\CoreExtension',
+		'System\\Framework\\Exception\\FileException',
+		'System\\Framework\\Exception\\FileNotFoundException',
 	);

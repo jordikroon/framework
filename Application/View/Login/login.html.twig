@@ -1,10 +1,12 @@
-{% if loginfalse == true %}
-    <p>Bad authentication</p>
-{% endif %}
 
-<form method="post" action="">
-	<label>Username: </label><input type="text" name="username" /> <br />
-	<label>Password: </label><input type="password" name="password" /> <br /><br />
-	
-	<input type="submit" name="submit" value="Log in" />
-</form>
+                	<form action="" method='post' class="jNice">
+
+               			{% if loginfalse == true %}
+    						 <div class="login-alert error">Bad authentication</div>
+						{% endif %}
+                       	<p><label>Username:</label><input type="text" name='username' class="text-long" /></p>
+                       	<p><label>Password:</label><input type="password" name='password' class="text-long" /><br />	   </p>
+
+                        <input type="submit" name="submit" value="Login" />
+                        
+                    </form>

@@ -1,5 +1,16 @@
-<h1>Register</h1>
+{% extends 'Core/default.html.twig' %}
 
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+
+<div class="blogheader" id="pageheader">
+	<h1><a href="http://localhost/framework/web/blog">Register</a></h1>
+	
+	
+</div>
+	
 {% if error|length > 0 %}
 	<p>Errors:</p>
 	{% for message in error %}
@@ -18,3 +29,5 @@
 	
 	<input type="submit" name="submit" value="Register" />
 </form>
+
+{% endblock %}

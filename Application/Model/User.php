@@ -178,7 +178,7 @@ class User extends Model {
 	
 	public function hashPassword($password) {
 		$config = new Config;
-
+		$config -> load(__dir__ . '/../../Config/application.php');
 		$security = $config -> get('security');
 
 		return sha1($security['salt'] . $password . $security['pepper']);

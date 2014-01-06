@@ -6,7 +6,7 @@
  * @copyright (c) Copyright 2013
  * @package CMS
  */
- 
+
 namespace Application\Controller\Auth;
 
 use System\Framework\MainController;
@@ -19,15 +19,15 @@ use Application\Model\User;
 
 Class LoginController extends MainController {
 
-	public function index() {
-		
+	public function index($type) {
+
 		$render = array();
 
 		$auth = new Auth;
 		$session = new Session;
 
 		$response = new Response();
-		
+
 		if (!$auth -> isAuthenticated()) {
 
 			$form = new FormHandler;
@@ -46,20 +46,29 @@ Class LoginController extends MainController {
 				}
 			}
 		} else {
-			$session -> get('key'); //todo... db check:)
+			$session -> get('key');
+			//todo... db check:)
 
 			$response -> redirect('home');
 		}
-		
-		return $this -> twig -> render('Admin/login.html.twig', $render);
+
+		if ($type == 'admin') {
+			return $this -> twig -> render('Admin/login.html.twig', $render);
+		} else {
+			return $this -> twig -> render('Login/login.html.twig', $render);
+		}
 	}
-	
+
 	public function logOut() {
 		$session = new Session;
-		$session->delete('key');
-		
+		$session -> delete('key');
+
 		$response = new Response();
 		$response -> redirect('login');
+	}
+
+	public function loginUser() {
+		return $this -> index('user');
 	}
 
 }

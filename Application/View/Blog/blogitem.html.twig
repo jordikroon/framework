@@ -6,8 +6,8 @@
 
 	<div class="blogheader">
 		<h1><a href="{{ url('blog') }}">Blog</a></h1>
-		<p>Lees het verdomde laatste nieuws over Jordi Kroon.<br />
-		Uitvinder en ontwikkelaar van het JK-framework dat standaard zit bij iedere webhost.</p>
+		<p>Op mijn blog plaats ik nieuwtjes en ontwikkelingen die ik door de jaren heen heb ontdekt.<br />
+		Dit kunnen verschillen van kleine tutorials tot technologische snufjes.</p>
 	</div>
 		
 		<div class="blogitem">
@@ -17,7 +17,7 @@
 					
 			<div class="blogiteminfo">
 				<div class="blogitemdatum">{{ item.date_added }}</div>
-				0 reacties | <a href="{{ url('blog-item', item.id, item.title|replace({ ' ': '-' })|lower) }}">#permalink</a>
+				{{ countreplies }} reacties | <a href="{{ url('blog-item', item.id, item.title|replace({ ' ': '-' })|lower) }}">#permalink</a>
 			</div>
         
 		</div>

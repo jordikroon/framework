@@ -9,10 +9,10 @@
 
 namespace Application\Controller\Admin;
 
-use System\Framework\MainController;
+use Application\System\Controller\SecurityController;
 use Application\Model\Auth;
 
-class DashboardController extends MainController {
+class DashboardController extends SecurityController {
 
 	public function index() {
 

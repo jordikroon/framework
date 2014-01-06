@@ -6,7 +6,7 @@
  * @copyright (c) Copyright 2013
  * @package CMS
  */
- 
+
 namespace Application\Controller\Auth;
 
 use System\Framework\MainController;

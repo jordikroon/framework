@@ -96,6 +96,8 @@ class Response {
 	
 	public function getBasePath() {
 		$config = new config;
+		$config -> loadFile(__dir__ . '/../../../Config/application.php');
+		
 		return $config -> get('BasePath');
 	}
 

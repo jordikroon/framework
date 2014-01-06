@@ -28,8 +28,22 @@ class BlogReply extends Model {
 		return $this -> blogItem;
 	}
 
+	public function countReplies() {
+		$sth = $this -> database -> prepare('SELECT id
+											FROM scms_blogreplies
+											WHERE blog_id = ?');
+
+		if ($sth -> execute(array($this -> getBlogItem()))) {
+
+			return $sth -> rowCount();
+			;
+		} else {
+			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+		}
+	}
+
 	public function getReplies() {
-		$sth = $this -> database -> prepare('SELECT scms_blogreplies.id, fullname, content, date_added, created, (
+		$sth = $this -> database -> prepare('SELECT scms_blogreplies.id, fullname, content, date_added, created,  (
 												SELECT COUNT( scms_blogreplies.id )
 												FROM scms_blogreplies
 												WHERE scms_users.id = author_id
@@ -37,7 +51,7 @@ class BlogReply extends Model {
 											FROM scms_blogreplies
 											LEFT JOIN scms_users ON author_id = scms_users.id
 											WHERE blog_id = ?');
-											
+
 		if ($sth -> execute(array($this -> getBlogItem()))) {
 
 			$fetch = $sth -> fetchAll(\PDO::FETCH_ASSOC);

@@ -129,7 +129,12 @@ class Blog extends Model {
 	}
 
 	public function getItems() {
-		$sth = $this -> database -> prepare('SELECT id, title, content, published, author_id, date_added FROM scms_blog');
+		$sth = $this -> database -> prepare('SELECT id, title, content, published, author_id, date_added, (
+												SELECT COUNT( blog_id )
+												FROM scms_blogreplies
+												WHERE scms_blogreplies.blog_id = scms_blog.id
+											)  as replies
+											FROM scms_blog');
 		if ($sth -> execute()) {
 
 			$fetch = $sth -> fetchAll(\PDO::FETCH_ASSOC);

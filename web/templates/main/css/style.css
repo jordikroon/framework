@@ -261,6 +261,18 @@ ul h4 {
 	border-bottom:1px solid lightgray;
 	line-height:100%
 }
+
+#pageheader {
+	font-size:8pt;
+	margin-bottom:100px;
+	border-bottom:1px solid lightgray;
+	line-height:100%
+	
+}
+
+hr {
+	border-bottom:1px solid lightgray;
+}
 .blogheader h1 {
 	color:black;
 	font-size:26pt;

@@ -16,29 +16,28 @@ use Application\Model\BlogReply;
 class BlogController extends MainController {
 
 	public function index() {
-		
+
 		$blog = new Blog;
-		
+
 		return $this -> twig -> render('Blog/blog.html.twig', array('blogitems' => $blog -> getItems()));
 	}
-	
+
 	public function item($id) {
-		
+
 		$blog = new Blog;
 		$blog -> read($id);
-		
+
 		$blogItem = array();
 		$blogItem['id'] = $blog -> getId();
-		$blogItem['author'] = $blog -> getAuthor(); 
+		$blogItem['author'] = $blog -> getAuthor();
 		$blogItem['title'] = $blog -> getTitle();
 		$blogItem['content'] = $blog -> getContent();
 		$blogItem['date_added'] = $blog -> getDateAdded();
-	
+
 		$reply = new BlogReply;
 		$reply -> setBlogItem((int) $id);
-		
-		return $this -> twig -> render('Blog/blogitem.html.twig', array('item' => $blogItem, 'replies' => $reply -> getReplies()));
+
+		return $this -> twig -> render('Blog/blogitem.html.twig', array('item' => $blogItem, 'replies' => $reply -> getReplies(), 'countreplies' => $reply -> countReplies()));
 	}
-	
+
 }
-		

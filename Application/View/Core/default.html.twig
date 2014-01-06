@@ -34,6 +34,13 @@
 		</div>
 		{% endblock %}
 		<div id="sidebar">
+			<h3>Login </h3>
+			<div class="date-list">
+				<ul class="list date-list">
+					{{ render('Auth_Login:loginUser') }}
+				</ul>
+				
+			</div>
 			<h3>Twitter </h3>
 			<div class="date-list">
 				<ul class="list date-list">
@@ -47,7 +54,7 @@
 	</div>
 </div>
 <div id="footer">
-	Copyright (c) 2012 <strong>jordikroon.nl</strong> alle rechten voorbehouden.
+	Copyright (c) {{ "now"|date("Y") }} <strong>jordikroon.nl</strong> alle rechten voorbehouden.
 </div>
 </body>
 </html>

@@ -9,14 +9,14 @@
 
 namespace Application\Controller\Admin;
 
-use System\Framework\MainController;
+use Application\System\Controller\SecurityController;
 
 use Application\Model\Auth;
 use Application\Model\User;
 use System\Framework\Form\FormHandler;
 use System\Framework\Form\FormValidator;
 
-class UserController extends MainController {
+class UserController extends SecurityController {
 
 	public function index() {
 
