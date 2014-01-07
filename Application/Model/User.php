@@ -76,7 +76,7 @@ class User extends Model {
 	public function create() {
 		$sth = $this -> database -> prepare('INSERT INTO scms_users (username, password, email, role, fullname) VALUES (?, ?, ?, ?, ?)');
 		if ($sth -> execute(array($this -> getUsername(), $this -> hashPassword($this -> getPassword()), $this -> getEmail(), $this -> getRole(), $this -> getFullname()))) {
-
+			$this -> setId($this -> database -> lastInsertId());
 			return true;
 		} else {
 			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
@@ -122,7 +122,7 @@ class User extends Model {
 			$this -> setUsername($fetch['username']);
 			$this -> setEmail($fetch['email']);
 			$this -> setFullname($fetch['fullname']);
-			
+			$this -> setRole($fetch['role']);
 			$this -> backid = $fetch['id'];
 			return $this;
 		} else {
@@ -178,7 +178,7 @@ class User extends Model {
 	
 	public function hashPassword($password) {
 		$config = new Config;
-		$config -> load(__dir__ . '/../../Config/application.php');
+		$config -> loadFile(__dir__ . '/../../Config/application.php');
 		$security = $config -> get('security');
 
 		return sha1($security['salt'] . $password . $security['pepper']);

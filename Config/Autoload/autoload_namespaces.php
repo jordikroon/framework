@@ -41,4 +41,5 @@
 		'System\\Framework\\Template\\Extension\\CoreExtension',
 		'System\\Framework\\Exception\\FileException',
 		'System\\Framework\\Exception\\FileNotFoundException',
+		'System\\Framework\\Security',
 	);

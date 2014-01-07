@@ -25,7 +25,7 @@ Class Auth extends Model {
 				$result = $sth -> fetch(\PDO::FETCH_ASSOC);
 				$this -> userid = $result['id'];
 
-				return true;
+				return $this -> userid;
 			}
 		}
 	}

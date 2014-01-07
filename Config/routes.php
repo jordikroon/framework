@@ -4,7 +4,8 @@
 					'','Home_Home:index'), // empty = /
 					
 		array('login', 
-					'auth/login/<#type>','Auth_Login:index'),
+					'auth/login','Auth_Login:index'),
+
 
 		array('logout', 
 					'auth/logout','Auth_Login:logOut'),	

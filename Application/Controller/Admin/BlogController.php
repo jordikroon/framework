@@ -10,7 +10,8 @@
 namespace Application\Controller\Admin;
 
 
-use Application\System\Controller;
+use System\Framework\MainController;
+
 
 use Application\Model\Auth;
 use Application\Model\User;
@@ -18,7 +19,7 @@ use Application\Model\Blog;
 use System\Framework\Form\FormHandler;
 use System\Framework\Form\FormValidator;
 
-class BlogController extends SecurityController {
+class BlogController extends MainController {
 
 	public function index() {
 

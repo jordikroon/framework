@@ -9,14 +9,13 @@
 
 namespace Application\Controller\Admin;
 
-use Application\System\Controller\SecurityController;
-
 use Application\Model\Auth;
 use Application\Model\User;
 use System\Framework\Form\FormHandler;
 use System\Framework\Form\FormValidator;
+use System\Framework\MainController;
 
-class UserController extends SecurityController {
+class UserController extends MainController {
 
 	public function index() {
 
@@ -34,7 +33,7 @@ class UserController extends SecurityController {
 
 			$validator -> rule('required', array('user', 'pass', 'email', 'fullname'));
 			$validator -> rule('email', 'email');
-			$validator -> rule('in', 'role', array(0, 1));
+			$validator -> rule('in', 'role', array(1, 2));
 
 			if ($user -> exists(array('username' => $fields['user']))) {
 				$error['user'][] = 'Username in use!';
@@ -104,7 +103,7 @@ class UserController extends SecurityController {
 
 			$validator -> rule('required', $required);
 			$validator -> rule('email', 'email');
-			$validator -> rule('in', 'role', array(0, 1));
+			$validator -> rule('in', 'role', array(1, 2));
 
 			if (!$validator -> validate()) {
 				$error = array_merge($error, $validator -> errors());

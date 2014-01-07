@@ -18,8 +18,8 @@ use Application\Model\Auth;
 use Application\Model\User;
 
 Class LoginController extends MainController {
-
-	public function index($type) {
+	
+	public function index() {
 
 		$render = array();
 
@@ -38,9 +38,11 @@ Class LoginController extends MainController {
 				$user -> setUsername($form -> getValue('username'));
 				$user -> setPassword($form -> getValue('password'));
 
-				if ($auth -> check($user)) {
+				if ($uid = $auth -> check($user)) {
 					$session -> create('key', $auth -> getKey());
-					$response -> redirect('home');
+					$session -> create('uid', (int) $uid);
+					
+					$response -> redirect('admin-users');
 				} else {
 					$render['loginfalse'] = true;
 				}
@@ -49,16 +51,12 @@ Class LoginController extends MainController {
 			$session -> get('key');
 			//todo... db check:)
 
-			$response -> redirect('home');
+			$response -> redirect('admin-users');
 		}
+		
+		return $this -> twig -> render('Admin/login.html.twig', $render);
 
-		if ($type == 'admin') {
-			return $this -> twig -> render('Admin/login.html.twig', $render);
-		} else {
-			return $this -> twig -> render('Login/login.html.twig', $render);
-		}
 	}
-
 	public function logOut() {
 		$session = new Session;
 		$session -> delete('key');
@@ -71,4 +69,16 @@ Class LoginController extends MainController {
 		return $this -> index('user');
 	}
 
+	public function checkLogin() {
+		
+		$auth = new Auth;
+		$session = new Session;
+		if($auth -> isAuthenticated()) {
+			$user = new User;
+			$user -> read($session -> get('uid'));
+			
+				return $user -> getRole();
+		}
+		return 0;
+	}
 }
