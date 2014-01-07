@@ -9633,3 +9633,27 @@ Stack trace:
 #0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
 #1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
 #2 {main} [] []
+[2014-01-07 16:27:16] LogicException.CRITICAL: Exception thrown: exception 'LogicException' with message 'We detected duplicated role values, please check your security config!' in D:\localroot\framework\System\Framework\Security.php:36
+Stack trace:
+#0 D:\localroot\framework\System\Framework\MainController.php(68): System\Framework\Security->isAuthorized('Admin_User:inde...')
+#1 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#2 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#3 {main} [] []
+[2014-01-07 16:28:20] LogicException.CRITICAL: Exception thrown: exception 'LogicException' with message 'We detected duplicated role values, please check your security config!' in D:\localroot\framework\System\Framework\Security.php:36
+Stack trace:
+#0 D:\localroot\framework\System\Framework\MainController.php(68): System\Framework\Security->isAuthorized('Admin_User:inde...')
+#1 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#2 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#3 {main} [] []
+[2014-01-07 16:28:34] LogicException.CRITICAL: Exception thrown: exception 'LogicException' with message 'We detected duplicated role values, please check your security config!' in D:\localroot\framework\System\Framework\Security.php:36
+Stack trace:
+#0 D:\localroot\framework\System\Framework\MainController.php(68): System\Framework\Security->isAuthorized('Admin_User:inde...')
+#1 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#2 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#3 {main} [] []
+[2014-01-07 16:29:08] LogicException.CRITICAL: Exception thrown: exception 'LogicException' with message 'We detected duplicated role values in your security config file, please fix this issue!' in D:\localroot\framework\System\Framework\Security.php:36
+Stack trace:
+#0 D:\localroot\framework\System\Framework\MainController.php(68): System\Framework\Security->isAuthorized('Admin_User:inde...')
+#1 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#2 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#3 {main} [] []

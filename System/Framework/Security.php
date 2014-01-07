@@ -31,10 +31,14 @@ class Security {
 					$controller = new $controllerClass;
 					$method = $data[2];
 					$return = $controller -> $method();
-					if (!in_array(array_search($return, $security['roles']), $roles)) {
-						return false;
+					
+					if (count($security['roles']) !== count(array_unique($security['roles']))) {
+						throw new \LogicException('We detected duplicated role values in your security config file, please fix this issue!');
+					} else {
+						if (!in_array(array_search($return, $security['roles']), $roles)) {
+							return false;
+						}
 					}
-
 				} else {
 					throw new \ErrorException(sprintf('LoginRoute "%s" does not exists', $security['checklogin']));
 				}
