@@ -19,14 +19,12 @@ class Application {
 	 * 
 	 * @return string $execute output of pages
 	 */
-	public function runApp() {
+	final public static function run() {
 		
 		try {
-			
 			$maincontroller = new MainController;
 			
 			return $maincontroller->execute();
-			
 		}
 		
 		catch(\Exception $e) {

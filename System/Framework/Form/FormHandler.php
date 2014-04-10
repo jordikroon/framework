@@ -23,21 +23,35 @@ class FormHandler {
 	
 	/** 
 	 * manually set post variable
+	 * 
+	 * @param string $name POST name
+	 * @param string $value POST value
 	 */
 	public function setValue($name, $value) {
 		$_POST[$name] = $value;
 	}
-	
+
+	/** 
+	 * manually unset post variable
+	 */	
 	public function unsetValue($name) {
 		unset($_POST[$name]);
 	}
 	
+	/** 
+	 * unset all post variables
+	 */	
 	public function unsetAll() {
 		foreach($_POST as $key => $value) {
 			unset($_POST[$key]);
 		}
 	}
 	
+	/** 
+	 * unset all post variables
+	 * 
+	 * @param array $array selected form field values
+	 */	
 	public function getFields($array) {
 		
 		if(!is_array($array)) {
@@ -56,6 +70,11 @@ class FormHandler {
 		
 	}
 	
+	/** 
+	 * Check method is equal
+	 * 
+	 * @param string $method form method to check
+	 */	
 	public function isMethod($method) {
 		if($_SERVER['REQUEST_METHOD'] == strtoupper($method)) {
 			return true;

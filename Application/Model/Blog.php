@@ -81,7 +81,8 @@ class Blog extends Model {
 		if ($sth -> execute(array($this -> getTitle(), $this -> getContent(), $this -> getPublished(), $this -> getAuthor()))) {
 			return true;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -93,7 +94,8 @@ class Blog extends Model {
 		if ($sth -> execute($prepare)) {
 			return true;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -104,7 +106,8 @@ class Blog extends Model {
 
 			return true;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -124,7 +127,8 @@ class Blog extends Model {
 			$this -> backid = $fetch['id'];
 			return $this;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -141,7 +145,8 @@ class Blog extends Model {
 
 			return $fetch;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}	
 	

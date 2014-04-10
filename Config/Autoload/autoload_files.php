@@ -1,5 +1,5 @@
 <?php
-
+/**
 $files = array(
 	'/Vendor/FluentPDO/QueryBuilder.php',
 	'/Vendor/Mailer/swift_required.php',
@@ -8,4 +8,6 @@ $files = array(
 	'/Vendor/UBBParser/bb_parser.php',
 	
 );
+ * 
+ */
 

@@ -38,7 +38,8 @@ class BlogReply extends Model {
 			return $sth -> rowCount();
 			;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -58,7 +59,8 @@ class BlogReply extends Model {
 
 			return $fetch;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 
 	}

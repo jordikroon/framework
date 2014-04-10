@@ -31,7 +31,8 @@ Class Menu extends Model {
 
 			return $fetch;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -43,7 +44,8 @@ Class Menu extends Model {
 
 				return true;
 			} else {
-				throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new PDOException('Could not execute query, ' . $pdoerr[2]);
 			}
 			 
 		} else {

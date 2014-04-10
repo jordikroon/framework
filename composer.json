@@ -1,0 +1,35 @@
+{
+    "name": "JKF/JKF",
+    "type": "library",
+    "description": "JKF Framework",
+    "keywords": ["framework"],
+    "homepage": "http://jordikroon.nl",
+    "license": 	"MIT",
+    "authors": [
+        {
+            "name": "Jordi Kroon",
+            "email": "jordi@jordikroon.nl",
+			"homepage": "http://jordikroon.nl"
+        }
+    ],
+    "require": {
+		"php": ">=5.3.3",
+		"psr/log": "~1.0",
+        "monolog/monolog": "1.8.*@dev",    
+        "twig/twig": "1.15.*@dev",
+        "swiftmailer/swiftmailer": "5.1.*@dev",
+        "lichtner/fluentpdo": "dev-master",
+        "symfony/console": "2.5.*@dev",
+        "symfony/event-dispatcher": "2.5.*@dev",
+        "kunststube/csrfp": "dev-master",
+        "symfony/http-foundation": "2.5.*@dev",
+        "doctrine/common": "2.5.*@dev"
+    },
+    "autoload": {
+        "psr-0": { 
+		
+		},
+		"files": ["Vendor/UBBParser/bb_parser.php"]
+    },
+	"minimum-stability": "dev"
+}

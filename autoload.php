@@ -51,17 +51,6 @@ class ClassLoader {
 		spl_autoload_unregister(array($this, 'loadClass'));
 	}
 
-	public function registerFiles() {
-
-		require_once __dir__ . '/Config/Autoload/autoload_files.php';
-
-		foreach ($files AS $file) {
-
-			require_once __dir__ . $file;
-		}
-
-	}
-
 	public function loadClass($className) {
 		$fileName = '';
 

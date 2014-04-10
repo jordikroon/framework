@@ -40,7 +40,8 @@ Class Auth extends Model {
 			if ($sth -> execute(array($key, $this -> userid))) {
 				return $key;
 			} else {
-				throw new PDOException('Failed to update authkey!');
+				$pdoerr = $sth -> errorInfo();
+				throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 			}
 
 		}
@@ -57,7 +58,8 @@ Class Auth extends Model {
 					return true;
 				}
 			} else {
-				throw new PDOException('Failed to get authkey!');
+				$pdoerr = $sth -> errorInfo();
+				throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 			}
 		}
 

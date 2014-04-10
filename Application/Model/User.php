@@ -79,7 +79,8 @@ class User extends Model {
 			$this -> setId($this -> database -> lastInsertId());
 			return true;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -97,7 +98,8 @@ class User extends Model {
 		if ($sth -> execute($prepare)) {
 			return true;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -108,7 +110,8 @@ class User extends Model {
 
 			return true;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -126,7 +129,8 @@ class User extends Model {
 			$this -> backid = $fetch['id'];
 			return $this;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}
 
@@ -155,7 +159,8 @@ class User extends Model {
 					return true;
 				}
 			} else {
-				throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new PDOException('Could not execute query, ' . $pdoerr[2]);
 			}
 
 		} else {
@@ -172,7 +177,8 @@ class User extends Model {
 
 			return $fetch;
 		} else {
-			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			$pdoerr = $sth -> errorInfo();
+			throw new PDOException('Could not execute query, ' . $pdoerr[2]);
 		}
 	}	
 	

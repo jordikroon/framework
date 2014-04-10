@@ -2,7 +2,7 @@
 
 $config = array();
 
-$config['database']['host'] 	= 'localhost';
+$config['database']['host'] 	= '127.0.0.1';
 $config['database']['username'] = 'root';
 $config['database']['password'] = '';
 $config['database']['database'] = 'scms';

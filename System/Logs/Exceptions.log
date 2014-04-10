@@ -9657,3 +9657,617 @@ Stack trace:
 #1 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
 #2 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
 #3 {main} [] []
+[2014-01-07 16:34:17] LogicException.CRITICAL: Exception thrown: exception 'LogicException' with message 'We detected duplicated role values in your security config file, please fix this issue!' in D:\localroot\framework\System\Framework\Security.php:36
+Stack trace:
+#0 D:\localroot\framework\System\Framework\MainController.php(68): System\Framework\Security->isAuthorized('Admin_User:edit')
+#1 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#2 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#3 {main} [] []
+[2014-01-07 16:57:37] LogicException.CRITICAL: Exception thrown: exception 'LogicException' with message 'We detected duplicated role values in your security config file, please fix this issue!' in D:\localroot\framework\System\Framework\Security.php:36
+Stack trace:
+#0 D:\localroot\framework\System\Framework\MainController.php(68): System\Framework\Security->isAuthorized('Admin_User:edit')
+#1 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#2 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#3 {main} [] []
+[2014-01-07 22:19:37] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:80
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-01-07 22:19:37] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:80
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-01-09 08:58:43] PDOException.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Kan geen verbinding maken omdat de doelcomputer de verbinding actief heeft geweigerd.
+' in D:\localroot\framework\System\Framework\Database\Database.php:22
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Database\Database.php(22): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 D:\localroot\framework\System\Framework\Model.php(23): System\Framework\Database\Database->__construct()
+#2 D:\localroot\framework\Application\Model\Blog.php(28): System\Framework\Model->getDatabase()
+#3 D:\localroot\framework\Application\Controller\Blog\BlogController.php(27): Application\Model\Blog->__construct()
+#4 [internal function]: Application\Controller\Blog\BlogController->item('4')
+#5 D:\localroot\framework\System\Framework\MainController.php(77): call_user_func_array(Array, Array)
+#6 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#7 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#8 {main} [] []
+[2014-01-18 20:46:48] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:80
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-01-18 20:46:48] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in D:\localroot\framework\System\Framework\MainController.php:80
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#1 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-01-22 19:36:02] PDOException.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] Kan geen verbinding maken omdat de doelcomputer de verbinding actief heeft geweigerd.
+' in D:\localroot\framework\System\Framework\Database\Database.php:22
+Stack trace:
+#0 D:\localroot\framework\System\Framework\Database\Database.php(22): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 D:\localroot\framework\System\Framework\Model.php(23): System\Framework\Database\Database->__construct()
+#2 D:\localroot\framework\Application\Model\Blog.php(28): System\Framework\Model->getDatabase()
+#3 D:\localroot\framework\Application\Controller\Blog\BlogController.php(27): Application\Model\Blog->__construct()
+#4 [internal function]: Application\Controller\Blog\BlogController->item('4')
+#5 D:\localroot\framework\System\Framework\MainController.php(77): call_user_func_array(Array, Array)
+#6 D:\localroot\framework\System\Framework\Application.php(28): System\Framework\Maincontroller->execute()
+#7 D:\localroot\framework\web\index.php(33): System\Framework\Application->runApp()
+#8 {main} [] []
+[2014-02-03 00:56:15] RuntimeException.CRITICAL: Exception thrown: exception 'RuntimeException' with message 'Unable to create the cache directory (/www/home/framework/System/Framework/../../Application/Cache/twig/89/e2).' in /www/home/framework/Vendor/Twig/Environment.php:1206
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Environment.php(323): Twig_Environment->writeCacheFile('/www/home/frame...', '<?php??/* Home/...')
+#1 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#2 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#3 [internal function]: Application\Controller\Home\HomeController->index()
+#4 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#5 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#6 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#7 {main} [] []
+[2014-02-03 00:56:44] RuntimeException.CRITICAL: Exception thrown: exception 'RuntimeException' with message 'Unable to create the cache directory (/www/home/framework/System/Framework/../../Application/Cache/twig/89/e2).' in /www/home/framework/Vendor/Twig/Environment.php:1206
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Environment.php(323): Twig_Environment->writeCacheFile('/www/home/frame...', '<?php??/* Home/...')
+#1 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#2 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#3 [internal function]: Application\Controller\Home\HomeController->index()
+#4 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#5 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#6 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#7 {main} [] []
+[2014-02-03 00:56:47] RuntimeException.CRITICAL: Exception thrown: exception 'RuntimeException' with message 'Unable to create the cache directory (/www/home/framework/System/Framework/../../Application/Cache/twig/89/e2).' in /www/home/framework/Vendor/Twig/Environment.php:1206
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Environment.php(323): Twig_Environment->writeCacheFile('/www/home/frame...', '<?php??/* Home/...')
+#1 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#2 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#3 [internal function]: Application\Controller\Home\HomeController->index()
+#4 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#5 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#6 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#7 {main} [] []
+[2014-02-03 00:56:52] RuntimeException.CRITICAL: Exception thrown: exception 'RuntimeException' with message 'Unable to create the cache directory (/www/home/framework/System/Framework/../../Application/Cache/twig/89/e2).' in /www/home/framework/Vendor/Twig/Environment.php:1206
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Environment.php(323): Twig_Environment->writeCacheFile('/www/home/frame...', '<?php??/* Home/...')
+#1 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#2 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#3 [internal function]: Application\Controller\Home\HomeController->index()
+#4 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#5 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#6 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#7 {main} [] []
+[2014-02-03 00:57:04] RuntimeException.CRITICAL: Exception thrown: exception 'RuntimeException' with message 'Unable to create the cache directory (/www/home/framework/System/Framework/../../Application/Cache/twig/89/e2).' in /www/home/framework/Vendor/Twig/Environment.php:1206
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Environment.php(323): Twig_Environment->writeCacheFile('/www/home/frame...', '<?php??/* Home/...')
+#1 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#2 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#3 [internal function]: Application\Controller\Home\HomeController->index()
+#4 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#5 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#6 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#7 {main} [] []
+[2014-02-03 00:57:06] RuntimeException.CRITICAL: Exception thrown: exception 'RuntimeException' with message 'Unable to create the cache directory (/www/home/framework/System/Framework/../../Application/Cache/twig/89/e2).' in /www/home/framework/Vendor/Twig/Environment.php:1206
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Environment.php(323): Twig_Environment->writeCacheFile('/www/home/frame...', '<?php??/* Home/...')
+#1 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#2 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#3 [internal function]: Application\Controller\Home\HomeController->index()
+#4 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#5 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#6 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#7 {main} [] []
+[2014-02-03 00:57:07] RuntimeException.CRITICAL: Exception thrown: exception 'RuntimeException' with message 'Unable to create the cache directory (/www/home/framework/System/Framework/../../Application/Cache/twig/89/e2).' in /www/home/framework/Vendor/Twig/Environment.php:1206
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Environment.php(323): Twig_Environment->writeCacheFile('/www/home/frame...', '<?php??/* Home/...')
+#1 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#2 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#3 [internal function]: Application\Controller\Home\HomeController->index()
+#4 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#5 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#6 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#7 {main} [] []
+[2014-02-03 00:57:23] RuntimeException.CRITICAL: Exception thrown: exception 'RuntimeException' with message 'Unable to create the cache directory (/www/home/framework/System/Framework/../../Application/Cache/twig/89/e2).' in /www/home/framework/Vendor/Twig/Environment.php:1206
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Environment.php(323): Twig_Environment->writeCacheFile('/www/home/frame...', '<?php??/* Home/...')
+#1 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Environment->loadTemplate('Home/index.html...')
+#2 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#3 [internal function]: Application\Controller\Home\HomeController->index()
+#4 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#5 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#6 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#7 {main} [] []
+[2014-02-03 00:57:45] Twig_Error_Runtime.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /www/home/framework/System/Framework/Database/Database.php:22
+Stack trace:
+#0 /www/home/framework/System/Framework/Database/Database.php(22): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 /www/home/framework/System/Framework/Model.php(23): System\Framework\Database\Database->__construct()
+#2 /www/home/framework/Application/Model/Menu.php(13): System\Framework\Model->getDatabase()
+#3 /www/home/framework/Application/Controller/Menu/MenuController.php(20): Application\Model\Menu->__construct()
+#4 [internal function]: Application\Controller\Menu\MenuController->getItems()
+#5 /www/home/framework/System/Framework/Template/Extension/CoreExtension.php(69): call_user_func_array(Array, Array)
+#6 [internal function]: System\Framework\Template\Extension\CoreExtension->System\Framework\Template\Extension\{closure}('Menu_Menu:getIt...')
+#7 /www/home/framework/Application/Cache/twig/aa/e9/686ef9c6465e18197c6cc64a9476.php(51): call_user_func_array(Object(Closure), Array)
+#8 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_aae9686ef9c6465e18197c6cc64a9476->doDisplay(Array, Array)
+#9 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#11 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#12 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#14 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#15 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#16 [internal function]: Application\Controller\Home\HomeController->index()
+#17 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#18 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#19 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#20 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("SQLSTATE[HY000] [2002] No such file or directory") in "Home/index.html.twig".' in /www/home/framework/Vendor/Twig/Template.php:279
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#1 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#2 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#3 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#4 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#5 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#6 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#7 [internal function]: Application\Controller\Home\HomeController->index()
+#8 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#9 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#10 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#11 {main} [] []
+[2014-02-03 00:57:46] Twig_Error_Runtime.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /www/home/framework/System/Framework/Database/Database.php:22
+Stack trace:
+#0 /www/home/framework/System/Framework/Database/Database.php(22): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 /www/home/framework/System/Framework/Model.php(23): System\Framework\Database\Database->__construct()
+#2 /www/home/framework/Application/Model/Menu.php(13): System\Framework\Model->getDatabase()
+#3 /www/home/framework/Application/Controller/Menu/MenuController.php(20): Application\Model\Menu->__construct()
+#4 [internal function]: Application\Controller\Menu\MenuController->getItems()
+#5 /www/home/framework/System/Framework/Template/Extension/CoreExtension.php(69): call_user_func_array(Array, Array)
+#6 [internal function]: System\Framework\Template\Extension\CoreExtension->System\Framework\Template\Extension\{closure}('Menu_Menu:getIt...')
+#7 /www/home/framework/Application/Cache/twig/aa/e9/686ef9c6465e18197c6cc64a9476.php(51): call_user_func_array(Object(Closure), Array)
+#8 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_aae9686ef9c6465e18197c6cc64a9476->doDisplay(Array, Array)
+#9 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#11 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#12 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#14 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#15 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#16 [internal function]: Application\Controller\Home\HomeController->index()
+#17 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#18 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#19 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#20 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("SQLSTATE[HY000] [2002] No such file or directory") in "Home/index.html.twig".' in /www/home/framework/Vendor/Twig/Template.php:279
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#1 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#2 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#3 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#4 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#5 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#6 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#7 [internal function]: Application\Controller\Home\HomeController->index()
+#8 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#9 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#10 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#11 {main} [] []
+[2014-02-03 00:57:49] Twig_Error_Runtime.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /www/home/framework/System/Framework/Database/Database.php:22
+Stack trace:
+#0 /www/home/framework/System/Framework/Database/Database.php(22): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 /www/home/framework/System/Framework/Model.php(23): System\Framework\Database\Database->__construct()
+#2 /www/home/framework/Application/Model/Menu.php(13): System\Framework\Model->getDatabase()
+#3 /www/home/framework/Application/Controller/Menu/MenuController.php(20): Application\Model\Menu->__construct()
+#4 [internal function]: Application\Controller\Menu\MenuController->getItems()
+#5 /www/home/framework/System/Framework/Template/Extension/CoreExtension.php(69): call_user_func_array(Array, Array)
+#6 [internal function]: System\Framework\Template\Extension\CoreExtension->System\Framework\Template\Extension\{closure}('Menu_Menu:getIt...')
+#7 /www/home/framework/Application/Cache/twig/aa/e9/686ef9c6465e18197c6cc64a9476.php(51): call_user_func_array(Object(Closure), Array)
+#8 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_aae9686ef9c6465e18197c6cc64a9476->doDisplay(Array, Array)
+#9 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#11 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#12 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#14 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#15 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#16 [internal function]: Application\Controller\Home\HomeController->index()
+#17 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#18 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#19 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#20 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("SQLSTATE[HY000] [2002] No such file or directory") in "Home/index.html.twig".' in /www/home/framework/Vendor/Twig/Template.php:279
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#1 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#2 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#3 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#4 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#5 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#6 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#7 [internal function]: Application\Controller\Home\HomeController->index()
+#8 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#9 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#10 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#11 {main} [] []
+[2014-02-03 00:57:52] Twig_Error_Runtime.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /www/home/framework/System/Framework/Database/Database.php:22
+Stack trace:
+#0 /www/home/framework/System/Framework/Database/Database.php(22): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 /www/home/framework/System/Framework/Model.php(23): System\Framework\Database\Database->__construct()
+#2 /www/home/framework/Application/Model/Menu.php(13): System\Framework\Model->getDatabase()
+#3 /www/home/framework/Application/Controller/Menu/MenuController.php(20): Application\Model\Menu->__construct()
+#4 [internal function]: Application\Controller\Menu\MenuController->getItems()
+#5 /www/home/framework/System/Framework/Template/Extension/CoreExtension.php(69): call_user_func_array(Array, Array)
+#6 [internal function]: System\Framework\Template\Extension\CoreExtension->System\Framework\Template\Extension\{closure}('Menu_Menu:getIt...')
+#7 /www/home/framework/Application/Cache/twig/aa/e9/686ef9c6465e18197c6cc64a9476.php(51): call_user_func_array(Object(Closure), Array)
+#8 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_aae9686ef9c6465e18197c6cc64a9476->doDisplay(Array, Array)
+#9 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#11 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#12 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#14 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#15 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#16 [internal function]: Application\Controller\Home\HomeController->index()
+#17 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#18 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#19 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#20 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("SQLSTATE[HY000] [2002] No such file or directory") in "Home/index.html.twig".' in /www/home/framework/Vendor/Twig/Template.php:279
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#1 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#2 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#3 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#4 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#5 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#6 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#7 [internal function]: Application\Controller\Home\HomeController->index()
+#8 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#9 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#10 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#11 {main} [] []
+[2014-02-03 12:53:31] Twig_Error_Runtime.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /www/home/framework/System/Framework/Database/Database.php:22
+Stack trace:
+#0 /www/home/framework/System/Framework/Database/Database.php(22): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 /www/home/framework/System/Framework/Model.php(23): System\Framework\Database\Database->__construct()
+#2 /www/home/framework/Application/Model/Menu.php(13): System\Framework\Model->getDatabase()
+#3 /www/home/framework/Application/Controller/Menu/MenuController.php(20): Application\Model\Menu->__construct()
+#4 [internal function]: Application\Controller\Menu\MenuController->getItems()
+#5 /www/home/framework/System/Framework/Template/Extension/CoreExtension.php(69): call_user_func_array(Array, Array)
+#6 [internal function]: System\Framework\Template\Extension\CoreExtension->System\Framework\Template\Extension\{closure}('Menu_Menu:getIt...')
+#7 /www/home/framework/Application/Cache/twig/aa/e9/686ef9c6465e18197c6cc64a9476.php(51): call_user_func_array(Object(Closure), Array)
+#8 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_aae9686ef9c6465e18197c6cc64a9476->doDisplay(Array, Array)
+#9 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#11 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#12 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#14 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#15 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#16 [internal function]: Application\Controller\Home\HomeController->index()
+#17 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#18 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#19 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#20 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("SQLSTATE[HY000] [2002] No such file or directory") in "Home/index.html.twig".' in /www/home/framework/Vendor/Twig/Template.php:279
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#1 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#2 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#3 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#4 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#5 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#6 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#7 [internal function]: Application\Controller\Home\HomeController->index()
+#8 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#9 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#10 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#11 {main} [] []
+[2014-02-09 15:21:35] Twig_Error_Runtime.CRITICAL: Exception thrown: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /www/home/framework/System/Framework/Database/Database.php:22
+Stack trace:
+#0 /www/home/framework/System/Framework/Database/Database.php(22): PDO->__construct('mysql:dbname=sc...', 'root', '')
+#1 /www/home/framework/System/Framework/Model.php(23): System\Framework\Database\Database->__construct()
+#2 /www/home/framework/Application/Model/Menu.php(13): System\Framework\Model->getDatabase()
+#3 /www/home/framework/Application/Controller/Menu/MenuController.php(20): Application\Model\Menu->__construct()
+#4 [internal function]: Application\Controller\Menu\MenuController->getItems()
+#5 /www/home/framework/System/Framework/Template/Extension/CoreExtension.php(69): call_user_func_array(Array, Array)
+#6 [internal function]: System\Framework\Template\Extension\CoreExtension->System\Framework\Template\Extension\{closure}('Menu_Menu:getIt...')
+#7 /www/home/framework/Application/Cache/twig/aa/e9/686ef9c6465e18197c6cc64a9476.php(51): call_user_func_array(Object(Closure), Array)
+#8 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_aae9686ef9c6465e18197c6cc64a9476->doDisplay(Array, Array)
+#9 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#10 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#11 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#12 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#13 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#14 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#15 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#16 [internal function]: Application\Controller\Home\HomeController->index()
+#17 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#18 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#19 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#20 {main}
+
+Next exception 'Twig_Error_Runtime' with message 'An exception has been thrown during the rendering of a template ("SQLSTATE[HY000] [2002] No such file or directory") in "Home/index.html.twig".' in /www/home/framework/Vendor/Twig/Template.php:279
+Stack trace:
+#0 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#1 /www/home/framework/Application/Cache/twig/89/e2/f3248ce58ca7b2cc8bc582fab9fe.php(25): Twig_Template->display(Array, Array)
+#2 /www/home/framework/Vendor/Twig/Template.php(264): __TwigTemplate_89e2f3248ce58ca7b2cc8bc582fab9fe->doDisplay(Array, Array)
+#3 /www/home/framework/Vendor/Twig/Template.php(238): Twig_Template->displayWithErrorHandling(Array, Array)
+#4 /www/home/framework/Vendor/Twig/Template.php(249): Twig_Template->display(Array)
+#5 /www/home/framework/Vendor/Twig/Environment.php(288): Twig_Template->render(Array)
+#6 /www/home/framework/Application/Controller/Home/HomeController.php(48): Twig_Environment->render('Home/index.html...', Array)
+#7 [internal function]: Application\Controller\Home\HomeController->index()
+#8 /www/home/framework/System/Framework/MainController.php(77): call_user_func_array(Array, Array)
+#9 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#10 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#11 {main} [] []
+[2014-02-09 15:22:24] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-09 15:22:24] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-09 15:22:25] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-09 15:22:28] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-09 15:22:31] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-09 15:22:31] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-09 15:22:31] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-09 15:22:35] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-09 15:22:35] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:56:51] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:56:51] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:56:51] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:57:05] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:57:10] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:57:12] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:57:12] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:57:13] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:57:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-02-27 19:57:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:17:48] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:17:48] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:18:39] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:18:39] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:23:36] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:23:36] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:16] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:16] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-03-19 14:24:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80
+Stack trace:
+#0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute()
+#1 /www/home/framework/web/index.php(33): System\Framework\Application->runApp()
+#2 {main} [] []
+[2014-04-08 21:44:37] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 21:44:37] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 21:44:37] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 21:46:36] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 21:46:37] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 21:46:45] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 21:52:20] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:01:53] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:10:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:10:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:10:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:17:24] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:17:25] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:25:34] Exception.CRITICAL: Exception thrown: exception 'Exception' with message 'Route  not found!' in /www/home/framework/System/Framework/HTTP/Response.php:29 Stack trace: #0 /www/home/framework/System/Framework/MainController.php(67): System\Framework\HTTP\Response->generateUrl(NULL) #1 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #2 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #3 {main} [] []
+[2014-04-08 22:25:59] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:83 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:25:59] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:83 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:25:59] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:83 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:25:59] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:83 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:25:59] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:83 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:25:59] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:83 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:26:07] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:84 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:26:07] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:84 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:26:07] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:84 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:26:08] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:84 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:26:09] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:84 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:27:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:27:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:27:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:27:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:27:33] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:27:35] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:29:21] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:29:21] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:29:21] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:29:25] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:29:42] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:29:46] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:31:37] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:31:39] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:31:39] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:31:39] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:31:39] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:31:39] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:31:39] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:31:46] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:32:08] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:32:19] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:32:21] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:33:18] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:33:18] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:33:18] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:33:18] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:33:21] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:33:22] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:85 Stack trace: #0 /www/home/framework/System/Framework/Application.php(28): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::runApp() #2 {main} [] []
+[2014-04-08 22:50:30] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 22:50:30] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 22:50:30] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:02:43] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:02:43] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:02:43] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:07:53] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:07:53] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:07:53] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:07:55] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:10:47] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:10:47] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:10:47] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:22:08] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:22:08] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:22:08] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:22:17] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-08 23:22:19] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-09 19:17:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-09 19:17:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []
+[2014-04-09 19:17:15] ErrorException.CRITICAL: Exception thrown: exception 'ErrorException' with message 'Page not found' in /www/home/framework/System/Framework/MainController.php:80 Stack trace: #0 /www/home/framework/System/Framework/Application.php(27): System\Framework\Maincontroller->execute() #1 /www/home/framework/web/index.php(23): System\Framework\Application::run() #2 {main} [] []

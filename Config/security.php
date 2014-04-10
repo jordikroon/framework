@@ -19,7 +19,6 @@ $config['security']['securedroutes'] = array(
 										'admin-blog' => array('Admin'),
 										'admin-blog-delete' => array('Admin'),
 										'admin-blog-edit' => array('Admin'),
-										
 									);
 	
 $config['security']['checklogin'] = 'Auth_Login:checkLogin';
