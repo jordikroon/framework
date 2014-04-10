@@ -21,3 +21,9 @@ Questions:
 
 Contact me :-) 
 jordi@jordikroon.nl
+
+
+Thanks to:
+-----------------
+ - Jordi Boggiano (Composer)
+ - Fabien Potencier (Symfony2)
