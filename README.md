@@ -14,7 +14,7 @@ Third party libaries:
  - Mono Log
  - FluentPDO
  - Valitron
- 
+ - Composer
 
 Questions:
 -----------------
