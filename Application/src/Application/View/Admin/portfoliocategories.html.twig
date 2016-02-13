@@ -1,0 +1,108 @@
+{% extends "Admin/Core/coreback.html.twig" %}
+
+{% set selectedindex = 4 %}
+
+{% block title %}{{ editcategorie|default('Add') }} portfolio category{% endblock %}
+
+{% block extralinks %}
+<li><a href="{{ url('admin-portfolio') }}">Manage portfolio</a></li>
+<li><a href="{{ url('admin-pf-categories') }}" class="active">Manage categories</a></li>
+{% endblock %}
+
+{% block page %}
+
+<h2><a href="#">Portfolio</a> &raquo; <a href="{{ url('admin-pf-categories') }}" class="active">Manage categories</a></h2>
+
+<div id="main">
+
+	<h3>Manage categories:</h3>
+	<table cellpadding="0" cellspacing="0">
+
+		<div id="dialog" title="Delete category?" style="display: none;">
+			<p>
+				<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Are you sure you want to delete this category?
+			</p>
+		</div>
+
+		{% for category in categories %}
+		<tr class="{{ cycle(['even','odd'],loop.index) }}">
+			<td>{{ category.category }}</td>
+			<td class="action"><a href="{{ url('admin-pf-categories-edit', category.id) }}" class="edit">Edit</a><a href="{{ url('admin-pf-categories-delete', category.id) }}" class="delete">Delete</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+
+	<h3>{{ editcategory|default('Add') }} category:</h3>
+
+	<fieldset>
+		
+			{% if updatecategory.id  == '' and editcategory %}
+			<div class="alert-box2 error">
+				<span>Category does not exist!</span>
+			</div>
+			{% else %}
+			{% if editcategory %}
+			<form action="{{ url('admin-pf-categories-edit', updatecategory.id)}}" method='post' class="jNice">
+			
+			{% else %}
+			<form action="{{ url('admin-pf-categories')}}" method='post' class="jNice">
+			{% endif %}
+			{% if field_errors|length %}
+			<div class="alert-box2 error">
+				<span>Category could not been created:</span>
+				<br />
+				<br />
+				{% for error in field_errors %}
+					{% for message in error %}
+						{{ message }}	<br />
+					{% endfor %}
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			{% if confirmation|length %}
+			<div class="alert-box2 success">
+				<span>{{ confirmation.message }}</span>
+			</div>
+			{% endif %}
+			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+			<p>
+				<label>Name:</label>
+				<input name="name" type="text" value="{{  updatecategory.name|default(formValue('name')) }}" class="text-long" />
+			</p>
+			<p>
+				<label>Slug:</label>
+				<input name="slug" type="text" value="{{  updatecategory.slug|default(formValue('slug')) }}" class="text-long" />
+			</p>
+			<input type="submit" value="{{ editcategory|default('Add') }} category" />
+		</form>
+	
+		{% endif %}
+	
+	</fieldset>
+
+</div>
+
+<script>
+	$('.delete').click(function() {
+
+		var a = this;		
+		$('#dialog').dialog({
+			resizable : false,
+			draggable: false,
+			width : 250,	
+			modal : true,
+			buttons : {
+				"Delete category" : function() {
+					window.location = a.href; 
+				},
+				Cancel : function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+		return false;
+	});
+
+</script>
+{% endblock %}

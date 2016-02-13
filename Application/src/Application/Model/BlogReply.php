@@ -8,13 +8,16 @@ class BlogReply extends Model {
 
 	private $blogItem;
 
+	private $name;
+	private $content;
+	
 	public function __construct($blogItem = 0) {
 
 		$this -> database = $this -> getDatabase();
 		$this -> setBlogItem($blogItem);
 
 	}
-
+	
 	public function setBlogItem($blogItem) {
 
 		if (is_int($blogItem)) {
@@ -28,6 +31,22 @@ class BlogReply extends Model {
 		return $this -> blogItem;
 	}
 
+	public function setName($name) {
+		$this -> name = $name;
+	}
+
+	public function getName() {
+		return $this -> name;
+	}
+	
+	public function setContent($content) {
+		$this -> content = $content;	
+	}
+	
+	public function getContent() {
+		return $this -> content;
+	}	
+	
 	public function countReplies() {
 		$sth = $this -> database -> prepare('SELECT id
 											FROM scms_blogreplies
@@ -44,13 +63,8 @@ class BlogReply extends Model {
 	}
 
 	public function getReplies() {
-		$sth = $this -> database -> prepare('SELECT scms_blogreplies.id, fullname, content, date_added, created,  (
-												SELECT COUNT( scms_blogreplies.id )
-												FROM scms_blogreplies
-												WHERE scms_users.id = author_id
-											) AS posts
+		$sth = $this -> database -> prepare('SELECT id, author, content, date_added
 											FROM scms_blogreplies
-											LEFT JOIN scms_users ON author_id = scms_users.id
 											WHERE blog_id = ?');
 
 		if ($sth -> execute(array($this -> getBlogItem()))) {
@@ -65,4 +79,13 @@ class BlogReply extends Model {
 
 	}
 
+	public function add() {
+		$sth = $this -> database -> prepare('INSERT INTO scms_blogreplies (blog_id, author, content, date_added) VALUES (?, ?, ?, NOW())');
+		if ($sth -> execute(array($this -> getBlogItem(), $this -> getName(), $this -> getContent()))) {
+			return true;
+		} else {
+			$pdoerr = $sth -> errorInfo();
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
+		}
+	}
 }

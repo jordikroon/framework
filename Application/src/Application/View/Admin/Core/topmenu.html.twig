@@ -1,10 +1,10 @@
 <ul id="mainNav">
 
-<li><a href="/admincp" class="active">DASHBOARD</a></li>
-<li><a href="?module=poll">USERS</a></li>
-<li><a href="?module=forum">BLOG</a></li>
-<li><a href="?module=news">PROJECTS</a></li>
-<li><a href="?module=site">SETTINGS</a></li>
+<li><a href="{{ url('admin') }}" {% if selectedindex == 1 %} class="active" {% endif %}>DASHBOARD</a></li>
+<li><a href="{{ url('admin-users') }}" {% if selectedindex == 2 %} class="active" {% endif %}>USERS</a></li>
+<li><a href="{{ url('admin-blog') }}" {% if selectedindex == 3 %} class="active" {% endif %}>BLOG</a></li>
+<li><a href="{{ url('admin-portfolio') }}" {% if selectedindex == 4 %} class="active" {% endif %}>PROJECTS</a></li>
+<li><a href="{{ url('admin-menu') }}" {% if selectedindex == 5 %} class="active" {% endif %}>MENU</a></li>
 
 <li class="logout"><a href="{{ url('logout') }}">LOGOUT</a></li>
 </ul>

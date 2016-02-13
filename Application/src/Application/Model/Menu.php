@@ -53,4 +53,68 @@ Class Menu extends Model {
 		}
 	}
 
+	public function removeItem($menuitem) {
+		if (is_object($menuitem) && $menuitem instanceof MenuItem) {
+			
+			$sth = $this -> database -> prepare('DELETE from scms_menu WHERE mname = ? AND id = ?');
+			if ($sth -> execute(array($this -> getMenu(), $menuitem -> getId()))) {
+
+				return true;
+			} else {
+				throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			}
+			 
+		} else {
+			throw new \InvalidArgumentException('Parameter should be an instance of Menuitem!');
+		}
+	}
+	
+	public function updateItem($menuitem) {
+		if (is_object($menuitem) && $menuitem instanceof MenuItem) {
+			
+			$sth = $this -> database -> prepare('UPDATE scms_menu SET id=?, mname=?, lname=?, link=? WHERE id=?');
+			if ($sth -> execute(array($menuitem -> getId(), $this -> getMenu(), $menuitem -> getName(), $menuitem -> getLink(), $menuitem -> getId()))) {
+				return true;
+			} else {
+				throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			}
+			 
+		} else {
+			throw new \InvalidArgumentException('Parameter should be an instance of Menuitem!');
+		}
+	}
+	
+	public function itemExists($array) {
+
+		$where = 'WHERE ';
+
+		if (is_array($array)) {
+
+			$i = 0;
+			foreach ($array AS $key => $value) {
+
+				if ($i > 0) {
+					$where .= ' AND ';
+				}
+
+				$where .= $key . ' = ?';
+
+				$i++;
+			}
+
+			$sth = $this -> database -> prepare('SELECT id FROM scms_menu ' . $where);
+			
+			if ($sth -> execute(array_values($array))) {
+				if($sth->rowCount() >= 1) {
+					return true;
+				}
+			} else {
+				throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+			}
+
+		} else {
+			throw new \InvalidArgumentException('Parameter should be an array! Got: ' . gettype($array));
+		}
+
+	}
 }

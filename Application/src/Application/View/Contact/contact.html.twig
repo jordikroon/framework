@@ -1,0 +1,24 @@
+{% extends 'Core/default.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+{% block contenttitle %}Contact{% endblock %}
+
+{% block content %}
+
+
+<form id="contactform" action="" method="post">
+	{% if content.error %}
+	<div class="error">{{ content.error }}</div>
+	{% elseif content.succes %}
+	<div class="info">{{ content.succes }}</div>
+	{% endif %}
+	
+	<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+	<input type="text" name="name" placeholder="Your name" />
+	<input type="email" name="email" placeholder="Your email" />
+	<textarea name="message" placeholder="Your message"></textarea>
+	<input type="submit" value="Send message" />
+</form>
+
+
+{% endblock %}

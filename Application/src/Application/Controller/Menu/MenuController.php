@@ -24,4 +24,3 @@ class MenuController extends MainController {
 	}
 	
 }
-		

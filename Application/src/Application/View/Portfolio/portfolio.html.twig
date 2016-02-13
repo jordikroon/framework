@@ -1,0 +1,62 @@
+{% extends 'Core/default.html.twig' %}
+
+{% block title %}{{ info.category}}{% endblock %}
+{% block contenttitle %}{{ info.category}}{% endblock %}
+{% block content %}
+					
+				<div id="blogrol">
+					{% for item in items %}
+					<div class="blogItem">
+
+						<div class="blogtitle">
+							<h3>{{ item.title }}</h3>
+							
+							<ul>
+								{% for tag in item.tags %}
+								<li class="hideMobile">{{ tag.tag }}</li>
+								{% endfor %}
+								
+							</ul>
+						</div>
+
+					
+						<div class="portfoliocontent">
+							
+							<div class="portfolioimg">
+								<img src="{{ base_path() }}files/{{ item.image }}" width="234" height="165" alt="{{ item.title }}" title="{{ item.title }}"/>
+								
+								<a href="{{ url('portfolioitem', info.slug, item.id, item.title|slugify)}}" class="readportfolio hideMobile">Read more</a>
+								
+								{% if item.source %}
+								<a href="{{ item.source }}" class="source hideMobile">Source code</a>
+								{% else %}
+								<a class="source hideMobile">No source</a>
+								{% endif %}
+							</div> 
+							<div class="portfoliotxt">
+							<p>
+								{{ item.content|markdown|striptags[:426] }}
+							</p>
+							
+							<div class="showMobile">
+								<a href="{{ item.source }}">Source</a>
+								<a href="{{ url('portfolioitem', info.slug, item.id, item.title|slugify)}}">More info</a>
+							</div>
+								
+							<p class="portfoliodate">Date released: {{ item.released|date('Y/m/d') }}</p>
+							</div>
+							
+						</div>
+						
+						
+
+						<div class="clear"></div>
+
+					</div>
+					{% endfor %}
+				</div>
+				{% include 'Core/sidebar.html.twig' %}
+
+
+{% endblock %}
+

@@ -150,4 +150,17 @@ class Blog extends Model {
 		}
 	}	
 	
+	public function getRecentPosts() {
+		$sth = $this -> database -> prepare('SELECT id, title, DATE(date_added) FROM scms_blog ORDER BY id DESC LIMIT 5');
+		if ($sth -> execute()) {
+
+			$fetch = $sth -> fetchAll(\PDO::FETCH_ASSOC);
+
+			return $fetch;
+		} else {
+			$pdoerr = $sth -> errorInfo();
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
+		}
+	}
+	
 }

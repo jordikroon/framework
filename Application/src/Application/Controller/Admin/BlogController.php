@@ -18,6 +18,7 @@ use Application\Model\User;
 use Application\Model\Blog;
 use System\Framework\Form\FormHandler;
 use System\Framework\Form\FormValidator;
+use System\Framework\Security;
 
 class BlogController extends MainController {
 
@@ -32,13 +33,18 @@ class BlogController extends MainController {
 
 		if ($form -> isMethod('post')) {
 
-			$fields = $form -> getFields(array('title', 'author', 'content', 'published'));
+			$fields = $form -> getFields(array('title', 'author', 'content', 'published', '_token'));
 
 			$validator = new FormValidator($fields);
 
 			$validator -> rule('required', array('title', 'author', 'content'));
 			$validator -> rule('in', 'published', array(0, 1));
-
+			
+			$security = new Security;
+			if(!$security -> checkSignature($fields['_token'])) {
+				$error['csrf'][] = 'Invalid token provided!';
+			}
+			
 			if (!$user -> exists(array('id' => $fields['author']))) {
 				$error['user'][] = 'Author not found!';
 			}
@@ -52,7 +58,7 @@ class BlogController extends MainController {
 				$blog -> setAuthor($fields['author']);
 				$blog -> setTitle($fields['title']);
 				$blog -> setContent($fields['content']);
-				$blog -> setPublished($fields['published']);
+				$blog -> setPublished(1);
 
 				$blog -> create();
 
@@ -63,10 +69,11 @@ class BlogController extends MainController {
 		}
 
 		return $this -> twig -> render('Admin/blog.html.twig', array('blogitems' => $blog -> getItems(), 'authors' => $user -> getUsers(), 'field_errors' => $error, 'confirmation' => $confirmation));
+	
 	}
 
 	public function edit($id) {
-
+	
 		$blog = new Blog;
 		$user = new User;
 		$form = new FormHandler;
@@ -78,13 +85,19 @@ class BlogController extends MainController {
 
 		if ($form -> isMethod('post')) {
 
-			$fields = $form -> getFields(array('title', 'author', 'content', 'published'));
+			$fields = $form -> getFields(array('title', 'author', 'content', 'published', '_token'));
 
 			$validator = new FormValidator($fields);
 
 			$validator -> rule('required', array('title', 'author', 'content'));
 			$validator -> rule('in', 'published', array(0, 1));
 
+			$security = new Security;
+			if(!$security -> checkSignature($fields['_token'])) {
+				$error['csrf'][] = 'Invalid token provided!';
+			} 
+			
+			
 			if (!$user -> exists(array('id' => $fields['author']))) {
 				$error['user'][] = 'Author not found!';
 			}
@@ -122,5 +135,5 @@ class BlogController extends MainController {
 		return $this -> twig -> render('Admin/blog.html.twig', array('blogitems' => $blog -> getItems(), 'authors' => $user -> getUsers(), 'field_errors' => array(), 'confirmation' => $confirmation));
 
 	}
-
+	
 }

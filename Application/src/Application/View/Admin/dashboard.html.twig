@@ -1,0 +1,69 @@
+{% extends "Admin/Core/coreback.html.twig" %}
+
+{% set selectedindex = 1 %}
+
+{% block title %}Update settings{% endblock %}
+
+{% block page %}
+
+<h2><a href="#">Dashboard</a> &raquo; <a href="{{ url('admin-users') }}" class="active">Settings</a></h2>
+
+<div id="main">
+	<h3>Site settings:</h3>
+
+	<fieldset>
+		<form action="" method='post' class="jNice">
+			{% if field_errors|length %}
+			<div class="alert-box2 error">
+				<span>Settings could not been created:</span>
+				<br />
+				<br />
+				{% for error in field_errors %}
+				{% for message in error %}
+				{{ message }}
+				<br />
+				{% endfor %}
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			{% if confirmation|length %}
+			<div class="alert-box2 success">
+				<span>{{ confirmation.message }}</span>
+			</div>
+			{% endif %}
+			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+			<p>
+				<label>Admin name:</label>
+				<input name="adminname" type="text" value="{{ updatesettings.adminname|default(formValue('adminname')) }}" class="text-long" />
+			</p>
+			<p>
+				<label>Admin email:</label>
+				<input name="adminemail" type="text" value="{{ updatesettings.adminemail|default(formValue('adminemail')) }}" class="text-long" />
+			</p>
+			<p>
+				<label>Site title:</label>
+				<input name="title" type="text" value="{{  updatesettings.title|default(formValue('title')) }}" class="text-long" />
+			</p>
+			<p>
+				<label>Site description:</label>
+				 <textarea style="height: 100px;" class='content' name='descr'>{{  updatesettings.descr|default(formValue('descr')) }}</textarea>
+			</p>
+			<p>
+				<label>Spotlight title:</label>
+				<input name="stitle" type="text" value="{{  updatesettings.stitle|default(formValue('stitle')) }}" class="text-long" />
+			</p>
+			<p>
+				<label>Spotlight description:</label>
+				 <textarea style="height: 100px;" class='content' name='sdescr'>{{  updatesettings.sdescr|default(formValue('sdescr')) }}</textarea>
+			</p>
+			<p>
+				<label>Spotlight url:</label>
+				<input name="surl" type="text" value="{{  updatesettings.surl|default(formValue('surl')) }}" class="text-long" />
+			</p>
+			<input type="submit" value="Update settings" />
+		</form>
+
+	</fieldset>
+</div>
+{% endblock %}

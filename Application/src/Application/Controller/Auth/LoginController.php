@@ -13,12 +13,13 @@ use System\Framework\MainController;
 use System\Framework\Storage\Session;
 use System\Framework\Form\FormHandler;
 use System\Framework\HTTP\Response;
+use System\Framework\Security;
 
 use Application\Model\Auth;
 use Application\Model\User;
 
 Class LoginController extends MainController {
-	
+
 	public function index() {
 
 		$render = array();
@@ -32,31 +33,37 @@ Class LoginController extends MainController {
 
 			$form = new FormHandler;
 
+			$security = new Security;
+
 			if ($form -> isMethod('post')) {
-
-				$user = new User;
-				$user -> setUsername($form -> getValue('username'));
-				$user -> setPassword($form -> getValue('password'));
-
-				if ($uid = $auth -> check($user)) {
-					$session -> create('key', $auth -> getKey());
-					$session -> create('uid', (int) $uid);
-					
-					$response -> redirect('admin-users');
+				if (!$security -> checkSignature($form -> getValue('_token'))) {
+					$render['csrferror'] = 'Invalid token provided!';
 				} else {
-					$render['loginfalse'] = true;
+					$user = new User;
+					$user -> setUsername($form -> getValue('username'));
+					$user -> setPassword($form -> getValue('password'));
+
+					if ($uid = $auth -> check($user)) {
+						$session -> create('key', $auth -> getKey());
+						$session -> create('uid', (int)$uid);
+
+						$response -> redirect('admin');
+					} else {
+						$render['loginfalse'] = true;
+					}
 				}
 			}
 		} else {
 			$session -> get('key');
 			//todo... db check:)
-
-			$response -> redirect('admin-users');
+			
+			$response -> redirect('admin');
 		}
-		
+
 		return $this -> twig -> render('Admin/login.html.twig', $render);
 
 	}
+
 	public function logOut() {
 		$session = new Session;
 		$session -> delete('key');
@@ -70,15 +77,16 @@ Class LoginController extends MainController {
 	}
 
 	public function checkLogin() {
-		
+
 		$auth = new Auth;
 		$session = new Session;
-		if($auth -> isAuthenticated()) {
+		if ($auth -> isAuthenticated()) {
 			$user = new User;
 			$user -> read($session -> get('uid'));
-			
-				return $user -> getRole();
+
+			return array($user -> getRole(), true);
 		}
-		return 0;
+		return array(0, false);
 	}
+
 }

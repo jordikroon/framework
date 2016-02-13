@@ -1,50 +1,79 @@
 {% extends 'Core/default.html.twig' %}
 
 {% block title %}Blog{% endblock %}
-
+{% block contenttitle %}Blog{% endblock %}
 {% block content %}
+				<div id="blogrol">
 
-	<div class="blogheader">
-		<h1><a href="{{ url('blog') }}">Blog</a></h1>
-		<p>Op mijn blog plaats ik nieuwtjes en ontwikkelingen die ik door de jaren heen heb ontdekt.<br />
-		Dit kunnen verschillen van kleine tutorials tot technologische snufjes.</p>
-	</div>
-		
-		<div class="blogitem">
-			<h5><a href="{{ url('blog-item', item.id, item.title|replace({ ' ': '-' })|lower) }}">{{ item.title }}</a></h5>
-        
-			<p>{{ item.content|ubb }}</p>
-					
-			<div class="blogiteminfo">
-				<div class="blogitemdatum">{{ item.date_added }}</div>
-				{{ countreplies }} reacties | <a href="{{ url('blog-item', item.id, item.title|replace({ ' ': '-' })|lower) }}">#permalink</a>
-			</div>
-        
-		</div>
-		
-		<div class="comments">
-		{% for reply in replies %}
-			<div class="commentitem">
-			
-				<div class="commentUserInfo">
-					<img src="" /><b>{{ reply.fullname }}</b><br />
-					{{ reply.posts }} posts<br />
-					Geplaatst op: {{ reply.date_added }}
-					
-				</div>
-				
-				<div class="commentTxt">
-					<p>{{ reply.content|ubb }}</p>
-					
-				</div>
-				
-				
-			
-			</div>
-			{% endfor %}
-		
-			<div class="commentfooter"></div>
-		</div>
+					<div class="blogItem">
+						<div class="blogtitle">
+							<h3>{{ item.title }}</h3>
+						</div>
+						
 
-        
+						<p class="date">
+							Posted on {{ item.date_added|date('Y/m/d')}}
+						</p>
+
+						<div id="blogcontentFull">
+							<p>{{ item.content|markdown }}</p>
+						</div>
+				
+				
+						<div id="numOfComments">
+							
+								{{ replies|length }} comments
+								<a href="#doComment" class="button addComment">Add comment</a>
+							
+							
+						</div>
+						
+						
+						<div id="commentsList">
+							<div id="doComment">
+								{% if replies|length > 0 %}
+								<h4>Comments</h4>
+								
+								{% for reply in replies %}
+								<div class="comment">
+									
+									<div class="commentDate"><span>{{ reply.date_added|date('d')}}</span>{{ reply.date_added|date('M')}} '{{ reply.date_added|date('y')}}
+									</div>
+									
+									<div class="commentText">
+									<p><b>{{ reply.author }} commented:</b></p>
+									
+									<p>{{ reply.content|nl2br }}</p>
+									</div>
+									
+									
+								</div>
+								{% endfor %}
+								{% endif %}
+								
+								<h4>Add comment</h4>
+								<form id="doCommentForm" action="" method="post">
+									<!--<div class="error" style="width: 360px">{{ content.error }}</div>-->
+									<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+									<input type="name" name="name" placeholder="Your name" />
+									<textarea name="reply" placeholder="Your comment"></textarea>
+									<input type="submit" value="Send Comment" />
+								</form>
+							</div>
+						</div>
+
+						<div class="clear"></div>
+
+					</div>
+
+				
+
+				</div>
+				{% embed 'Core/sidebar.html.twig' %}
+					{% block return %}
+					<div class="sidebarItem blogPage">
+						<a id="returnToBlog" href="{{ url('blog') }}">Return to blog</a>
+					</div>
+					{% endblock %}
+				{% endembed %}
 {% endblock %}

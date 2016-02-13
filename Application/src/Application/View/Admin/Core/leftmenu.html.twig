@@ -2,11 +2,9 @@
 			<div id="container">
         		<div id="sidebar">
                 	<ul class="sideNav">
-                    	<li><a href="/admincp/?module=users&action=manage_users">Manage users</a></li>
-                    	<li><a href="/admincp/?module=users&action=warn_users">Warn users</a></li>
-                    	<li><a href="/admincp/?module=users&action=ban">Ban users</a></li>
-                    	<li><a href="/admincp/?module=users&action=blacklist">Blacklist</a></li>
-                    	<li><a href="/admincp/?module=users&action=create_admins">Create admins</a></li>
+                    	<li><a href="{{ base_path() }}"><b>View website</b></a></li>
+                    	{% block extralinks %}{% endblock %}
+
                     </ul>
                     <!-- // .sideNav -->
                 </div>    

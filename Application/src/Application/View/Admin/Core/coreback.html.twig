@@ -2,9 +2,20 @@
 
 {% block content %}
 	{% include 'Admin/Core/topmenu.html.twig' %}
-	{% include 'Admin/Core/leftmenu.html.twig' %}
+        <div id="containerHolder">
+			<div id="container">
+        		<div id="sidebar">
+                	<ul class="sideNav">
+                    	<li><a href="{{ base_path() }}"><b>View website</b></a></li>
+                    	{% block extralinks %}{% endblock %}
+
+                    </ul>
+                    <!-- // .sideNav -->
+                </div>    
+                <!-- // #sidebar -->
+
 		
-		{% block page %}{% endblock%}
+	{% block page %}{% endblock%}
 		
 	{% include 'Admin/Core/footer.html.twig' %}
 {% endblock %}

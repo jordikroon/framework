@@ -14,6 +14,7 @@ use Application\Model\User;
 use System\Framework\Form\FormHandler;
 use System\Framework\Form\FormValidator;
 use System\Framework\MainController;
+use System\Framework\Security;
 
 class UserController extends MainController {
 
@@ -27,7 +28,7 @@ class UserController extends MainController {
 
 		if ($form -> isMethod('post')) {
 
-			$fields = $form -> getFields(array('user', 'pass', 'email', 'role', 'fullname'));
+			$fields = $form -> getFields(array('user', 'pass', 'email', 'role', 'fullname', '_token'));
 
 			$validator = new FormValidator($fields);
 
@@ -35,6 +36,11 @@ class UserController extends MainController {
 			$validator -> rule('email', 'email');
 			$validator -> rule('in', 'role', array(1, 2));
 
+			$security = new Security;
+			if(!$security -> checkSignature($fields['_token'])) {
+				$error['csrf'][] = 'Invalid token provided!';
+			} 
+			
 			if ($user -> exists(array('username' => $fields['user']))) {
 				$error['user'][] = 'Username in use!';
 			}
@@ -75,12 +81,18 @@ class UserController extends MainController {
 
 		if ($form -> isMethod('post')) {
 
-			$fields = $form -> getFields(array('user', 'pass', 'email', 'role', 'fullname'));
+			$fields = $form -> getFields(array('user', 'pass', 'email', 'role', 'fullname', '_token'));
 
 			$validator = new FormValidator($fields);
 
 			$required = array();
 			$required[] = 'fullname';
+			
+			$security = new Security;
+			if(!$security -> checkSignature($fields['_token'])) {
+				$error['csrf'][] = 'Invalid token provided!';
+			} 
+			
 			
 			if ($user -> getUsername() != $fields['user']) {
 				$required[] = 'user';

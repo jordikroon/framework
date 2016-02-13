@@ -4,6 +4,11 @@
                			{% if loginfalse == true %}
     						 <div class="login-alert error">Bad authentication</div>
 						{% endif %}
+               			{% if csrferror %}
+    						 <div class="login-alert error">{{ csrferror }}</div>
+						{% endif %}
+						
+						<input type="hidden" name="_token" value="{{ csrf_token() }}" />
                        	<p><label>Username:</label><input type="text" name='username' class="text-long" /></p>
                        	<p><label>Password:</label><input type="password" name='password' class="text-long" /><br />	   </p>
 

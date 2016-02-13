@@ -1,5 +1,7 @@
 {% extends "Admin/Core/coreback.html.twig" %}
 
+{% set selectedindex = 2 %}
+
 {% block title %}{{ edituser|default('Add') }} user{% endblock %}
 
 {% block page %}
@@ -53,7 +55,7 @@
 				<span>{{ confirmation.message }}</span>
 			</div>
 			{% endif %}
-
+			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 			<p>
 				<label>Username:</label>
 				<input name="user" type="text" value="{{  updateuser.user|default(formValue('user')) }}" class="text-long" />

@@ -1,0 +1,47 @@
+{% extends 'Core/default.html.twig' %}
+
+{% block title %}{{ info.category}}{% endblock %}
+{% block contenttitle %}{{ info.category}}{% endblock %}
+{% block content %}
+					
+				<div id="blogrol">
+
+					<div class="blogItem">
+						<div class="blogtitle">
+							<h3>{{ item.title }}</h3>
+							
+							<ul>
+								{% for tag in item.tags %}
+								<li class="hideMobile">{{ tag.tag }}</li>
+								{% endfor %}
+								
+							</ul>
+						</div>
+						
+
+						<p class="date">
+							Released on {{ item.released|date('Y/m/d') }}
+						</p>
+
+						<div id="blogcontentFull">
+							
+							<img align="right" src="{{ base_path() }}files/{{ item.image }}" width="234" height="165" alt="{{ item.title }}" title="{{ item.title }}"/>
+								
+						<p>{{ item.content|markdown }}</p>
+						</div>
+
+						<div class="clear"></div>
+
+					</div>
+				</div>
+				{% embed 'Core/sidebar.html.twig' %}
+					{% block return %}
+					<div class="sidebarItem blogPage">
+						<a id="returnToBlog" href="{{ url('portfoliocategory', info.slug)}}">Return to {{ info.category }}</a>
+					</div>
+					{% endblock %}
+				{% endembed %}
+
+
+{% endblock %}
+

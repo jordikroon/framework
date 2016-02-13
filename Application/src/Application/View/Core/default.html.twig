@@ -1,60 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Jordi Kroon - {% block title %}Home{% endblock %}</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
+		<link rel="stylesheet" href="{{ base_path() }}templates/main/css/main.css">
+		<link rel="stylesheet" href="{{ base_path() }}pygments/manni/highlight.css">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta name="description" content="fdjf" />
-<meta name="keywords" content="gdfh" />
-<title>{% block title %}Homepage{% endblock %}</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+		  ga('create', 'UA-54303192-1', 'auto');
+		  ga('send', 'pageview');
+		  
 
-<link rel="stylesheet" type="text/css" media="screen" href="{{ base_path() }}templates/main/css/style.css" />
+		</script>
+	</head>
+	<body>
 
-	
-</head>
-<body>
-<div id="wrapper">
-	<div id="header">
-		<div id="logo">
-			<h1><a href="index.php">Jordi Kroon</a></h1>
-		</div>
-		<div id="menu">
-			{{ render('Menu_Menu:getItems') }}
-			<br class="clearfix">
-		</div>
-	</div>
-	<div id="page">
-	
-		{% block blogcontent %}
-		<div class="content">
-			<div class="post">
-			
-				{% block content %}{% endblock %}
-			</div>	
-		</div>
-		{% endblock %}
-		<div id="sidebar">
-			<h3>Login </h3>
-			<div class="date-list">
-				<ul class="list date-list">
+		<div id="header">
+
+			<div id="nav">
+				<div class="container">
+					<a href="{{ base_path() }}auth/login" id="loginButton">Login area</a>
+					<div>
+						{{ render('Menu_Menu:getItems') }}
+
+					</div>
+				</div>
+			</div>
+
+			<div id="headerbox">
+				<div class="container">
+					{{ render('Home_Top:index')}}
 					
-				</ul>
-				
-			</div>
-			<h3>Twitter </h3>
-			<div class="date-list">
-				<ul class="list date-list">
-				
-					<li class="last"></li>
-				</ul>
+				</div>
+
+				<div class="clear"></div>
 			</div>
 
 		</div>
-		<br class="clearfix" />
-	</div>
-</div>
-<div id="footer">
-	Copyright (c) {{ "now"|date("Y") }} <strong>jordikroon.nl</strong> alle rechten voorbehouden.
-</div>
-</body>
+
+		<div id="main">
+
+			<div class="container">
+				<h2>{% block contenttitle %}My Projects{% endblock %}</h2>
+				<hr />
+				{% block content %}{% endblock %}
+				
+			</div>
+
+			<div id="footer">
+				<div class="container">
+
+					<div id="social">
+
+						<a href="http://github.com/jordi12100"><img src="{{ base_path() }}templates/main/img/social-github.jpg" title="github" alt="github profile"  width="35" height="35"/></a>
+						<a href="http://twitter.com/jordi12100"><img src="{{ base_path() }}templates/main/img/social-twitter.jpg" title="twitter" alt="twitter profile"  width="35" height="35"/></a>
+						<a href="http://facebook.com/jordi.kroon"><img src="{{ base_path() }}templates/main/img/social-facebook.jpg" title="facebook" alt="facebook profile" width="35" height="35" /></a>
+					</div>
+					<p>
+						&copy; Copyright 2014 - Designed and developed by Jordi Kroon
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

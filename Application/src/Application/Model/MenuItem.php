@@ -13,6 +13,12 @@ Class MenuItem extends Model {
 	
 	private $id;
 	
+	private $database;
+
+	public function __construct($menu = '') {
+		$this -> database = $this -> getDatabase();
+	}
+	
 	public function setId($id) {
 		$this -> id = $id;
 	}
@@ -29,10 +35,6 @@ Class MenuItem extends Model {
 		$this -> link = $link;
 	}
 	
-	public function setParent($id) {
-		$this -> parent = $id;
-	}
-	
 	public function getName() {
 		return $this -> name;
 	}
@@ -41,8 +43,18 @@ Class MenuItem extends Model {
 		return $this -> link;
 	}
 	
-	public function getParent() {
-		return $this -> parent;
+	public function readItem($id) {
+		$sth = $this -> database -> prepare('SELECT id, mname, lname, link FROM scms_menu WHERE id = ?');
+		if ($sth -> execute(array($id))) {
+
+			$fetch = $sth -> fetch();
+
+			$this -> setId($fetch['id']);
+			$this -> setName($fetch['lname']);
+			$this -> setLink($fetch['link']);
+			return $this;
+		} else {
+			throw new \PDOException('Could not execute query!' . $sth -> errorInfo());
+		}
 	}
 }
-	

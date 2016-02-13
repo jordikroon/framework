@@ -22,6 +22,7 @@
 {% endif %}
 
 <form method="post" action="">
+<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 	<label>Username: </label><input type="text" name="username" /> <br />
 	<label>Password: </label><input type="password" name="password" /> <br />
 	<label>Confirm: </label><input type="password" name="password2" /> <br />

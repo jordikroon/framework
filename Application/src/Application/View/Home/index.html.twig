@@ -1,5 +1,22 @@
 {% extends 'Core/default.html.twig' %}
 
-{% block title %} test{% endblock %}
+{% block title %}Home{% endblock %}
+{% block contenttitle %}My Projects{% endblock %}
 
-{% block content %} {{ content|raw }} {% endblock %}
+{% block content %}
+				<div class="table">
+
+					<div class="tablerow">
+						<div class="left">
+							<a href="{{ url('portfoliocategory', 'web-applications') }}" class="tile"  id="webapp"><span>Web Applications</span></a>
+						</div>
+						<div class="middle">
+							<a href="{{ url('portfoliocategory', 'ios-applications') }}" class="tile"  id="iosapp"><span>iOS Applications</span></a>
+						</div>
+						<div class="right">
+							<a href="{{ url('portfoliocategory', 'framework') }}" class="tile"  id="phpframework"><span>PHP Framework</span></a>
+						</div>
+					</div>
+
+				</div>
+{% endblock %}

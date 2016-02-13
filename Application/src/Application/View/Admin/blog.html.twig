@@ -1,5 +1,7 @@
 {% extends "Admin/Core/coreback.html.twig" %}
 
+{% set selectedindex = 3 %}
+
 {% block title %}{{ editblog|default('Add') }} blog{% endblock %}
 
 {% block page %}
@@ -54,6 +56,7 @@
 			</div>
 			{% endif %}
 
+			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 			<p>
 				<label>Title:</label>
 				<input name="title" type="text" value="{{  updateblog.title|default(formValue('title')) }}" class="text-long" />

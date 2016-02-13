@@ -1,0 +1,98 @@
+{% extends "Admin/Core/coreback.html.twig" %}
+
+{% set selectedindex = 5 %}
+{% block title %}{{ editmenu|default('Add') }} menu{% endblock %}
+
+{% block page %}
+
+<h2><a href="#">Menu</a> &raquo; <a href="{{ url('admin-menu') }}" class="active">Manage menu</a></h2>
+
+<div id="main">
+
+	<h3>Manage menu:</h3>
+	<table cellpadding="0" cellspacing="0">
+
+		<div id="dialog" title="Delete menu?" style="display: none;">
+			<p>
+				<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Are you sure you want to delete this menu item?
+			</p>
+		</div>
+
+		{% for menu in menuitems %}
+		<tr class="{{ cycle(['even','odd'],loop.index) }}">
+			<td>{{ menu.lname }}</td>
+			<td class="action"><a href="{{ url('admin-menu-edit', menu.id) }}" class="edit">Edit</a><a href="{{ url('admin-menu-delete', menu.id) }}" class="delete">Delete</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+
+	<h3>{{ editmenu|default('Add') }} menu item:</h3>
+
+	<fieldset>
+		
+			{% if updatemenu.id  == '' and editmenu %}
+			<div class="alert-box2 error">
+				<span>menu does not exist!</span>
+			</div>
+			{% else %}
+		<form action="" method='post' class="jNice">
+			{% if field_errors|length %}
+			<div class="alert-box2 error">
+				<span>menu could not been created:</span>
+				<br />
+				<br />
+				{% for error in field_errors %}
+					{% for message in error %}
+						{{ message }}	<br />
+					{% endfor %}
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			{% if confirmation|length %}
+			<div class="alert-box2 success">
+				<span>{{ confirmation.message }}</span>
+			</div>
+			{% endif %}
+			<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+			<p>
+				<label>Name:</label>
+				<input name="name" type="text" value="{{  updatemenu.menu|default(formValue('name')) }}" class="text-long" />
+			</p>
+			<p>
+				<label>Link:</label>
+				<input name="link" type="text" value="{{  updatemenu.link|default(formValue('link')) }}" class="text-long" />
+			</p>
+			<input type="submit" value="{{ editmenu|default('Add') }} menu item" />
+		</form>
+	
+		{% endif %}
+	
+	</fieldset>
+
+</div>
+
+<script>
+	$('.delete').click(function() {
+
+		var a = this;
+
+		$('#dialog').dialog({
+			resizable : false,
+			draggable: false,
+			width : 250,	
+			modal : true,
+			buttons : {
+				"Delete menu item" : function() {
+					window.location = a.href; 
+				},
+				Cancel : function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+		return false;
+	});
+
+</script>
+{% endblock %}

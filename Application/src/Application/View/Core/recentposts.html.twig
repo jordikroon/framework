@@ -1,0 +1,13 @@
+					<div class="sidebarItem">
+
+						<h4>Recent Posts</h4>
+
+						<ul>
+							{% for post in content.posts[:5] %} 
+							<li>
+								<a href="{{ url('blog-item', post.id, post.title|slugify) }}">{{ post.title|capitalize }}</a><span>{{ repo.updated_at|date("Y/m/d") }}</span>
+							</li>
+							{% endfor %}
+						</ul>
+
+					</div>
