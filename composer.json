@@ -26,10 +26,10 @@
         "doctrine/common": "2.5.*@dev"
     },
     "autoload": {
-        "psr-0": { 
-		
-		},
-		"files": ["Vendor/UBBParser/bb_parser.php"]
-    },
-	"minimum-stability": "dev"
+        "psr-4": {
+            "Application\\": "Application/src/Application",
+            "System\\": "System/src/System"
+        },
+        "files": ["Vendor/UBBParser/bb_parser.php"]
+    }
 }
