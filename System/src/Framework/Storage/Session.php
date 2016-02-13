@@ -25,9 +25,9 @@ class Session {
 	 * @param string $sessionName session name
 	 * @param string $value session value
 	 */
-	public function create($sessionName, $value) {
+	public function create($sessionName, $value, $overwrite = false) {
 		
-		if(!$this -> exists($sessionName)) {
+		if(!$this -> exists($sessionName) || $overwrite == true) {
 			$_SESSION[$sessionName] = $value;
 		}
 	}

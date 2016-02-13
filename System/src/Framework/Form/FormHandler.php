@@ -18,7 +18,9 @@ class FormHandler {
 	public function getValue($name) {
 		if(isset($_POST[$name]) && !empty($_POST[$name])) {
 			return $_POST[$name];
-		}
+		} else if(isset($_FILES[$name]) && !empty($_FILES[$name])) {
+			return $_FILES[$name];
+		} 
 	}
 	
 	/** 
