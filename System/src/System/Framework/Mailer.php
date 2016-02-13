@@ -18,7 +18,7 @@ class Mailer {
 	public function __construct() {
 
 		$config = new Config;
-		$config -> loadFile(__dir__ . '/../../Config/application.php');
+		$config -> loadFile(__dir__ . '/../../../../Config/application.php');
 
 		$mailsettings = $config -> get('email');
 		

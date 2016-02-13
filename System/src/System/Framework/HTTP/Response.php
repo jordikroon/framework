@@ -149,16 +149,16 @@ class Response {
 	
 	public function getBasePath() {
 		$config = new config;
-		$config -> loadFile(__dir__ . '/../../../Config/application.php');
+		$config -> loadFile(__dir__ . '/../../../../../Config/application.php');
 		
 		return $config -> get('BasePath');
 	}
 
 	public function returnStatusCode($statusCode) {
-		if ($this::$statusCodes[$statusCode] !== null) {
-			header(sprintf('%s %d %s', $_SERVER['SERVER_PROTOCOL'], $statusCode, $status_codes[$statuscode]), true, $statusCode);
+		if (self::$statusCodes[$statusCode] !== null) {
+			header(sprintf('%s %d %s', $_SERVER['SERVER_PROTOCOL'], $statusCode, self::$statusCodes[$statusCode]), true, $statusCode);
 		} else {
-			throw new ErrorException(sprintf('Invalid status code %d', $statuscode));
+			throw new ErrorException(sprintf('Invalid status code %d', $statusCode));
 		}
 	}
 }

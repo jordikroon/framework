@@ -75,7 +75,7 @@ Class Route {
 	}
 
 	public function getByName($name) {
-		$routes = require __dir__ . '/../../../Config/routes.php';
+		$routes = require __dir__ . '/../../../../../Config/routes.php';
 		
 		foreach($routes AS $route) {
 			if($route[0] == $name) {

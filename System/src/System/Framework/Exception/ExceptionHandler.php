@@ -43,29 +43,48 @@ use System\Framework\Template\Templating;
  * @since   1.0.0
  * @package Framework
  */
-class ExceptionHandler {
+class ExceptionHandler
+{
+    const LOG_DIR = __DIR__ . '/../../../../Logs';
 
-	private $exception;
+    /**
+     * @var \Exception
+     */
+    private $exception;
 
-	public function __construct($e) {
-		$this -> exception = $e;
-	}
+    public function __construct($e)
+    {
+        $this->exception = $e;
+    }
 
-	public function save($file) {
-		$log = new Logger(get_class($this -> exception));
-		$log -> pushHandler(new StreamHandler($file, Logger::DEBUG));
+    public function save($file)
+    {
+        $this->assertFileExist($file);
 
-		$log -> addCritical(sprintf("Exception thrown: %s", $this -> exception -> __toString()));
-	}
+        $log = new Logger(get_class($this->exception));
+        $log->pushHandler(new StreamHandler($file, Logger::DEBUG));
 
-	public function getContent() {
+        $log->addCritical(sprintf("Exception thrown: %s", $this->exception->__toString()));
+    }
 
-		$template = new Templating;
-		$template -> setCacheDir(__dir__ . '/../../../Cache/twig');
-		$template -> setViewDir(__dir__ . '/../../Views/');
+    public function getContent()
+    {
+        $template = new Templating;
+        $template->setCacheDir(__dir__ . '/../../../Cache/twig');
+        $template->setViewDir(__dir__ . '/../../Views/');
 
-		return $template -> getParser() -> render('exception.html.twig', array('name' => get_class($this -> exception), 'message' => $this -> exception -> getMessage(), 'stack' => $this -> exception -> getTraceAsString()));
-		
-	}
+        return $template->getParser()->render('exception.html.twig', array('name' => get_class($this->exception), 'message' => $this->exception->getMessage(), 'stack' => $this->exception->getTraceAsString()));
+    }
 
+    protected function assertFileExist($file)
+    {
+        if (!file_exists(self::LOG_DIR)) {
+            throw new \Exception('Log folder not found, please create a Logs folder in the root of your project');
+        }
+
+        $path = self::LOG_DIR . '/' . $file;
+        if (!file_exists($path)) {
+            touch($path);
+        }
+    }
 }

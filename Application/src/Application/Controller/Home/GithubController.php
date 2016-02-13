@@ -14,28 +14,27 @@ use Application\Model\Settings;
 
 use System\Framework\Config;
 
-Class GithubController extends MainController {
+Class GithubController extends MainController
+{
 
-	public function index() {
+    public function index()
+    {
+        $content = [];
 
-		$settings = new Settings;
+        $content['title'] = 'Github repositories';
 
-		$content = array();
+        $cache = new \Github\HttpClient\CachedHttpClient();
+        $cache->setCache(new \Github\HttpClient\Cache\FilesystemCache(__dir__ . '/../../../../../Cache/github'));
 
-		$content['title'] = 'Github repositories';
+        $client = new \Github\Client($cache);
 
-		$cache = new \Github\HttpClient\CachedHttpClient();
-		$cache -> setCache(new \Github\HttpClient\Cache\FilesystemCache(__dir__ . '/../../Cache/github'));
-		
-		$client = new \Github\Client($cache);
-		
-		$config = new Config;
-		$config -> loadFile(__dir__ . '/../../../Config/application.php');
-		$github = $config -> get('github');
-		
-		$content['repositories'] = $client -> api('user') -> repositories($github['username'], 'updated');
-		
-		return $this -> twig -> render('Core/github.html.twig', array('content' => $content));
-	}
+        $config = new Config;
+        $config->loadFile(__dir__ . '/../../../../../Config/application.php');
+        $github = $config->get('github');
+
+        $content['repositories'] = $client->api('user')->repositories($github['username'], 'updated');
+
+        return $this->twig->render('Core/github.html.twig', array('content' => $content));
+    }
 
 }
