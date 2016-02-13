@@ -41,20 +41,36 @@ use System\Framework\Config;
  * @since   1.0.0
  * @package Framework
  */
-class Database extends \PDO {
+class Database extends \PDO
+{
+    /**
+     * @var Database
+     */
+    protected static $instance;
+
+    /**
+     * @return Database
+     */
+    public static function getInstance() {
+        if (!self::$instance) {
+            self::$instance = new Database;
+        }
+
+        return self::$instance;
+    }
 
     /**
      * Calling the database handler
      */
-     
-	public function __construct() {
+    public function __construct()
+    {
 
-		$config = new Config;
-		$config -> loadFile(__dir__ . '/../../../../../Config/application.php');
-		$db = $config -> get('database');
+        $config = new Config;
+        $config->loadFile(__dir__ . '/../../../../../Config/application.php');
+        $db = $config->get('database');
 
-		parent::__construct('mysql:dbname=' . $db['database'] . ';host=' . $db['host'], $db['username'], $db['password']);
-		$this->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-	}
+        parent::__construct('mysql:dbname=' . $db['database'] . ';host=' . $db['host'], $db['username'], $db['password']);
+        $this->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+    }
 
 }

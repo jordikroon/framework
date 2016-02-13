@@ -5,4 +5,4 @@ ini_set('display_errors', 1);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-echo \System\Framework\Application::run();
+echo \System\Framework\Application::run(getenv('APP_ENV') !== 'prod');

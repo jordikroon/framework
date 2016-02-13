@@ -2,23 +2,23 @@
 
 return [
     'database' => [
-        'host' => '127.0.0.1',
-        'username' => 'root',
-        'password' => '',
-        'database' => 'scms',
+        'host' => getenv('DATABASE_HOST'),
+        'username' => getenv('DATABASE_USERNAME'),
+        'password' => getenv('DATABASE_PASSWORD'),
+        'database' => getenv('DATABASE_NAME'),
     ],
     'security' => [
-        'salt' => 'RF7ufd76#$67Rei6BI6GUu7Re%$%#J',
-        'pepper' => 'vjFU^f#fyuj%$%#r$$8Nt$326tif',
+        'salt' => getenv('SECURITY_SALT'),
+        'pepper' => getenv('SECURITY_PEPPER')
     ],
     'email' => [
-        'server' => 'mail.jordikroon.nl',
-        'port' => 25,
-        'username' => '',
-        'password' => '',
+        'server' => getenv('EMAIL_SERVER'),
+        'port' => getenv('EMAIL_PORT'),
+        'username' => getenv('EMAIL_USERNAME'),
+        'password' => getenv('EMAIL_PASSWORD'),
     ],
     'github' => [
-        'username' => '',
+        'username' => getenv('GIT_USERNAME'),
     ],
-    'BasePath' => 'http://localhost/framework/web/',
+    'BasePath' => getenv('BASE_PATH'),
 ];

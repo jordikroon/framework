@@ -150,7 +150,7 @@ class PortfolioCategory extends Model {
 				}
 			} else {
 			$pdoerr = $sth -> errorInfo();
-			throw new PDOException('Could not execute query, ' . $pdoerr[2]);
+			throw new \PDOException('Could not execute query, ' . $pdoerr[2]);
 			}
 
 		} else {
