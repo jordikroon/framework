@@ -29,7 +29,6 @@
         "psr-4": {
             "Application\\": "Application/src/Application",
             "System\\": "System/src/Framework"
-        },
-        "files": ["Vendor/UBBParser/bb_parser.php"]
+        }
     }
 }

@@ -17,8 +17,8 @@ class Config {
 	
 	public function loadFile($file) {
 		if(file_exists($file)) {
-			
-			require $file;		
+
+			$config = require $file;
 			
 			if(!isset($config) || !is_array($config)) {
 				$this -> config = array();

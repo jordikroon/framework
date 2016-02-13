@@ -48,12 +48,13 @@ class FormHandler {
 			unset($_POST[$key]);
 		}
 	}
-	
-	/** 
+
+	/**
 	 * unset all post variables
-	 * 
+	 *
 	 * @param array $array selected form field values
-	 */	
+	 * @return array
+	 */
 	public function getFields($array) {
 		
 		if(!is_array($array)) {
@@ -71,12 +72,13 @@ class FormHandler {
 		}
 		
 	}
-	
-	/** 
+
+	/**
 	 * Check method is equal
-	 * 
+	 *
 	 * @param string $method form method to check
-	 */	
+	 * @return bool
+	 */
 	public function isMethod($method) {
 		if($_SERVER['REQUEST_METHOD'] == strtoupper($method)) {
 			return true;

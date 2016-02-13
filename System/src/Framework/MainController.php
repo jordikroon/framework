@@ -34,7 +34,7 @@ class Maincontroller extends Application {
 	protected function loadTemplates() {
 
 		$parser = new Templating;
-		$parser -> setCacheDir(__dir__ . '/../../Application/Cache/twig');
+		$parser -> setCacheDir(__dir__ . '/../../Cache/twig');
 		$parser -> setViewDir(__dir__ . '/../../Application/View/');
 		$this -> twig = $parser -> getParser();
 		
@@ -107,8 +107,7 @@ class Maincontroller extends Application {
 
 		$router = new Router;
 
-		require __dir__ . '/../../Config/routes.php';
-
+		$routes =  __dir__ . '/../../Config/routes.php';
 		foreach ($routes AS $data) {
 			$route = new Route;
 			$route -> handle($data[0], $data[1], $data[2]);
