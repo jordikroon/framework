@@ -13,15 +13,13 @@ use System\Framework\Routing\Router;
 use System\Framework\Routing\Route;
 use System\Framework\HTTP\Response;
 use System\Framework\Template\Templating;
-use System\Framework\Security;
-use System\Framework\Config;
 
-class Maincontroller extends Application
+class Maincontroller
 {
-
     protected $database;
     protected $twig;
-    private $params;
+    protected $params;
+    protected $response;
 
     public function __construct()
     {
@@ -35,7 +33,6 @@ class Maincontroller extends Application
      */
     protected function loadTemplates()
     {
-
         $parser = new Templating;
         $parser->setCacheDir(__dir__ . '/../../Cache/twig');
         $parser->setViewDir(__dir__ . '/../../../../Application/src/Application/View/');
