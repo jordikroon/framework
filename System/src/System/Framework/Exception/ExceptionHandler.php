@@ -70,7 +70,6 @@ class ExceptionHandler
     public function getContent()
     {
         $template = new Templating;
-        $template->setCacheDir(__dir__ . '/../../../../../Cache/twig');
         $template->setViewDir(__dir__ . '/../../../../Views/');
 
         return $template->getParser()->render('exception.html.twig', array('name' => get_class($this->exception), 'message' => $this->exception->getMessage(), 'stack' => $this->exception->getTraceAsString()));

@@ -34,7 +34,7 @@ class Maincontroller
     protected function loadTemplates()
     {
         $parser = new Templating;
-        $parser->setCacheDir(__dir__ . '/../../Cache/twig');
+        $parser->setCacheDir(__dir__ . '/../../../../Cache/twig');
         $parser->setViewDir(__dir__ . '/../../../../Application/src/Application/View/');
         $this->twig = $parser->getParser();
 
