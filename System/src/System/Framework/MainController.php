@@ -16,106 +16,110 @@ use System\Framework\Template\Templating;
 use System\Framework\Security;
 use System\Framework\Config;
 
-class Maincontroller extends Application {
+class Maincontroller extends Application
+{
 
-	protected $database;
-	protected $twig;
-	private $params;
+    protected $database;
+    protected $twig;
+    private $params;
 
-	public function __construct() {
-		$this -> config = new config;
-		$this -> loadTemplates();
-	}
+    public function __construct()
+    {
+        $this->config = new config;
+        $this->loadTemplates();
+    }
 
-	/** Load template parser 'twig'
-	 *
-	 * @example http://twig.sensiolabs.org/documentation
-	 */
-	protected function loadTemplates() {
+    /** Load template parser 'twig'
+     *
+     * @example http://twig.sensiolabs.org/documentation
+     */
+    protected function loadTemplates()
+    {
 
-		$parser = new Templating;
-		$parser -> setCacheDir(__dir__ . '/../../Cache/twig');
-		$parser -> setViewDir(__dir__ . '/../../Application/View/');
-		$this -> twig = $parser -> getParser();
-		
-	}
+        $parser = new Templating;
+        $parser->setCacheDir(__dir__ . '/../../Cache/twig');
+        $parser->setViewDir(__dir__ . '/../../../../Application/src/Application/View/');
+        $this->twig = $parser->getParser();
 
-	/** get route matches by request
-	 *
-	 * @return array|boolean $date route data
-	 */
-	public function getRouteMatches($request) {
-		$request = ltrim($request, '/');
+    }
 
-		$router = $this -> getRouter();
-		$route = $router -> getRoute($request);
+    /** get route matches by request
+     *
+     * @return array|boolean $date route data
+     */
+    public function getRouteMatches($request)
+    {
+        $request = ltrim($request, '/');
 
-		if ($route) {
+        $router = $this->getRouter();
+        $route = $router->getRoute($request);
 
-			$this -> params = $route -> getParams();
+        if ($route) {
 
-			return $route -> getData();
-		}
+            $this->params = $route->getParams();
 
-		return false;
-	}
+            return $route->getData();
+        }
 
-	public function execute() {
+        return false;
+    }
 
-		$response = new Response;
+    public function execute()
+    {
 
-		$route = $this -> getRouteMatches($response -> getUri());
-		$security = new Security;
-		
-		$authorized = $security -> isAuthorized($route[0] . '_' . $route[1] . ':' . $route[2]);
-		if ($authorized == 2) {
+        $response = new Response;
 
-			if ($route) {
-				$controllerClass = '\\Application\\Controller\\' . $route[0] . '\\' . $route[1] . 'Controller';
+        $route = $this->getRouteMatches($response->getUri());
+        $security = new Security;
 
-				$controller = new $controllerClass;
-				$reflection = new \ReflectionMethod($controller, $route[2]);
+        $authorized = $security->isAuthorized($route[0] . '_' . $route[1] . ':' . $route[2]);
+        if ($authorized == 2) {
 
-				$array = array_slice($this -> params, 0, count($reflection -> getParameters()));
-				$this -> response = call_user_func_array(array($controller, $route[2]), $array);
-				
-			} else {
-				throw new \ErrorException('Page not found');
-				$response -> redirect($securityarray[404]);
-			}
+            if ($route) {
+                $controllerClass = '\\Application\\Controller\\' . $route[0] . '\\' . $route[1] . 'Controller';
 
-			return $this -> response;
-		} else {
-			$response = new Response;
-			$securityconf = new Config;
-			$securityconf -> loadFile(__dir__ . '/../../Config/security.php');
+                $controller = new $controllerClass;
+                $reflection = new \ReflectionMethod($controller, $route[2]);
 
-			$securityarray = $securityconf -> get('security');
-			if ($authorized == 1) {
-				$response -> redirect($securityarray['notauthroute']);
-			} else {
-				$response -> redirect($securityarray['loginroute']);
-			}	
-		}
-	}
+                $array = array_slice($this->params, 0, count($reflection->getParameters()));
+                $this->response = call_user_func_array(array($controller, $route[2]), $array);
 
-	/** gets and returns route object
-	 *
-	 * @return object $route route object
-	 */
-	public function getRouter() {
+            } else {
+                throw new \ErrorException('Page not found');
+            }
 
-		$router = new Router;
+            return $this->response;
+        } else {
+            $response = new Response;
+            $securityconf = new Config;
+            $securityconf->loadFile(__dir__ . '/../../../../Config/security.php');
 
-		$routes =  __dir__ . '/../../Config/routes.php';
-		foreach ($routes AS $data) {
-			$route = new Route;
-			$route -> handle($data[0], $data[1], $data[2]);
+            if ($authorized == 1) {
+                $response->redirect($securityconf->get('notauthroute'));
+            } else {
+                $response->redirect($securityconf->get('loginroute'));
+            }
+        }
+    }
 
-			$router -> setRoute($route);
-		}
+    /** gets and returns route object
+     *
+     * @return object $route route object
+     */
+    public function getRouter()
+    {
 
-		return $router;
-	}
+        $router = new Router;
+
+        $routes = require __dir__ . '/../../../../Config/routes.php';
+        foreach ($routes AS $data) {
+            $route = new Route;
+            $route->handle($data[0], $data[1], $data[2]);
+
+            $router->setRoute($route);
+        }
+
+        return $router;
+    }
 
 }

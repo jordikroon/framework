@@ -1,6 +1,7 @@
-/Application/Cache/*
+/Cache/*
 .project
 .settings/
 /vendor
 
 .DS_Store
+web/Exceptions.log

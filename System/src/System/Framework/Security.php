@@ -10,8 +10,8 @@ use System\Framework\Storage\Session;
 class Security
 {
     const PERMISSION_REQUESTED = 0;
-    const PERMISSION_DENIED = 2;
-    const PERMISSION_GRANTED = 1;
+    const PERMISSION_DENIED = 1;
+    const PERMISSION_GRANTED = 2;
 
     /**
      * @var Config
@@ -21,7 +21,7 @@ class Security
     public function __construct()
     {
         $this->config = new Config;
-        $this->config->loadFile(__dir__ . '/../../Config/security.php');
+        $this->config->loadFile(__dir__ . '/../../../../Config/security.php');
     }
 
     /**
@@ -32,10 +32,7 @@ class Security
     public function isAuthorized($routeName)
     {
         $route = new Route;
-
-        $security = $this->config->get('security');
-
-        foreach ($security['securedroutes'] AS $key => $roles) {
+        foreach ($this->config->get('securedroutes') AS $key => $roles) {
             $routeInfo = $route->getByName($key);
             $securityRoles = $this->config->get('roles');
 
@@ -47,7 +44,7 @@ class Security
             $controllerClass = '\\Application\\Controller\\' . $data[0] . '\\' . $data[1] . 'Controller';
 
             if (!class_exists($controllerClass) || !method_exists($controllerClass, $data[2])) {
-                throw new \ErrorException(sprintf('LoginRoute "%s" does not exists', $security['checklogin']));
+                throw new \ErrorException(sprintf('LoginRoute "%s" does not exists', $this->config->get('checklogin')));
             }
 
             $controller = new $controllerClass;
@@ -60,7 +57,7 @@ class Security
             $response = $controller->$method();
 
             if (!in_array(array_search($response[0], $securityRoles), $roles)) {
-                return $response[1] === true ? self::PERMISSION_DENIED : self::PERMISSION_REQUESTED;
+                return $response[1] == true ? self::PERMISSION_DENIED : self::PERMISSION_REQUESTED;
             }
         }
 
