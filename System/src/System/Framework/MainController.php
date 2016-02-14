@@ -23,7 +23,7 @@ class Maincontroller
 
     public function __construct()
     {
-        $this->config = new config;
+        $this->config = new Config;
         $this->loadTemplates();
     }
 
